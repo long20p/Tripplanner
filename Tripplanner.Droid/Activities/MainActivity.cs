@@ -7,9 +7,11 @@ using Android.Support.Design.Widget;
 using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
+using V4App = Android.Support.V4.App;
 using Android.Views;
+using Tripplanner.Droid.Fragments;
 
-namespace Tripplanner.Droid
+namespace Tripplanner.Droid.Activities
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
@@ -32,6 +34,12 @@ namespace Tripplanner.Droid
 
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
+
+            if(savedInstanceState == null)
+            {
+                NavigateToPage(Resource.Id.nav_new_trip);
+                navigationView.SetCheckedItem(Resource.Id.nav_new_trip);
+            }
         }
 
         public override void OnBackPressed()
@@ -73,37 +81,45 @@ namespace Tripplanner.Droid
 
         public bool OnNavigationItemSelected(IMenuItem item)
         {
-            int id = item.ItemId;
-
-            if (id == Resource.Id.nav_camera)
-            {
-                // Handle the camera action
-            }
-            else if (id == Resource.Id.nav_gallery)
-            {
-
-            }
-            else if (id == Resource.Id.nav_slideshow)
-            {
-
-            }
-            else if (id == Resource.Id.nav_manage)
-            {
-
-            }
-            else if (id == Resource.Id.nav_share)
-            {
-
-            }
-            else if (id == Resource.Id.nav_send)
-            {
-
-            }
+            NavigateToPage(item.ItemId);
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);
             return true;
         }
+
+        private void NavigateToPage(int pageId)
+        {
+            V4App.Fragment fragment = null;
+
+            if (pageId == Resource.Id.nav_new_trip)
+            {
+                fragment = new NewTripFragment();
+            }
+            else if (pageId == Resource.Id.nav_all_trips)
+            {
+
+            }
+            else if (pageId == Resource.Id.nav_backup)
+            {
+
+            }
+            else if (pageId == Resource.Id.nav_restore)
+            {
+
+            }
+            else if (pageId == Resource.Id.nav_settings)
+            {
+
+            }
+            else if (pageId == Resource.Id.nav_about)
+            {
+
+            }
+
+            SupportFragmentManager.BeginTransaction().Replace(Resource.Id.main_content_frame, fragment).Commit();
+        }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
