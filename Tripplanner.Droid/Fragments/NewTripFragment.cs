@@ -15,11 +15,12 @@ using Tripplanner.Business;
 using Tripplanner.Business.Models;
 using Tripplanner.Business.Services;
 using Tripplanner.Business.Utils;
+using Tripplanner.Business.ViewModels;
 using Tripplanner.Droid.Services;
 
 namespace Tripplanner.Droid.Fragments
 {
-    public class NewTripFragment : FragmentBase
+    public class NewTripFragment : FragmentBase<NewTripViewModel>
     {
         private DateTime dateFrom;
         private DateTime dateTo;
