@@ -116,7 +116,8 @@
                 android:id="@+id/newTrip_create_new_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Create"/>
+                android:text="Create"
+                app:MvxBind="Click CreateNewCommand"/>
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

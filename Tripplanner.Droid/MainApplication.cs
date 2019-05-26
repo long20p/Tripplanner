@@ -16,7 +16,7 @@ using Tripplanner.Business;
 namespace Tripplanner.Droid
 {
     [Application]
-    public class MainApplication : MvxAndroidApplication<MvxAndroidSetup<App>, App>
+    public class MainApplication : MvxAndroidApplication<Setup, App>
     {
         public MainApplication(IntPtr javaReference, JniHandleOwnership transfer)
             : base(javaReference, transfer)

@@ -11,6 +11,9 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.Platforms.Android.Presenters.Attributes;
+using MvvmCross.Platforms.Android.Views.Fragments;
 using Tripplanner.Business;
 using Tripplanner.Business.Models;
 using Tripplanner.Business.Services;
@@ -20,6 +23,8 @@ using Tripplanner.Droid.Services;
 
 namespace Tripplanner.Droid.Fragments
 {
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.main_content_frame, true)]
+    [Register("tripplanner.droid.fragments.NewTripFragment")]
     public class NewTripFragment : FragmentBase<NewTripViewModel>
     {
         private DateTime dateFrom;
@@ -28,9 +33,11 @@ namespace Tripplanner.Droid.Fragments
         private IStorageService storageService;
         private ISerializer serializer;
 
+        protected override int FragmentId => Resource.Layout.fragment_new_trip;
+
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            var view = inflater.Inflate(Resource.Layout.fragment_new_trip, container, false);
+            var view = base.OnCreateView(inflater, container, savedInstanceState);
 
             var destinationText = view.FindViewById<AutoCompleteTextView>(Resource.Id.newTrip_location_textView);
 
@@ -67,21 +74,26 @@ namespace Tripplanner.Droid.Fragments
                 ToggleVisibility(toCalendarWrapper);
             };
 
-            createTripBtn.Click += (sender, e) =>
+            this.ViewModel.OnNavigateToTripDetails = () =>
             {
-                var tripInfo = new TripInfo
-                {
-                    TripId = Guid.NewGuid().ToString(),
-                    Destination = destinationText.Text,
-                    DateFrom = dateFrom,
-                    DateTo = dateTo
-                };
-
-                var data = serializer.Serialize(tripInfo);
-                storageService.SaveTextFile(Path.Combine(tripInfo.TripId, Constants.GeneralTripInfoFile), data);
-                
-                Toast.MakeText(Activity, $"New trip to {tripInfo.Destination} saved!", ToastLength.Long).Show();
+                this.Activity.SupportFragmentManager.PopBackStack();
             };
+
+            //createTripBtn.Click += (sender, e) =>
+            //{
+            //    var tripInfo = new TripInfo
+            //    {
+            //        TripId = Guid.NewGuid().ToString(),
+            //        Destination = destinationText.Text,
+            //        DateFrom = dateFrom,
+            //        DateTo = dateTo
+            //    };
+
+            //    var data = serializer.Serialize(tripInfo);
+            //    storageService.SaveTextFile(Path.Combine(tripInfo.TripId, Constants.GeneralTripInfoFile), data);
+                
+            //    Toast.MakeText(Activity, $"New trip to {tripInfo.Destination} saved!", ToastLength.Long).Show();
+            //};
 
             storageService = new StorageService();
             serializer = new Serializer();

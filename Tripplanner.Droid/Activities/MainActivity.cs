@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Android;
 using Android.App;
 using Android.OS;
@@ -9,6 +10,7 @@ using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using V4App = Android.Support.V4.App;
 using Android.Views;
+using Android.Widget;
 using Tripplanner.Business.ViewModels;
 using Tripplanner.Droid.Fragments;
 
@@ -17,6 +19,15 @@ namespace Tripplanner.Droid.Activities
     [Activity(Label = "@string/app_name", Theme = "@style/Tripplanner.AppTheme.NoActionBar")]
     public class MainActivity : ActivityBase<MainViewModel>, NavigationView.IOnNavigationItemSelectedListener
     {
+        private Dictionary<int, string> viewModelMappings = new Dictionary<int, string>
+        {
+            {Resource.Id.nav_new_trip, nameof(NewTripViewModel)},
+            {Resource.Id.nav_all_trips, nameof(AllTripsViewModel)},
+            {Resource.Id.nav_settings, nameof(SettingsViewModel)},
+            {Resource.Id.nav_backup, nameof(BackupViewModel)},
+            {Resource.Id.nav_about, nameof(AboutViewModel)}
+        };
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -33,13 +44,15 @@ namespace Tripplanner.Droid.Activities
             //drawer.AddDrawerListener(toggle);
             //toggle.SyncState();
 
-            NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+            var navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
+
+            var contentFrame = FindViewById<FrameLayout>(Resource.Id.main_content_frame);
 
             if(savedInstanceState == null)
             {
-                NavigateToPage(Resource.Id.nav_new_trip);
-                navigationView.SetCheckedItem(Resource.Id.nav_new_trip);
+                NavigateToPage(Resource.Id.nav_all_trips);
+                navigationView.SetCheckedItem(Resource.Id.nav_all_trips);
             }
         }
 
@@ -52,6 +65,10 @@ namespace Tripplanner.Droid.Activities
             }
             else
             {
+                if (SupportFragmentManager.BackStackEntryCount == 1)
+                {
+                    SupportFragmentManager.PopBackStackImmediate();
+                }
                 base.OnBackPressed();
             }
         }
@@ -82,43 +99,49 @@ namespace Tripplanner.Droid.Activities
 
         public bool OnNavigationItemSelected(IMenuItem item)
         {
+            var navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+            navigationView.SetCheckedItem(item.ItemId);
+
             NavigateToPage(item.ItemId);
 
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            var drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);
+            
             return true;
         }
 
         private void NavigateToPage(int pageId)
         {
-            V4App.Fragment fragment = null;
+            var viewModelName = viewModelMappings[pageId];
+            ViewModel.NavigateToPage(viewModelName);
+            //V4App.Fragment fragment = null;
 
-            if (pageId == Resource.Id.nav_new_trip)
-            {
-                fragment = new NewTripFragment();
-            }
-            else if (pageId == Resource.Id.nav_all_trips)
-            {
+            //if (pageId == Resource.Id.nav_new_trip)
+            //{
+            //    fragment = new NewTripFragment();
+            //}
+            //else if (pageId == Resource.Id.nav_all_trips)
+            //{
+            //    fragment = new AllTripsFragment();
+            //}
+            //else if (pageId == Resource.Id.nav_backup)
+            //{
 
-            }
-            else if (pageId == Resource.Id.nav_backup)
-            {
+            //}
+            //else if (pageId == Resource.Id.nav_restore)
+            //{
 
-            }
-            else if (pageId == Resource.Id.nav_restore)
-            {
+            //}
+            //else if (pageId == Resource.Id.nav_settings)
+            //{
 
-            }
-            else if (pageId == Resource.Id.nav_settings)
-            {
+            //}
+            //else if (pageId == Resource.Id.nav_about)
+            //{
 
-            }
-            else if (pageId == Resource.Id.nav_about)
-            {
+            //}
 
-            }
-
-            SupportFragmentManager.BeginTransaction().Replace(Resource.Id.main_content_frame, fragment).Commit();
+            //SupportFragmentManager.BeginTransaction().Replace(Resource.Id.main_content_frame, fragment).Commit();
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
