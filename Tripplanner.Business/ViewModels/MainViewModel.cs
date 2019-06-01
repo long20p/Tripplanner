@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using MvvmCross.Navigation;
+using Tripplanner.Business.Services;
 
 namespace Tripplanner.Business.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        private readonly IMvxNavigationService _navigationService;
+        private IStorageService storageService;
 
-        public MainViewModel(IMvxNavigationService navigationService)
+        public MainViewModel(IStorageService storageService)
         {
-            _navigationService = navigationService;
+            this.storageService = storageService;
         }
 
         public void NavigateToPage(string viewModelName)
@@ -19,19 +19,19 @@ namespace Tripplanner.Business.ViewModels
             switch (viewModelName)
             {
                 case nameof(NewTripViewModel):
-                    _navigationService.Navigate<NewTripViewModel>();
+                    NavigationService.Navigate<NewTripViewModel>();
                     break;
                 case nameof(AllTripsViewModel):
-                    _navigationService.Navigate<AllTripsViewModel>();
+                    NavigationService.Navigate<AllTripsViewModel>();
                     break;
                 case nameof(SettingsViewModel):
-                    _navigationService.Navigate<SettingsViewModel>();
+                    NavigationService.Navigate<SettingsViewModel>();
                     break;
                 case nameof(BackupViewModel):
-                    _navigationService.Navigate<BackupViewModel>();
+                    NavigationService.Navigate<BackupViewModel>();
                     break;
                 case nameof(AboutViewModel):
-                    _navigationService.Navigate<AboutViewModel>();
+                    NavigationService.Navigate<AboutViewModel>();
                     break;
                 default:
                     throw new Exception($"Unknown page: {viewModelName}");
