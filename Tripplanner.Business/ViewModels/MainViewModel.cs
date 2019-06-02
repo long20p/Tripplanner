@@ -7,11 +7,8 @@ namespace Tripplanner.Business.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        private IStorageService storageService;
-
-        public MainViewModel(IStorageService storageService)
+        public MainViewModel()
         {
-            this.storageService = storageService;
         }
 
         public void NavigateToPage(string viewModelName)

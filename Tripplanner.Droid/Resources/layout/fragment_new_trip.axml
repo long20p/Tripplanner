@@ -29,7 +29,8 @@
             <AutoCompleteTextView
                 android:id="@+id/newTrip_location_textView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:MvxBind="Text Destination"/>
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">

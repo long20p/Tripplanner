@@ -1,9 +1,11 @@
 ﻿using Android.OS;
 using Android.Views;
+using Android.Widget;
 using MvvmCross;
 using MvvmCross.Droid.Support.V4;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.ViewModels;
+using Tripplanner.Business.ViewModels;
 
 namespace Tripplanner.Droid.Fragments
 {

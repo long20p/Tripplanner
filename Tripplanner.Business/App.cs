@@ -5,6 +5,7 @@ using MvvmCross;
 using MvvmCross.IoC;
 using MvvmCross.ViewModels;
 using Tripplanner.Business.Services;
+using Tripplanner.Business.Utils;
 using Tripplanner.Business.ViewModels;
 
 namespace Tripplanner.Business
@@ -13,6 +14,7 @@ namespace Tripplanner.Business
     {
         public override void Initialize()
         {
+            Mvx.IoCProvider.ConstructAndRegisterSingleton<ISerializer, Serializer>();
             RegisterAppStart<MainViewModel>();
         }
     }
