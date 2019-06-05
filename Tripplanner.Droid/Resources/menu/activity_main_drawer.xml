@@ -3,36 +3,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
-    </group>
+  <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/nav_all_trips"
+        android:icon="@drawable/ic_menu_gallery"
+        android:title="All trips" />
+    <item
+        android:id="@+id/nav_new_trip"
+        android:icon="@drawable/ic_menu_slideshow"
+        android:title="New trip" />
+  </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
+  <item android:title="Configuration">
+    <menu>
+      <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_backup"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Backup" />
+        <item
+            android:id="@+id/nav_restore"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Restore" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Settings" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_menu_share"
+            android:title="About" />
+      </group>
+    </menu>
+  </item>
 
 </menu>
