@@ -37,13 +37,13 @@ namespace Tripplanner.DatabaseDesign
       /// Public constructor with required data
       /// </summary>
       /// <param name="type"></param>
-      /// <param name="_tripinfo0"></param>
-      public Transportation(string type, global::Tripplanner.DatabaseDesign.TripInfo _tripinfo0)
+      /// <param name="_trip0"></param>
+      public Transportation(string type, global::Tripplanner.DatabaseDesign.Trip _trip0)
       {
          if (string.IsNullOrEmpty(type)) throw new ArgumentNullException(nameof(type));
          this.Type = type;
-         if (_tripinfo0 == null) throw new ArgumentNullException(nameof(_tripinfo0));
-         _tripinfo0.Transportations.Add(this);
+         if (_trip0 == null) throw new ArgumentNullException(nameof(_trip0));
+         _trip0.Transportations.Add(this);
 
          Init();
       }
@@ -52,10 +52,10 @@ namespace Tripplanner.DatabaseDesign
       /// Static create function (for use in LINQ queries, etc.)
       /// </summary>
       /// <param name="type"></param>
-      /// <param name="_tripinfo0"></param>
-      public static Transportation Create(string type, global::Tripplanner.DatabaseDesign.TripInfo _tripinfo0)
+      /// <param name="_trip0"></param>
+      public static Transportation Create(string type, global::Tripplanner.DatabaseDesign.Trip _trip0)
       {
-         return new Transportation(type, _tripinfo0);
+         return new Transportation(type, _trip0);
       }
 
       /*************************************************************************

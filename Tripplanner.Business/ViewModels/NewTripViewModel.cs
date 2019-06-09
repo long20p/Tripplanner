@@ -6,20 +6,17 @@ using System.Threading.Tasks;
 using MvvmCross.Commands;
 using Tripplanner.Business.Messages;
 using Tripplanner.Business.Models;
-using Tripplanner.Business.Services;
-using Tripplanner.Business.Utils;
+using Tripplanner.Business.Repositories;
 
 namespace Tripplanner.Business.ViewModels
 {
     public class NewTripViewModel : ViewModelBase
     {
-        private IStorageService storageService;
-        private ISerializer serializer;
+        private ITripRepository tripRepository;
 
-        public NewTripViewModel(IStorageService storageService, ISerializer serializer)
+        public NewTripViewModel(ITripRepository tripRepository)
         {
-            this.storageService = storageService;
-            this.serializer = serializer;
+            this.tripRepository = tripRepository;
             CreateNewCommand = new MvxAsyncCommand(async () => await CreateNewTrip());
         }
 
@@ -42,16 +39,13 @@ namespace Tripplanner.Business.ViewModels
 
         private async Task CreateNewTrip()
         {
-            var tripInfo = new TripInfo
+            var trip = new Trip
             {
-                TripId = Guid.NewGuid().ToString(),
+                TripId = Guid.NewGuid(),
                 Destination = Destination,
                 DateFrom = DateFrom,
                 DateTo = DateTo
             };
-
-            var data = serializer.Serialize(tripInfo);
-            storageService.SaveTextFile(Path.Combine(tripInfo.TripId, Constants.GeneralTripInfoFile), data);
 
             OnNavigateToTripDetails?.Invoke();
             await NavigationService.Navigate<TripDetailsViewModel>();

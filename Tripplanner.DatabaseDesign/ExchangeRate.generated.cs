@@ -38,15 +38,15 @@ namespace Tripplanner.DatabaseDesign
       /// </summary>
       /// <param name="fromcurrency"></param>
       /// <param name="tocurrency"></param>
-      /// <param name="_tripinfo0"></param>
-      public ExchangeRate(string fromcurrency, string tocurrency, global::Tripplanner.DatabaseDesign.TripInfo _tripinfo0)
+      /// <param name="_trip0"></param>
+      public ExchangeRate(string fromcurrency, string tocurrency, global::Tripplanner.DatabaseDesign.Trip _trip0)
       {
          if (string.IsNullOrEmpty(fromcurrency)) throw new ArgumentNullException(nameof(fromcurrency));
          this.FromCurrency = fromcurrency;
          if (string.IsNullOrEmpty(tocurrency)) throw new ArgumentNullException(nameof(tocurrency));
          this.ToCurrency = tocurrency;
-         if (_tripinfo0 == null) throw new ArgumentNullException(nameof(_tripinfo0));
-         _tripinfo0.ExchangeRates.Add(this);
+         if (_trip0 == null) throw new ArgumentNullException(nameof(_trip0));
+         _trip0.ExchangeRates.Add(this);
 
          Init();
       }
@@ -56,10 +56,10 @@ namespace Tripplanner.DatabaseDesign
       /// </summary>
       /// <param name="fromcurrency"></param>
       /// <param name="tocurrency"></param>
-      /// <param name="_tripinfo0"></param>
-      public static ExchangeRate Create(string fromcurrency, string tocurrency, global::Tripplanner.DatabaseDesign.TripInfo _tripinfo0)
+      /// <param name="_trip0"></param>
+      public static ExchangeRate Create(string fromcurrency, string tocurrency, global::Tripplanner.DatabaseDesign.Trip _trip0)
       {
-         return new ExchangeRate(fromcurrency, tocurrency, _tripinfo0);
+         return new ExchangeRate(fromcurrency, tocurrency, _trip0);
       }
 
       /*************************************************************************

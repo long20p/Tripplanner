@@ -37,13 +37,13 @@ namespace Tripplanner.DatabaseDesign
       /// Public constructor with required data
       /// </summary>
       /// <param name="place"></param>
-      /// <param name="_tripinfo0"></param>
-      public Activity(string place, global::Tripplanner.DatabaseDesign.TripInfo _tripinfo0)
+      /// <param name="_trip0"></param>
+      public Activity(string place, global::Tripplanner.DatabaseDesign.Trip _trip0)
       {
          if (string.IsNullOrEmpty(place)) throw new ArgumentNullException(nameof(place));
          this.Place = place;
-         if (_tripinfo0 == null) throw new ArgumentNullException(nameof(_tripinfo0));
-         _tripinfo0.Sightseeings.Add(this);
+         if (_trip0 == null) throw new ArgumentNullException(nameof(_trip0));
+         _trip0.Sightseeings.Add(this);
 
          Init();
       }
@@ -52,10 +52,10 @@ namespace Tripplanner.DatabaseDesign
       /// Static create function (for use in LINQ queries, etc.)
       /// </summary>
       /// <param name="place"></param>
-      /// <param name="_tripinfo0"></param>
-      public static Activity Create(string place, global::Tripplanner.DatabaseDesign.TripInfo _tripinfo0)
+      /// <param name="_trip0"></param>
+      public static Activity Create(string place, global::Tripplanner.DatabaseDesign.Trip _trip0)
       {
-         return new Activity(place, _tripinfo0);
+         return new Activity(place, _trip0);
       }
 
       /*************************************************************************

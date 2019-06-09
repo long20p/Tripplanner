@@ -71,7 +71,7 @@ namespace Tripplanner.Droid.Fragments
 
             //createTripBtn.Click += (sender, e) =>
             //{
-            //    var tripInfo = new TripInfo
+            //    var tripInfo = new Trip
             //    {
             //        TripId = Guid.NewGuid().ToString(),
             //        Destination = destinationText.Text,

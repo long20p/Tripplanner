@@ -29,7 +29,7 @@ namespace Tripplanner.DatabaseDesign
       public virtual System.Data.Entity.DbSet<global::Tripplanner.DatabaseDesign.ExchangeRate> ExchangeRates { get; set; }
       public virtual System.Data.Entity.DbSet<global::Tripplanner.DatabaseDesign.ExternalLink> ExternalLinks { get; set; }
       public virtual System.Data.Entity.DbSet<global::Tripplanner.DatabaseDesign.Transportation> Transportations { get; set; }
-      public virtual System.Data.Entity.DbSet<global::Tripplanner.DatabaseDesign.TripInfo> TripInfoes { get; set; }
+      public virtual System.Data.Entity.DbSet<global::Tripplanner.DatabaseDesign.Trip> Trips { get; set; }
       public virtual System.Data.Entity.DbSet<global::Tripplanner.DatabaseDesign.WeatherForecast> WeatherForecasts { get; set; }
       #endregion DbSets
 
@@ -178,54 +178,54 @@ namespace Tripplanner.DatabaseDesign
                      .Property(t => t.Type)
                      .IsRequired();
 
-         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.TripInfo>()
-                     .ToTable("TripInfoes")
+         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.Trip>()
+                     .ToTable("Trips")
                      .HasKey(t => t.Id);
-         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.TripInfo>()
+         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.Trip>()
                      .Property(t => t.Id)
                      .IsRequired()
                      .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.TripInfo>()
+         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.Trip>()
                      .Property(t => t.TripId)
                      .IsRequired();
-         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.TripInfo>()
+         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.Trip>()
                      .Property(t => t.Name)
                      .IsRequired();
-         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.TripInfo>()
+         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.Trip>()
                      .Property(t => t.DateFrom)
                      .IsRequired();
-         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.TripInfo>()
+         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.Trip>()
                      .HasMany(x => x.Transportations)
                      .WithRequired()
-                     .Map(x => x.MapKey("TripInfo.Transportations_Id"));
-         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.TripInfo>()
+                     .Map(x => x.MapKey("Trip.Transportations_Id"));
+         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.Trip>()
                      .HasMany(x => x.Accommodations)
                      .WithRequired()
-                     .Map(x => x.MapKey("TripInfo.Accommodations_Id"));
-         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.TripInfo>()
+                     .Map(x => x.MapKey("Trip.Accommodations_Id"));
+         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.Trip>()
                      .HasMany(x => x.Sightseeings)
                      .WithRequired()
-                     .Map(x => x.MapKey("TripInfo.Sightseeings_Id"));
-         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.TripInfo>()
+                     .Map(x => x.MapKey("Trip.Sightseeings_Id"));
+         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.Trip>()
                      .HasMany(x => x.ExchangeRates)
                      .WithRequired()
-                     .Map(x => x.MapKey("TripInfo.ExchangeRates_Id"));
-         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.TripInfo>()
+                     .Map(x => x.MapKey("Trip.ExchangeRates_Id"));
+         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.Trip>()
                      .HasMany(x => x.WeatherForecasts)
                      .WithRequired()
-                     .Map(x => x.MapKey("TripInfo.WeatherForecasts_Id"));
-         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.TripInfo>()
+                     .Map(x => x.MapKey("Trip.WeatherForecasts_Id"));
+         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.Trip>()
                      .HasMany(x => x.Trips)
                      .WithRequired()
-                     .Map(x => x.MapKey("TripInfo.Trips_Id"));
-         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.TripInfo>()
+                     .Map(x => x.MapKey("Trip.Trips_Id"));
+         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.Trip>()
                      .HasMany(x => x.ExternalLinks)
                      .WithRequired()
-                     .Map(x => x.MapKey("TripInfo.ExternalLinks_Id"));
-         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.TripInfo>()
+                     .Map(x => x.MapKey("Trip.ExternalLinks_Id"));
+         modelBuilder.Entity<global::Tripplanner.DatabaseDesign.Trip>()
                      .HasMany(x => x.CustomItems)
                      .WithRequired()
-                     .Map(x => x.MapKey("TripInfo.CustomItems_Id"));
+                     .Map(x => x.MapKey("Trip.CustomItems_Id"));
 
          modelBuilder.Entity<global::Tripplanner.DatabaseDesign.WeatherForecast>()
                      .ToTable("WeatherForecasts")

@@ -15,6 +15,12 @@ namespace Tripplanner.Business
         public override void Initialize()
         {
             Mvx.IoCProvider.ConstructAndRegisterSingleton<ISerializer, Serializer>();
+
+            CreatableTypes()
+                .EndingWith("Repository")
+                .AsInterfaces()
+                .RegisterAsLazySingleton();
+
             RegisterAppStart<MainViewModel>();
         }
     }

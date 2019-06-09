@@ -38,15 +38,15 @@ namespace Tripplanner.DatabaseDesign
       /// </summary>
       /// <param name="key"></param>
       /// <param name="value"></param>
-      /// <param name="_tripinfo0"></param>
-      public CustomItem(string key, string value, global::Tripplanner.DatabaseDesign.TripInfo _tripinfo0)
+      /// <param name="_trip0"></param>
+      public CustomItem(string key, string value, global::Tripplanner.DatabaseDesign.Trip _trip0)
       {
          if (string.IsNullOrEmpty(key)) throw new ArgumentNullException(nameof(key));
          this.Key = key;
          if (string.IsNullOrEmpty(value)) throw new ArgumentNullException(nameof(value));
          this.Value = value;
-         if (_tripinfo0 == null) throw new ArgumentNullException(nameof(_tripinfo0));
-         _tripinfo0.CustomItems.Add(this);
+         if (_trip0 == null) throw new ArgumentNullException(nameof(_trip0));
+         _trip0.CustomItems.Add(this);
 
          Init();
       }
@@ -56,10 +56,10 @@ namespace Tripplanner.DatabaseDesign
       /// </summary>
       /// <param name="key"></param>
       /// <param name="value"></param>
-      /// <param name="_tripinfo0"></param>
-      public static CustomItem Create(string key, string value, global::Tripplanner.DatabaseDesign.TripInfo _tripinfo0)
+      /// <param name="_trip0"></param>
+      public static CustomItem Create(string key, string value, global::Tripplanner.DatabaseDesign.Trip _trip0)
       {
-         return new CustomItem(key, value, _tripinfo0);
+         return new CustomItem(key, value, _trip0);
       }
 
       /*************************************************************************

@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Tripplanner.Business.Models
 {
-    public class TripInfo
+    public class Trip : BaseEntity
     {
-        public string TripId { get; set; }
+        public Guid TripId { get; set; }
         public string Destination { get; set; }
         public DateTime DateFrom { get; set; }
         public DateTime DateTo { get; set; }

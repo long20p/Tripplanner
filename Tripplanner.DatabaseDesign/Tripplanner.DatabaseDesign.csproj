@@ -67,7 +67,7 @@
     <Compile Include="Transportation.generated.cs">
       <DependentUpon>Tripplanner.tt</DependentUpon>
     </Compile>
-    <Compile Include="TripInfo.generated.cs">
+    <Compile Include="Trip.generated.cs">
       <DependentUpon>Tripplanner.tt</DependentUpon>
     </Compile>
     <Compile Include="Tripplanner.cs">
