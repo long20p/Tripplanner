@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tripplanner.Droid", "Tripplanner.Droid\Tripplanner.Droid.csproj", "{CF565ABC-4793-44F9-ADA2-E12DC43E62B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tripplanner.Business", "Tripplanner.Business\Tripplanner.Business.csproj", "{814DD163-84A0-4D86-9A87-EAC5EE2F23C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tripplanner.Business", "Tripplanner.Business\Tripplanner.Business.csproj", "{814DD163-84A0-4D86-9A87-EAC5EE2F23C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tripplanner.DatabaseDesign", "Tripplanner.DatabaseDesign\Tripplanner.DatabaseDesign.csproj", "{53C90BE0-9FB1-446A-A650-2B0E889DB836}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{814DD163-84A0-4D86-9A87-EAC5EE2F23C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{814DD163-84A0-4D86-9A87-EAC5EE2F23C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{814DD163-84A0-4D86-9A87-EAC5EE2F23C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53C90BE0-9FB1-446A-A650-2B0E889DB836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53C90BE0-9FB1-446A-A650-2B0E889DB836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53C90BE0-9FB1-446A-A650-2B0E889DB836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53C90BE0-9FB1-446A-A650-2B0E889DB836}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
