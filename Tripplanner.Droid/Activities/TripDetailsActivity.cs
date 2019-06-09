@@ -19,7 +19,6 @@ namespace Tripplanner.Droid.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
             SetContentView(Resource.Layout.activity_trip_details);
         }
     }

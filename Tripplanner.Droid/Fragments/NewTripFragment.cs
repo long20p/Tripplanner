@@ -27,19 +27,11 @@ namespace Tripplanner.Droid.Fragments
     [Register("tripplanner.droid.fragments.NewTripFragment")]
     public class NewTripFragment : FragmentBase<NewTripViewModel>
     {
-        private DateTime dateFrom;
-        private DateTime dateTo;
-
-        private IStorageService storageService;
-        private ISerializer serializer;
-
         protected override int FragmentId => Resource.Layout.fragment_new_trip;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = base.OnCreateView(inflater, container, savedInstanceState);
-
-            var destinationText = view.FindViewById<AutoCompleteTextView>(Resource.Id.newTrip_location_textView);
 
             var dateFromText = view.FindViewById<EditText>(Resource.Id.newTrip_date_from_text);
             var showCalendarFromDateBtn = view.FindViewById<ImageButton>(Resource.Id.newTrip_open_from_date_button);
@@ -50,8 +42,6 @@ namespace Tripplanner.Droid.Fragments
             var showCalendarToDateBtn = view.FindViewById<ImageButton>(Resource.Id.newTrip_open_to_date_button);
             var toCalendarWrapper = view.FindViewById<LinearLayout>(Resource.Id.newTrip_calendar_to_wrapper);
             var toCalendar = view.FindViewById<CalendarView>(Resource.Id.newTrip_date_to_calendar);
-
-            var createTripBtn = view.FindViewById<Button>(Resource.Id.newTrip_create_new_button);
 
             showCalendarFromDateBtn.Click += (sender, e) =>
             {
@@ -64,13 +54,13 @@ namespace Tripplanner.Droid.Fragments
             fromCalendar.DateChange += (sender, e) =>
             {
                 SetDateText(dateFromText, e.Year, e.Month, e.DayOfMonth);
-                dateFrom = new DateTime(e.Year, e.Month, e.DayOfMonth);
+                ViewModel.DateFrom = new DateTime(e.Year, e.Month, e.DayOfMonth);
                 ToggleVisibility(fromCalendarWrapper);
             };
             toCalendar.DateChange += (sender, e) =>
             {
                 SetDateText(dateToText, e.Year, e.Month, e.DayOfMonth);
-                dateTo = new DateTime(e.Year, e.Month, e.DayOfMonth);
+                ViewModel.DateTo = new DateTime(e.Year, e.Month, e.DayOfMonth);
                 ToggleVisibility(toCalendarWrapper);
             };
 
@@ -94,9 +84,6 @@ namespace Tripplanner.Droid.Fragments
                 
             //    Toast.MakeText(Activity, $"New trip to {tripInfo.Destination} saved!", ToastLength.Long).Show();
             //};
-
-            storageService = new StorageService();
-            serializer = new Serializer();
 
             return view;
         }
