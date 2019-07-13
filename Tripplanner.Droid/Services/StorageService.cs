@@ -12,20 +12,20 @@ namespace Tripplanner.Droid.Services
 {
     class StorageService : IStorageService
     {
-        private string documentsRootPath;
-
         public StorageService()
         {
-            documentsRootPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "Tripplanner");
-            if (!Directory.Exists(documentsRootPath))
+            RootPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "Tripplanner");
+            if (!Directory.Exists(RootPath))
             {
-                Directory.CreateDirectory(documentsRootPath);
+                Directory.CreateDirectory(RootPath);
             }
         }
 
+        public string RootPath { get; }
+
         public IEnumerable<string> GetFilesInFolder(string folder)
         {
-            var fullPath = Path.Combine(documentsRootPath, folder);
+            var fullPath = Path.Combine(RootPath, folder);
             if (!Directory.Exists(fullPath))
                 return null;
 
@@ -35,7 +35,7 @@ namespace Tripplanner.Droid.Services
 
         public bool SaveTextFile(string relativeFilePath, string content)
         {
-            var filePath = Path.Combine(documentsRootPath, relativeFilePath);
+            var filePath = Path.Combine(RootPath, relativeFilePath);
             var dir = Path.GetDirectoryName(filePath);
             if (!Directory.Exists(dir))
             {
@@ -48,13 +48,13 @@ namespace Tripplanner.Droid.Services
 
         public string LoadTextFile(string relativeFilePath)
         {
-            var filePath = Path.Combine(documentsRootPath, relativeFilePath);
+            var filePath = Path.Combine(RootPath, relativeFilePath);
             return File.ReadAllText(filePath);
         }
 
         public bool DeleteTextFile(string relativeFilePath)
         {
-            var filePath = Path.Combine(documentsRootPath, relativeFilePath);
+            var filePath = Path.Combine(RootPath, relativeFilePath);
             if (File.Exists(filePath))
             {
                 File.Delete(filePath);
@@ -64,7 +64,7 @@ namespace Tripplanner.Droid.Services
 
         public bool SaveBitmapFile(string relativeFilePath, object content, ImageFormat format)
         {
-            var photoDir = Path.Combine(documentsRootPath, Constants.FolderPhotos);
+            var photoDir = Path.Combine(RootPath, Constants.FolderPhotos);
             if (!Directory.Exists(photoDir))
             {
                 Directory.CreateDirectory(photoDir);
@@ -90,18 +90,18 @@ namespace Tripplanner.Droid.Services
 
         public string GetBitmapFullFilePath(string relativeFilePath)
         {
-            return Path.Combine(documentsRootPath, Constants.FolderPhotos, relativeFilePath);
+            return Path.Combine(RootPath, Constants.FolderPhotos, relativeFilePath);
         }
 
         public object LoadBitmapFile(string relativeFilePath)
         {
-            var filePath = Path.Combine(documentsRootPath, Constants.FolderPhotos, relativeFilePath);
+            var filePath = Path.Combine(RootPath, Constants.FolderPhotos, relativeFilePath);
             return BitmapFactory.DecodeFile(filePath);
         }
 
         public bool DeleteBitmapFile(string relativeFilePath)
         {
-            var filePath = Path.Combine(documentsRootPath, Constants.FolderPhotos, relativeFilePath);
+            var filePath = Path.Combine(RootPath, Constants.FolderPhotos, relativeFilePath);
             if (File.Exists(filePath))
             {
                 File.Delete(filePath);

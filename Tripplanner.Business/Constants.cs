@@ -9,5 +9,7 @@ namespace Tripplanner.Business
         public const string GeneralTripInfoFile = "tripinfo.json";
 
         public const string FolderPhotos = "Photos";
+
+        public const string DbName = "Tripplanner.db3";
     }
 }

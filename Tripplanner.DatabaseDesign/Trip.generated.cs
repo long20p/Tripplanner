@@ -21,21 +21,21 @@ using System.Runtime.CompilerServices;
 
 namespace Tripplanner.DatabaseDesign
 {
-   public partial class TripInfo
+   public partial class Trip
    {
       partial void Init();
 
       /// <summary>
       /// Default constructor. Protected due to required properties, but present because EF needs it.
       /// </summary>
-      protected TripInfo()
+      protected Trip()
       {
          Transportations = new System.Collections.Generic.HashSet<global::Tripplanner.DatabaseDesign.Transportation>();
          Accommodations = new System.Collections.Generic.HashSet<global::Tripplanner.DatabaseDesign.Accommodation>();
          Sightseeings = new System.Collections.Generic.HashSet<global::Tripplanner.DatabaseDesign.Activity>();
          ExchangeRates = new System.Collections.Generic.HashSet<global::Tripplanner.DatabaseDesign.ExchangeRate>();
          WeatherForecasts = new System.Collections.Generic.HashSet<global::Tripplanner.DatabaseDesign.WeatherForecast>();
-         Trips = new System.Collections.Generic.HashSet<global::Tripplanner.DatabaseDesign.TripInfo>();
+         Trips = new System.Collections.Generic.HashSet<global::Tripplanner.DatabaseDesign.Trip>();
          ExternalLinks = new System.Collections.Generic.HashSet<global::Tripplanner.DatabaseDesign.ExternalLink>();
          CustomItems = new System.Collections.Generic.HashSet<global::Tripplanner.DatabaseDesign.CustomItem>();
 
@@ -48,22 +48,22 @@ namespace Tripplanner.DatabaseDesign
       /// <param name="tripid"></param>
       /// <param name="name"></param>
       /// <param name="datefrom"></param>
-      /// <param name="_tripinfo0"></param>
-      public TripInfo(Guid tripid, string name, DateTime datefrom, global::Tripplanner.DatabaseDesign.TripInfo _tripinfo0)
+      /// <param name="_trip0"></param>
+      public Trip(Guid tripid, string name, DateTime datefrom, global::Tripplanner.DatabaseDesign.Trip _trip0)
       {
          this.TripId = tripid;
          if (string.IsNullOrEmpty(name)) throw new ArgumentNullException(nameof(name));
          this.Name = name;
          this.DateFrom = datefrom;
-         if (_tripinfo0 == null) throw new ArgumentNullException(nameof(_tripinfo0));
-         _tripinfo0.Trips.Add(this);
+         if (_trip0 == null) throw new ArgumentNullException(nameof(_trip0));
+         _trip0.Trips.Add(this);
 
          this.Transportations = new System.Collections.Generic.HashSet<global::Tripplanner.DatabaseDesign.Transportation>();
          this.Accommodations = new System.Collections.Generic.HashSet<global::Tripplanner.DatabaseDesign.Accommodation>();
          this.Sightseeings = new System.Collections.Generic.HashSet<global::Tripplanner.DatabaseDesign.Activity>();
          this.ExchangeRates = new System.Collections.Generic.HashSet<global::Tripplanner.DatabaseDesign.ExchangeRate>();
          this.WeatherForecasts = new System.Collections.Generic.HashSet<global::Tripplanner.DatabaseDesign.WeatherForecast>();
-         this.Trips = new System.Collections.Generic.HashSet<global::Tripplanner.DatabaseDesign.TripInfo>();
+         this.Trips = new System.Collections.Generic.HashSet<global::Tripplanner.DatabaseDesign.Trip>();
          this.ExternalLinks = new System.Collections.Generic.HashSet<global::Tripplanner.DatabaseDesign.ExternalLink>();
          this.CustomItems = new System.Collections.Generic.HashSet<global::Tripplanner.DatabaseDesign.CustomItem>();
          Init();
@@ -75,10 +75,10 @@ namespace Tripplanner.DatabaseDesign
       /// <param name="tripid"></param>
       /// <param name="name"></param>
       /// <param name="datefrom"></param>
-      /// <param name="_tripinfo0"></param>
-      public static TripInfo Create(Guid tripid, string name, DateTime datefrom, global::Tripplanner.DatabaseDesign.TripInfo _tripinfo0)
+      /// <param name="_trip0"></param>
+      public static Trip Create(Guid tripid, string name, DateTime datefrom, global::Tripplanner.DatabaseDesign.Trip _trip0)
       {
-         return new TripInfo(tripid, name, datefrom, _tripinfo0);
+         return new Trip(tripid, name, datefrom, _trip0);
       }
 
       /*************************************************************************
@@ -128,7 +128,7 @@ namespace Tripplanner.DatabaseDesign
 
       public virtual ICollection<global::Tripplanner.DatabaseDesign.WeatherForecast> WeatherForecasts { get; private set; }
 
-      public virtual ICollection<global::Tripplanner.DatabaseDesign.TripInfo> Trips { get; private set; }
+      public virtual ICollection<global::Tripplanner.DatabaseDesign.Trip> Trips { get; private set; }
 
       public virtual ICollection<global::Tripplanner.DatabaseDesign.ExternalLink> ExternalLinks { get; private set; }
 

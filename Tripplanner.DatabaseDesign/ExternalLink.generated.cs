@@ -37,13 +37,13 @@ namespace Tripplanner.DatabaseDesign
       /// Public constructor with required data
       /// </summary>
       /// <param name="url"></param>
-      /// <param name="_tripinfo0"></param>
-      public ExternalLink(string url, global::Tripplanner.DatabaseDesign.TripInfo _tripinfo0)
+      /// <param name="_trip0"></param>
+      public ExternalLink(string url, global::Tripplanner.DatabaseDesign.Trip _trip0)
       {
          if (string.IsNullOrEmpty(url)) throw new ArgumentNullException(nameof(url));
          this.URL = url;
-         if (_tripinfo0 == null) throw new ArgumentNullException(nameof(_tripinfo0));
-         _tripinfo0.ExternalLinks.Add(this);
+         if (_trip0 == null) throw new ArgumentNullException(nameof(_trip0));
+         _trip0.ExternalLinks.Add(this);
 
          Init();
       }
@@ -52,10 +52,10 @@ namespace Tripplanner.DatabaseDesign
       /// Static create function (for use in LINQ queries, etc.)
       /// </summary>
       /// <param name="url"></param>
-      /// <param name="_tripinfo0"></param>
-      public static ExternalLink Create(string url, global::Tripplanner.DatabaseDesign.TripInfo _tripinfo0)
+      /// <param name="_trip0"></param>
+      public static ExternalLink Create(string url, global::Tripplanner.DatabaseDesign.Trip _trip0)
       {
-         return new ExternalLink(url, _tripinfo0);
+         return new ExternalLink(url, _trip0);
       }
 
       /*************************************************************************

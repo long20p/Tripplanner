@@ -8,7 +8,7 @@ using MvvmCross.ViewModels;
 
 namespace Tripplanner.Business.ViewModels
 {
-    public abstract class ViewModelBase : MvxViewModel
+    public abstract class ViewModelBase<T> : MvxViewModel<T>
     {
         protected ViewModelBase()
         {
@@ -18,5 +18,12 @@ namespace Tripplanner.Business.ViewModels
 
         protected IMvxNavigationService NavigationService { get; }
         protected IMvxMessenger Messenger { get; }
+    }
+
+    public abstract class ViewModelBase : ViewModelBase<object>
+    {
+        public override void Prepare(object parameter)
+        {
+        }
     }
 }

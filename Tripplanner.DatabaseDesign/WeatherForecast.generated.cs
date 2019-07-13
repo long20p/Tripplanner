@@ -38,14 +38,14 @@ namespace Tripplanner.DatabaseDesign
       /// </summary>
       /// <param name="location"></param>
       /// <param name="lasttemperature"></param>
-      /// <param name="_tripinfo0"></param>
-      public WeatherForecast(string location, int lasttemperature, global::Tripplanner.DatabaseDesign.TripInfo _tripinfo0)
+      /// <param name="_trip0"></param>
+      public WeatherForecast(string location, int lasttemperature, global::Tripplanner.DatabaseDesign.Trip _trip0)
       {
          if (string.IsNullOrEmpty(location)) throw new ArgumentNullException(nameof(location));
          this.Location = location;
          this.LastTemperature = lasttemperature;
-         if (_tripinfo0 == null) throw new ArgumentNullException(nameof(_tripinfo0));
-         _tripinfo0.WeatherForecasts.Add(this);
+         if (_trip0 == null) throw new ArgumentNullException(nameof(_trip0));
+         _trip0.WeatherForecasts.Add(this);
 
          Init();
       }
@@ -55,10 +55,10 @@ namespace Tripplanner.DatabaseDesign
       /// </summary>
       /// <param name="location"></param>
       /// <param name="lasttemperature"></param>
-      /// <param name="_tripinfo0"></param>
-      public static WeatherForecast Create(string location, int lasttemperature, global::Tripplanner.DatabaseDesign.TripInfo _tripinfo0)
+      /// <param name="_trip0"></param>
+      public static WeatherForecast Create(string location, int lasttemperature, global::Tripplanner.DatabaseDesign.Trip _trip0)
       {
-         return new WeatherForecast(location, lasttemperature, _tripinfo0);
+         return new WeatherForecast(location, lasttemperature, _trip0);
       }
 
       /*************************************************************************
