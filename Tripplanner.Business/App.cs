@@ -19,7 +19,7 @@ namespace Tripplanner.Business
             CreatableTypes()
                 .EndingWith("Repository")
                 .AsInterfaces()
-                .RegisterAsLazySingleton();
+                .RegisterAsDynamic();
 
             RegisterAppStart<MainViewModel>();
         }

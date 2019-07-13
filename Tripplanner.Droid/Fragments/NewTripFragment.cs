@@ -53,14 +53,14 @@ namespace Tripplanner.Droid.Fragments
             };
             fromCalendar.DateChange += (sender, e) =>
             {
-                SetDateText(dateFromText, e.Year, e.Month, e.DayOfMonth);
-                ViewModel.DateFrom = new DateTime(e.Year, e.Month, e.DayOfMonth);
+                SetDateText(dateFromText, e.Year, e.Month + 1, e.DayOfMonth);
+                ViewModel.DateFrom = new DateTime(e.Year, e.Month + 1, e.DayOfMonth);
                 ToggleVisibility(fromCalendarWrapper);
             };
             toCalendar.DateChange += (sender, e) =>
             {
-                SetDateText(dateToText, e.Year, e.Month, e.DayOfMonth);
-                ViewModel.DateTo = new DateTime(e.Year, e.Month, e.DayOfMonth);
+                SetDateText(dateToText, e.Year, e.Month + 1, e.DayOfMonth);
+                ViewModel.DateTo = new DateTime(e.Year, e.Month + 1, e.DayOfMonth);
                 ToggleVisibility(toCalendarWrapper);
             };
 

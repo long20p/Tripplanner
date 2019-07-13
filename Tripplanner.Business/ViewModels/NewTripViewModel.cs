@@ -47,8 +47,10 @@ namespace Tripplanner.Business.ViewModels
                 DateTo = DateTo
             };
 
+            tripRepository.Add(trip);
+
             OnNavigateToTripDetails?.Invoke();
-            await NavigationService.Navigate<TripDetailsViewModel>();
+            await NavigationService.Navigate<TripDetailsViewModel, Trip>(trip);
             Messenger.Publish(new NewTripCreatedMessage(this, Destination));
         }
     }
