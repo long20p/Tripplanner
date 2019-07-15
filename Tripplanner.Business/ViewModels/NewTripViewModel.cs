@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
-using MvvmCross.Commands;
+using System.Windows.Input;
 using Tripplanner.Business.Messages;
 using Tripplanner.Business.Models;
 using Tripplanner.Business.Repositories;
@@ -17,10 +17,10 @@ namespace Tripplanner.Business.ViewModels
         public NewTripViewModel(ITripRepository tripRepository)
         {
             this.tripRepository = tripRepository;
-            CreateNewCommand = new MvxAsyncCommand(async () => await CreateNewTrip());
+            CreateNewCommand = GetAsyncCommand(async () => await CreateNewTrip());
         }
 
-        public MvxAsyncCommand CreateNewCommand { get; }
+        public ICommand CreateNewCommand { get; }
         public Action OnNavigateToTripDetails { get; set; }
 
         private string destination;

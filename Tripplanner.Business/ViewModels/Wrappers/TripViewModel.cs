@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using MvvmCross.Commands;
+using System.Windows.Input;
 using Tripplanner.Business.Messages;
 using Tripplanner.Business.Models;
 using Tripplanner.Business.Repositories;
@@ -18,11 +18,12 @@ namespace Tripplanner.Business.ViewModels.Wrappers
         {
             this.trip = trip;
             this.tripRepository = tripRepository;
-            DeleteTripCommand = new MvxAsyncCommand(async () => await DeleteTrip());
+            DeleteTripCommand = GetAsyncCommand(async () => await DeleteTrip());
         }
 
-        public MvxAsyncCommand DeleteTripCommand { get; }
+        public ICommand DeleteTripCommand { get; }
 
+        public Trip Trip => trip;
         public string Destination => trip.Destination;
         public string TripId => trip.TripId.ToString();
         public string Dates => $"{trip.DateFrom:dd.MM.yyyy} - {trip.DateTo:dd.MM.yyyy}";

@@ -20,6 +20,8 @@ namespace Tripplanner.Droid.Activities
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_trip_details);
+
+            Title = ViewModel.Trip.Destination;
         }
     }
 }

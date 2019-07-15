@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace Tripplanner.Business.Repositories
@@ -9,6 +10,7 @@ namespace Tripplanner.Business.Repositories
         bool Add(T entity);
         T Get(int id);
         IEnumerable<T> GetAll();
+        IEnumerable<T> Where(Expression<Func<T, bool>> filter);
         bool Delete(T entity);
     }
 }

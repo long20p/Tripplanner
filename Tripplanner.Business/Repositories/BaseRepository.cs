@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq.Expressions;
 using System.Text;
 using SQLite;
 using Tripplanner.Business.Services;
@@ -32,6 +33,11 @@ namespace Tripplanner.Business.Repositories
         public virtual IEnumerable<T> GetAll()
         {
             return database.Table<T>();
+        }
+
+        public IEnumerable<T> Where(Expression<Func<T, bool>> filter)
+        {
+            return database.Table<T>().Where(filter);
         }
 
         public virtual bool Delete(T entity)

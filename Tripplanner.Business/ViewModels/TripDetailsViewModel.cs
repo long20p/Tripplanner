@@ -2,33 +2,29 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using MvvmCross.Commands;
-using MvvmCross.Navigation;
+using System.Windows.Input;
 using Tripplanner.Business.Models;
 
 namespace Tripplanner.Business.ViewModels
 {
-    public class TripDetailsViewModel : ViewModelBase<Trip>
+    public class TripDetailsViewModel : TripAwareViewModelBase
     {
-        private IMvxNavigationService navigationService;
-        private Trip trip;
-
-        public TripDetailsViewModel(IMvxNavigationService navigationService)
+        public TripDetailsViewModel()
         {
-            this.navigationService = navigationService;
-            GoToTransportCommand = new MvxAsyncCommand( async () => await GoToTransportation());
+            GoToTransportCommand = GetAsyncCommand( async () => await GoToTransportation());
         }
 
-        public MvxAsyncCommand GoToTransportCommand { get; }
+        public ICommand GoToTransportCommand { get; }
+        public ICommand GoToAccommodationCommand { get; }
+        public ICommand GoToActivitiesCommand { get; }
+        public ICommand GoToCityTransportCommand { get; }
 
-        public override void Prepare(Trip parameter)
-        {
-            trip = parameter;
-        }
+        public Trip Trip => trip;
+        public string TripDate => $"{trip.DateFrom:dd/MM/yy} - {trip.DateTo:dd/MM/yy}";
 
         private async Task GoToTransportation()
         {
-            await navigationService.Navigate<TransportationViewModel>();
+            await NavigationService.Navigate<TransportationViewModel, Trip>(trip);
         }
     }
 }
