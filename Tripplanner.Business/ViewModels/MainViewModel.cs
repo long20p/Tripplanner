@@ -7,10 +7,6 @@ namespace Tripplanner.Business.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        public MainViewModel()
-        {
-        }
-
         public void NavigateToPage(string viewModelName)
         {
             switch (viewModelName)

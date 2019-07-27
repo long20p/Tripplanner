@@ -45,6 +45,7 @@ namespace Tripplanner.Droid
         protected override void InitializeFirstChance()
         {
             Mvx.IoCProvider.ConstructAndRegisterSingleton<IStorageService, StorageService>();
+            Mvx.IoCProvider.ConstructAndRegisterSingleton<IDialogService, DialogService>();
             base.InitializeFirstChance();
         }
     }

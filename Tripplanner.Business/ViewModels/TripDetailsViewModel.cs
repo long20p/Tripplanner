@@ -12,6 +12,7 @@ namespace Tripplanner.Business.ViewModels
         public TripDetailsViewModel()
         {
             GoToTransportCommand = GetAsyncCommand( async () => await GoToTransportation());
+            GoToAccommodationCommand = GetAsyncCommand(async () => await GoToAccomodation());
         }
 
         public ICommand GoToTransportCommand { get; }
@@ -25,6 +26,11 @@ namespace Tripplanner.Business.ViewModels
         private async Task GoToTransportation()
         {
             await NavigationService.Navigate<TransportationViewModel, Trip>(trip);
+        }
+
+        private async Task GoToAccomodation()
+        {
+            await NavigationService.Navigate<AccommodationViewModel, Trip>(trip);
         }
     }
 }
