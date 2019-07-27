@@ -10,5 +10,6 @@ namespace Tripplanner.Business.Models
         public DateTime From { get; set; }
         public DateTime To { get; set; }
         public byte[] ReservationPhoto { get; set; }
+        public string Note { get; set; }
     }
 }
