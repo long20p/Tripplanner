@@ -7,6 +7,7 @@ using System.Windows.Input;
 using Tripplanner.Business.Messages;
 using Tripplanner.Business.Models;
 using Tripplanner.Business.Repositories;
+using Tripplanner.Business.ViewModels.Components;
 
 namespace Tripplanner.Business.ViewModels
 {
@@ -18,9 +19,13 @@ namespace Tripplanner.Business.ViewModels
         {
             this.tripRepository = tripRepository;
             CreateNewCommand = GetAsyncCommand(async () => await CreateNewTrip());
+            OpenFromCalendarCommand = GetAsyncCommand(async () => await OpenFromCalendar());
+            OpenToCalendarCommand = GetAsyncCommand(async () => await OpenToCalendar());
         }
 
         public ICommand CreateNewCommand { get; }
+        public ICommand OpenFromCalendarCommand { get; }
+        public ICommand OpenToCalendarCommand { get; }
         public Action OnNavigateToTripDetails { get; set; }
 
         private string destination;
@@ -34,8 +39,59 @@ namespace Tripplanner.Business.ViewModels
             }
         }
 
-        public DateTime DateFrom { get; set; }
-        public DateTime DateTo { get; set; }
+        private DateTime dateFrom;
+        public DateTime DateFrom
+        {
+            get => dateFrom;
+            set
+            {
+                dateFrom = value;
+                DateFromText = dateFrom.ToString("dd.MM.yyyy");
+            }
+        }
+
+        private string dateFromText;
+        public string DateFromText
+        {
+            get => dateFromText;
+            set
+            {
+                dateFromText = value;
+                RaisePropertyChanged(() => DateFromText);
+            }
+        }
+
+        private DateTime dateTo;
+        public DateTime DateTo
+        {
+            get => dateTo;
+            set
+            {
+                dateTo = value;
+                DateToText = dateTo.ToString("dd.MM.yyyy");
+            }
+        }
+
+        private string dateToText;
+        public string DateToText
+        {
+            get => dateToText;
+            set
+            {
+                dateToText = value;
+                RaisePropertyChanged(() => DateToText);
+            }
+        }
+
+        private async Task OpenFromCalendar()
+        {
+            await NavigationService.Navigate<DateSelectorViewModel, Action<DateTime>>(from => DateFrom = from);
+        }
+
+        private async Task OpenToCalendar()
+        {
+            await NavigationService.Navigate<DateSelectorViewModel, Action<DateTime>>(to => DateTo = to);
+        }
 
         private async Task CreateNewTrip()
         {
