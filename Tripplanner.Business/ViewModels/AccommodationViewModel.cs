@@ -29,9 +29,11 @@ namespace Tripplanner.Business.ViewModels
 
         private async Task CreateNewAccomItem()
         {
-            //await NavigationService.Navigate<NewAccommodationViewModel, Action<Accommodation>>(a => accommodationRepository.Add(a));
             await NavigationService.Navigate<NewAccommodationViewModel, Action<Accommodation>>(a =>
-                notificationService.ShowInfo($"Entry for {a.Address} created"));
+            {
+                accommodationRepository.Add(a);
+                notificationService.ShowInfo($"Entry for {a.Address} created");
+            });
         }
     }
 }

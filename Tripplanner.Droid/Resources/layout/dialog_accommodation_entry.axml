@@ -38,7 +38,8 @@
                 android:layout_height="wrap_content"
                 android:rowCount="2"
                 android:columnCount="3"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                app:MvxBind="IsEnabled IsIdenticalToTripDates, Converter=InversedBool">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -54,7 +55,8 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/edittext_round"/>
+                    android:background="@drawable/edittext_round"
+                    app:MvxBind="Text DateFromText"/>
                 <ImageButton
                     android:layout_width="40dp"
                     android:layout_height="40dp"
@@ -79,7 +81,8 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/edittext_round"/>
+                    android:background="@drawable/edittext_round"
+                    app:MvxBind="Text DateToText"/>
                 <ImageButton
                     android:layout_width="40dp"
                     android:layout_height="40dp"
@@ -93,7 +96,8 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Same as trip dates"/>
+                android:text="Same as trip dates"
+                app:MvxBind="Checked IsIdenticalToTripDates"/>
         </LinearLayout>
 
         <TextView

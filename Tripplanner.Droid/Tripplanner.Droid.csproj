@@ -69,6 +69,7 @@
     <Compile Include="Activities\SplashActivity.cs" />
     <Compile Include="Activities\TransportationActivity.cs" />
     <Compile Include="Activities\TripDetailsActivity.cs" />
+    <Compile Include="Converters\InversedBoolConverter.cs" />
     <Compile Include="Dialogs\DateSelectorDialog.cs" />
     <Compile Include="Dialogs\DialogBase.cs" />
     <Compile Include="Dialogs\NewAccommodationDialog.cs" />
