@@ -38,8 +38,7 @@
                 android:layout_height="wrap_content"
                 android:rowCount="2"
                 android:columnCount="3"
-                android:gravity="center_vertical"
-                app:MvxBind="IsEnabled IsIdenticalToTripDates, Converter=InversedBool">
+                android:gravity="center_vertical">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -49,14 +48,14 @@
                     android:layout_gravity="center_vertical"
                     android:text="From"/>
                 <EditText
-                    android:layout_width="90dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:editable="false"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/edittext_round"
-                    app:MvxBind="Text DateFromText"/>
+                    app:MvxBind="Text DateFromText; IsEnabled IsIdenticalToTripDates, Converter=InversedBool" />
                 <ImageButton
                     android:layout_width="40dp"
                     android:layout_height="40dp"
@@ -75,14 +74,14 @@
                     android:layout_gravity="center_vertical"
                     android:text="To"/>
                 <EditText
-                    android:layout_width="90dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:editable="false"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/edittext_round"
-                    app:MvxBind="Text DateToText"/>
+                    app:MvxBind="Text DateToText; IsEnabled IsIdenticalToTripDates, Converter=InversedBool"/>
                 <ImageButton
                     android:layout_width="40dp"
                     android:layout_height="40dp"

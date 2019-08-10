@@ -44,7 +44,7 @@ namespace Tripplanner.Droid.Activities
             //SetSupportActionBar(toolbar);
 
             Messenger.Subscribe<NewTripCreatedMessage>(message =>
-                Toast.MakeText(this, $"Trip to {message.Destination} created", ToastLength.Long).Show());
+                Toast.MakeText(this, $"Trip to {message.Trip.Destination} created", ToastLength.Long).Show());
 
             //FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             //fab.Click += FabOnClick;

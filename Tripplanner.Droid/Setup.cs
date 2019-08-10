@@ -47,6 +47,7 @@ namespace Tripplanner.Droid
             Mvx.IoCProvider.ConstructAndRegisterSingleton<IStorageService, StorageService>();
             Mvx.IoCProvider.ConstructAndRegisterSingleton<IDialogService, DialogService>();
             Mvx.IoCProvider.ConstructAndRegisterSingleton<INotificationService, NotificationService>();
+            Mvx.IoCProvider.ConstructAndRegisterSingleton<IDispatcherService, DispatcherService>();
             base.InitializeFirstChance();
         }
     }

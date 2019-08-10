@@ -7,10 +7,10 @@ namespace Tripplanner.Business.ViewModels
 {
     public abstract class TripAwareViewModelBase : ViewModelBase<Trip>
     {
-        protected Trip trip;
+        protected Trip Trip;
         public override void Prepare(Trip parameter)
         {
-            trip = parameter;
+            Trip = parameter;
         }
     }
 }
