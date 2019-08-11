@@ -27,6 +27,7 @@ namespace Tripplanner.Business.ViewModels
             this.notificationService = notificationService;
             CreateNewAccomItemCommand = GetAsyncCommand(async () => await CreateNewAccomItem());
             Messenger.Subscribe<AccommodationDeletedMessage>(msg => RemoveAccommodation(msg.Accommodation));
+            IndeterminateLoading = true;
         }
 
         public ICommand CreateNewAccomItemCommand { get; }
@@ -42,6 +43,8 @@ namespace Tripplanner.Business.ViewModels
                 RaisePropertyChanged(() => Accommodations);
             }
         }
+
+        public bool IndeterminateLoading { get; }
 
         private bool isLoading;
         public bool IsLoading
@@ -66,6 +69,7 @@ namespace Tripplanner.Business.ViewModels
             var all = await Task.Run(() =>
                 accommodationRepository.Where(x => x.TripId == Trip.TripId)
                     .Select(x => new AccommodationViewModel(x, Trip, accommodationRepository)).ToList());
+            await Task.Delay(5000);
             Accommodations = new ObservableCollection<AccommodationViewModel>(all);
             IsLoading = false;
         }

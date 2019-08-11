@@ -25,6 +25,7 @@ namespace Tripplanner.Business.ViewModels
             SelectTripCommand = GetAsyncCommand<TripViewModel>(async trip => await SelectTrip(trip));
             Messenger.Subscribe<NewTripCreatedMessage>( msg => AddTrip(msg.Trip));
             Messenger.Subscribe<TripDeletedMessage>( msg => RemoveTrip(msg.Trip));
+            IndeterminateLoading = true;
         }
 
         public ICommand SelectTripCommand { get; }
@@ -50,6 +51,8 @@ namespace Tripplanner.Business.ViewModels
                 RaisePropertyChanged(() => IsLoadingTrips);
             }
         }
+
+        public bool IndeterminateLoading { get; }
 
         public override async Task Initialize()
         {
