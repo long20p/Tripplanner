@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Tripplanner.Business.Models;
-using Tripplanner.Business.ViewModels.Wrappers;
 
 namespace Tripplanner.Business.Messages
 {
     public class NewTripCreatedMessage : MessageBase
     {
-        public NewTripCreatedMessage(object sender, Trip trip) : base(sender)
+        public NewTripCreatedMessage(object sender, string destination) : base(sender)
         {
-            Trip = trip;
+            Destination = destination;
         }
 
-        public Trip Trip { get; }
+        public string Destination { get; }
     }
 }

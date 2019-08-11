@@ -11,7 +11,5 @@ namespace Tripplanner.Business
         public const string FolderPhotos = "Photos";
 
         public const string DbName = "Tripplanner.db3";
-
-        public const string DateFormat = "dd.MM.yyyy";
     }
 }

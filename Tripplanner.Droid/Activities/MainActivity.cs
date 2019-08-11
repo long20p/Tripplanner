@@ -37,8 +37,6 @@ namespace Tripplanner.Droid.Activities
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTI4MjIzQDMxMzcyZTMyMmUzMGZTUFZUUUgxUHFTanpKUnpMakI4SXhuQlV6Njg3WVlXdkVSL29qbzg0bU09");
-
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
@@ -46,7 +44,7 @@ namespace Tripplanner.Droid.Activities
             //SetSupportActionBar(toolbar);
 
             Messenger.Subscribe<NewTripCreatedMessage>(message =>
-                Toast.MakeText(this, $"Trip to {message.Trip.Destination} created", ToastLength.Long).Show());
+                Toast.MakeText(this, $"Trip to {message.Destination} created", ToastLength.Long).Show());
 
             //FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             //fab.Click += FabOnClick;

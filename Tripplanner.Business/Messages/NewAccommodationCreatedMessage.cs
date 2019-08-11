@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Tripplanner.Business.Messages
 {
-    public class TripDeletedMessage : MessageBase
+    public class NewAccommodationCreatedMessage : MessageBase
     {
-        public TripDeletedMessage(object sender) : base(sender)
+        public NewAccommodationCreatedMessage(object sender) : base(sender)
         {
         }
     }

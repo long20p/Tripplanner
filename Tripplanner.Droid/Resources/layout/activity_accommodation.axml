@@ -4,21 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <FrameLayout 
+    <LinearLayout 
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <Mvx.MvxListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:MvxItemTemplate="@layout/fragment_accommodation_list_item"
-            app:MvxBind="ItemsSource Accommodations; ItemClick SelectAccommodationCommand" />
-        <Syncfusion.Android.ProgressBar.SfCircularProgressBar
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:MvxBind="IsIndeterminate IndeterminateLoading; Visibility IsLoading,Converter=BoolToVisibility"/>
-        
-    </FrameLayout>
+
+    </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
@@ -26,5 +17,5 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="20dp"
         app:srcCompat="@drawable/baseline_add"
-        app:MvxBind="Click CreateNewAccomItemCommand; Visibility IsLoading,Converter=InversedBoolToVisibility"/>
+        app:MvxBind="Click CreateNewAccomItemCommand"/>
 </android.support.design.widget.CoordinatorLayout>
