@@ -14,7 +14,7 @@ using Tripplanner.Business.ViewModels;
 namespace Tripplanner.Droid.Activities
 {
     [Activity(Label = "AccommodationActivity")]
-    public class AccommodationActivity : ActivityBase<AccommodationViewModel>
+    public class AccommodationActivity : ActivityBase<AccommodationListViewModel>
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
