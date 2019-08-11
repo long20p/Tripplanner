@@ -18,7 +18,7 @@ namespace Tripplanner.Business.ViewModels.Wrappers
         {
             this.trip = trip;
             this.tripRepository = tripRepository;
-            DeleteTripCommand = GetAsyncCommand(async () => await DeleteTrip());
+            DeleteTripCommand = GetCommand(DeleteTrip);
         }
 
         public ICommand DeleteTripCommand { get; }
@@ -26,9 +26,9 @@ namespace Tripplanner.Business.ViewModels.Wrappers
         public Trip Trip => trip;
         public string Destination => trip.Destination;
         public string TripId => trip.TripId.ToString();
-        public string Dates => $"{trip.DateFrom:dd.MM.yyyy} - {trip.DateTo:dd.MM.yyyy}";
+        public string Dates => $"{trip.DateFrom.ToString(Constants.DateFormat)} - {trip.DateTo.ToString(Constants.DateFormat)}";
 
-        private async Task DeleteTrip()
+        private void DeleteTrip()
         {
             tripRepository.Delete(trip);
             Messenger.Publish(new TripDeletedMessage(this));

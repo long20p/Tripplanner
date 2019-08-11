@@ -5,6 +5,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -13,10 +14,10 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 
 namespace Tripplanner.Droid.Activities
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/SplashTheme", MainLauncher = true, NoHistory = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/SplashTheme", MainLauncher = true, NoHistory = true, ScreenOrientation = ScreenOrientation.Portrait)]
     public class SplashActivity : MvxSplashScreenAppCompatActivity
     {
-        public SplashActivity() : base(Resource.Layout.splash)
+        public SplashActivity() : base(Resource.Layout.splash_screen)
         { }
     }
 }
