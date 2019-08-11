@@ -37,6 +37,8 @@ namespace Tripplanner.Droid.Activities
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTI4MjIzQDMxMzcyZTMyMmUzMGZTUFZUUUgxUHFTanpKUnpMakI4SXhuQlV6Njg3WVlXdkVSL29qbzg0bU09");
+
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);

@@ -69,7 +69,9 @@
     <Compile Include="Activities\SplashActivity.cs" />
     <Compile Include="Activities\TransportationActivity.cs" />
     <Compile Include="Activities\TripDetailsActivity.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\InversedBoolConverter.cs" />
+    <Compile Include="Converters\InversedBoolToVisibilityConverter.cs" />
     <Compile Include="Dialogs\DateSelectorDialog.cs" />
     <Compile Include="Dialogs\DialogBase.cs" />
     <Compile Include="Dialogs\NewAccommodationDialog.cs" />
@@ -165,6 +167,9 @@
     </PackageReference>
     <PackageReference Include="MvvmCross.Plugin.Messenger">
       <Version>6.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfProgressBar.Android">
+      <Version>17.2.0.40</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.1" />
     <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="28.0.0.1" />

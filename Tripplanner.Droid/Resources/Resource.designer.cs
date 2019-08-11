@@ -5135,6 +5135,66 @@ namespace Tripplanner.Droid
 			global::MvvmCross.Droid.Support.V7.AppCompat.Resource.Styleable.ViewStubCompat_android_id = global::Tripplanner.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::MvvmCross.Droid.Support.V7.AppCompat.Resource.Styleable.ViewStubCompat_android_inflatedId = global::Tripplanner.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::MvvmCross.Droid.Support.V7.AppCompat.Resource.Styleable.ViewStubCompat_android_layout = global::Tripplanner.Droid.Resource.Styleable.ViewStubCompat_android_layout;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.animationDuration = global::Tripplanner.Droid.Resource.Attribute.animationDuration;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.cornerRadius = global::Tripplanner.Droid.Resource.Attribute.cornerRadius;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.endAngle = global::Tripplanner.Droid.Resource.Attribute.endAngle;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.gapWidth = global::Tripplanner.Droid.Resource.Attribute.gapWidth;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.indeterminateAnimationDuration = global::Tripplanner.Droid.Resource.Attribute.indeterminateAnimationDuration;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.indicatorInnerRadius = global::Tripplanner.Droid.Resource.Attribute.indicatorInnerRadius;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.indicatorOuterRadius = global::Tripplanner.Droid.Resource.Attribute.indicatorOuterRadius;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.indicatorPaddingBottom = global::Tripplanner.Droid.Resource.Attribute.indicatorPaddingBottom;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.indicatorPaddingLeft = global::Tripplanner.Droid.Resource.Attribute.indicatorPaddingLeft;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.indicatorPaddingRight = global::Tripplanner.Droid.Resource.Attribute.indicatorPaddingRight;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.indicatorPaddingTop = global::Tripplanner.Droid.Resource.Attribute.indicatorPaddingTop;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.isIndeterminate = global::Tripplanner.Droid.Resource.Attribute.isIndeterminate;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.maximum = global::Tripplanner.Droid.Resource.Attribute.maximum;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.minimum = global::Tripplanner.Droid.Resource.Attribute.minimum;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.progress = global::Tripplanner.Droid.Resource.Attribute.progress;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.progressColor = global::Tripplanner.Droid.Resource.Attribute.progressColor;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.secondaryAnimationDuration = global::Tripplanner.Droid.Resource.Attribute.secondaryAnimationDuration;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.secondaryProgress = global::Tripplanner.Droid.Resource.Attribute.secondaryProgress;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.secondaryProgressColor = global::Tripplanner.Droid.Resource.Attribute.secondaryProgressColor;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.segmentCount = global::Tripplanner.Droid.Resource.Attribute.segmentCount;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.showProgressValue = global::Tripplanner.Droid.Resource.Attribute.showProgressValue;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.startAngle = global::Tripplanner.Droid.Resource.Attribute.startAngle;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.trackColor = global::Tripplanner.Droid.Resource.Attribute.trackColor;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.trackHeight = global::Tripplanner.Droid.Resource.Attribute.trackHeight;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.trackInnerRadius = global::Tripplanner.Droid.Resource.Attribute.trackInnerRadius;
+			global::Syncfusion.Android.ProgressBar.Resource.Attribute.trackOuterRadius = global::Tripplanner.Droid.Resource.Attribute.trackOuterRadius;
+			global::Syncfusion.Android.ProgressBar.Resource.Drawable.sfprogressbar_determinate_linear = global::Tripplanner.Droid.Resource.Drawable.sfprogressbar_determinate_linear;
+			global::Syncfusion.Android.ProgressBar.Resource.Drawable.sfprogressbar_indeterminate_circular = global::Tripplanner.Droid.Resource.Drawable.sfprogressbar_indeterminate_circular;
+			global::Syncfusion.Android.ProgressBar.Resource.Drawable.sfprogressbar_indeterminate_linear = global::Tripplanner.Droid.Resource.Drawable.sfprogressbar_indeterminate_linear;
+			global::Syncfusion.Android.ProgressBar.Resource.Id.sfprogressbar_progress = global::Tripplanner.Droid.Resource.Id.sfprogressbar_progress;
+			global::Syncfusion.Android.ProgressBar.Resource.Id.sfprogressbar_secondary_progress = global::Tripplanner.Droid.Resource.Id.sfprogressbar_secondary_progress;
+			global::Syncfusion.Android.ProgressBar.Resource.Id.sfprogressbar_track = global::Tripplanner.Droid.Resource.Id.sfprogressbar_track;
+			global::Syncfusion.Android.ProgressBar.Resource.String.library_name = global::Tripplanner.Droid.Resource.String.library_name;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_animationDuration = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_animationDuration;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_cornerRadius = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_cornerRadius;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_endAngle = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_endAngle;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_gapWidth = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_gapWidth;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_indeterminateAnimationDuration = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_indeterminateAnimationDuration;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_indicatorInnerRadius = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_indicatorInnerRadius;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_indicatorOuterRadius = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_indicatorOuterRadius;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_indicatorPaddingBottom = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_indicatorPaddingBottom;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_indicatorPaddingLeft = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_indicatorPaddingLeft;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_indicatorPaddingRight = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_indicatorPaddingRight;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_indicatorPaddingTop = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_indicatorPaddingTop;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_isIndeterminate = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_isIndeterminate;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_maximum = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_maximum;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_minimum = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_minimum;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_progress = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_progress;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_progressColor = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_progressColor;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_secondaryAnimationDuration = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_secondaryAnimationDuration;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_secondaryProgress = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_secondaryProgress;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_secondaryProgressColor = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_secondaryProgressColor;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_segmentCount = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_segmentCount;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_showProgressValue = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_showProgressValue;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_startAngle = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_startAngle;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_trackColor = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_trackColor;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_trackHeight = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_trackHeight;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_trackInnerRadius = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_trackInnerRadius;
+			global::Syncfusion.Android.ProgressBar.Resource.Styleable.SfProgressBar_trackOuterRadius = global::Tripplanner.Droid.Resource.Styleable.SfProgressBar_trackOuterRadius;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::Tripplanner.Droid.Resource.Attribute.alpha;
 			global::Xamarin.Essentials.Resource.Attribute.coordinatorLayoutStyle = global::Tripplanner.Droid.Resource.Attribute.coordinatorLayoutStyle;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::Tripplanner.Droid.Resource.Attribute.font;
@@ -5426,23 +5486,23 @@ namespace Tripplanner.Droid
 		public partial class Attribute
 		{
 			
-			// aapt resource value: 0x7f0101dd
-			public const int MvxBind = 2130772445;
+			// aapt resource value: 0x7f0101f6
+			public const int MvxBind = 2130772470;
 			
-			// aapt resource value: 0x7f0101e1
-			public const int MvxDropDownItemTemplate = 2130772449;
+			// aapt resource value: 0x7f0101fa
+			public const int MvxDropDownItemTemplate = 2130772474;
 			
-			// aapt resource value: 0x7f0101e2
-			public const int MvxGroupItemTemplate = 2130772450;
+			// aapt resource value: 0x7f0101fb
+			public const int MvxGroupItemTemplate = 2130772475;
 			
-			// aapt resource value: 0x7f0101e0
-			public const int MvxItemTemplate = 2130772448;
+			// aapt resource value: 0x7f0101f9
+			public const int MvxItemTemplate = 2130772473;
 			
-			// aapt resource value: 0x7f0101de
-			public const int MvxLang = 2130772446;
+			// aapt resource value: 0x7f0101f7
+			public const int MvxLang = 2130772471;
 			
-			// aapt resource value: 0x7f0101df
-			public const int MvxTemplate = 2130772447;
+			// aapt resource value: 0x7f0101f8
+			public const int MvxTemplate = 2130772472;
 			
 			// aapt resource value: 0x7f010062
 			public const int actionBarDivider = 2130772066;
@@ -5566,6 +5626,9 @@ namespace Tripplanner.Droid
 			
 			// aapt resource value: 0x7f0100d2
 			public const int alphabeticModifiers = 2130772178;
+			
+			// aapt resource value: 0x7f0101e5
+			public const int animationDuration = 2130772453;
 			
 			// aapt resource value: 0x7f0100cb
 			public const int arrowHeadLength = 2130772171;
@@ -5990,6 +6053,9 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f010031
 			public const int elevation = 2130772017;
 			
+			// aapt resource value: 0x7f0101f0
+			public const int endAngle = 2130772464;
+			
 			// aapt resource value: 0x7f0101c6
 			public const int enforceMaterialTheme = 2130772422;
 			
@@ -6107,6 +6173,9 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0100ca
 			public const int gapBetweenBars = 2130772170;
 			
+			// aapt resource value: 0x7f0101eb
+			public const int gapWidth = 2130772459;
+			
 			// aapt resource value: 0x7f0100e7
 			public const int goIcon = 2130772199;
 			
@@ -6182,14 +6251,38 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f01008d
 			public const int imageButtonStyle = 2130772109;
 			
+			// aapt resource value: 0x7f0101e4
+			public const int indeterminateAnimationDuration = 2130772452;
+			
 			// aapt resource value: 0x7f010027
 			public const int indeterminateProgressStyle = 2130772007;
+			
+			// aapt resource value: 0x7f0101f5
+			public const int indicatorInnerRadius = 2130772469;
+			
+			// aapt resource value: 0x7f0101f4
+			public const int indicatorOuterRadius = 2130772468;
+			
+			// aapt resource value: 0x7f0101e9
+			public const int indicatorPaddingBottom = 2130772457;
+			
+			// aapt resource value: 0x7f0101e6
+			public const int indicatorPaddingLeft = 2130772454;
+			
+			// aapt resource value: 0x7f0101e7
+			public const int indicatorPaddingRight = 2130772455;
+			
+			// aapt resource value: 0x7f0101e8
+			public const int indicatorPaddingTop = 2130772456;
 			
 			// aapt resource value: 0x7f010034
 			public const int initialActivityCount = 2130772020;
 			
 			// aapt resource value: 0x7f01018e
 			public const int insetForeground = 2130772366;
+			
+			// aapt resource value: 0x7f0101e3
+			public const int isIndeterminate = 2130772451;
 			
 			// aapt resource value: 0x7f010017
 			public const int isLightTheme = 2130771991;
@@ -6338,11 +6431,17 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f01017d
 			public const int maxImageSize = 2130772349;
 			
+			// aapt resource value: 0x7f0101e2
+			public const int maximum = 2130772450;
+			
 			// aapt resource value: 0x7f0100cf
 			public const int measureWithLargestChild = 2130772175;
 			
 			// aapt resource value: 0x7f010186
 			public const int menu = 2130772358;
+			
+			// aapt resource value: 0x7f0101e1
+			public const int minimum = 2130772449;
 			
 			// aapt resource value: 0x7f010038
 			public const int multiChoiceItemLayout = 2130772024;
@@ -6416,11 +6515,17 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f01017a
 			public const int pressedTranslationZ = 2130772346;
 			
+			// aapt resource value: 0x7f0101dd
+			public const int progress = 2130772445;
+			
 			// aapt resource value: 0x7f010028
 			public const int progressBarPadding = 2130772008;
 			
 			// aapt resource value: 0x7f010026
 			public const int progressBarStyle = 2130772006;
+			
+			// aapt resource value: 0x7f0101de
+			public const int progressColor = 2130772446;
 			
 			// aapt resource value: 0x7f0100ed
 			public const int queryBackground = 2130772205;
@@ -6464,8 +6569,20 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f010091
 			public const int searchViewStyle = 2130772113;
 			
+			// aapt resource value: 0x7f0101ee
+			public const int secondaryAnimationDuration = 2130772462;
+			
+			// aapt resource value: 0x7f0101ec
+			public const int secondaryProgress = 2130772460;
+			
+			// aapt resource value: 0x7f0101ed
+			public const int secondaryProgressColor = 2130772461;
+			
 			// aapt resource value: 0x7f0100bc
 			public const int seekBarStyle = 2130772156;
+			
+			// aapt resource value: 0x7f0101ea
+			public const int segmentCount = 2130772458;
 			
 			// aapt resource value: 0x7f010081
 			public const int selectableItemBackground = 2130772097;
@@ -6481,6 +6598,9 @@ namespace Tripplanner.Droid
 			
 			// aapt resource value: 0x7f01011f
 			public const int showMotionSpec = 2130772255;
+			
+			// aapt resource value: 0x7f0101f1
+			public const int showProgressValue = 2130772465;
 			
 			// aapt resource value: 0x7f0100f9
 			public const int showText = 2130772217;
@@ -6523,6 +6643,9 @@ namespace Tripplanner.Droid
 			
 			// aapt resource value: 0x7f010003
 			public const int stackFromEnd = 2130771971;
+			
+			// aapt resource value: 0x7f0101ef
+			public const int startAngle = 2130772463;
 			
 			// aapt resource value: 0x7f0100df
 			public const int state_above_anchor = 2130772191;
@@ -6826,6 +6949,18 @@ namespace Tripplanner.Droid
 			
 			// aapt resource value: 0x7f0100f1
 			public const int track = 2130772209;
+			
+			// aapt resource value: 0x7f0101df
+			public const int trackColor = 2130772447;
+			
+			// aapt resource value: 0x7f0101e0
+			public const int trackHeight = 2130772448;
+			
+			// aapt resource value: 0x7f0101f3
+			public const int trackInnerRadius = 2130772467;
+			
+			// aapt resource value: 0x7f0101f2
+			public const int trackOuterRadius = 2130772466;
 			
 			// aapt resource value: 0x7f0100f2
 			public const int trackTint = 2130772210;
@@ -8271,26 +8406,26 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f020056
 			public const int avd_hide_password = 2130837590;
 			
-			// aapt resource value: 0x7f020084
-			public const int avd_hide_password_1 = 2130837636;
+			// aapt resource value: 0x7f020087
+			public const int avd_hide_password_1 = 2130837639;
 			
-			// aapt resource value: 0x7f020085
-			public const int avd_hide_password_2 = 2130837637;
+			// aapt resource value: 0x7f020088
+			public const int avd_hide_password_2 = 2130837640;
 			
-			// aapt resource value: 0x7f020086
-			public const int avd_hide_password_3 = 2130837638;
+			// aapt resource value: 0x7f020089
+			public const int avd_hide_password_3 = 2130837641;
 			
 			// aapt resource value: 0x7f020057
 			public const int avd_show_password = 2130837591;
 			
-			// aapt resource value: 0x7f020087
-			public const int avd_show_password_1 = 2130837639;
+			// aapt resource value: 0x7f02008a
+			public const int avd_show_password_1 = 2130837642;
 			
-			// aapt resource value: 0x7f020088
-			public const int avd_show_password_2 = 2130837640;
+			// aapt resource value: 0x7f02008b
+			public const int avd_show_password_2 = 2130837643;
 			
-			// aapt resource value: 0x7f020089
-			public const int avd_show_password_3 = 2130837641;
+			// aapt resource value: 0x7f02008c
+			public const int avd_show_password_3 = 2130837644;
 			
 			// aapt resource value: 0x7f020058
 			public const int baseline_add = 2130837592;
@@ -8391,11 +8526,11 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f020078
 			public const int notification_icon_background = 2130837624;
 			
-			// aapt resource value: 0x7f020082
-			public const int notification_template_icon_bg = 2130837634;
+			// aapt resource value: 0x7f020085
+			public const int notification_template_icon_bg = 2130837637;
 			
-			// aapt resource value: 0x7f020083
-			public const int notification_template_icon_low_bg = 2130837635;
+			// aapt resource value: 0x7f020086
+			public const int notification_template_icon_low_bg = 2130837638;
 			
 			// aapt resource value: 0x7f020079
 			public const int notification_tile_bg = 2130837625;
@@ -8407,22 +8542,31 @@ namespace Tripplanner.Droid
 			public const int round_delete = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int side_nav_bar = 2130837628;
+			public const int sfprogressbar_determinate_linear = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int splash = 2130837629;
+			public const int sfprogressbar_indeterminate_circular = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int tooltip_frame_dark = 2130837630;
+			public const int sfprogressbar_indeterminate_linear = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int tooltip_frame_light = 2130837631;
+			public const int side_nav_bar = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int transport = 2130837632;
+			public const int splash = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int weather = 2130837633;
+			public const int tooltip_frame_dark = 2130837633;
+			
+			// aapt resource value: 0x7f020082
+			public const int tooltip_frame_light = 2130837634;
+			
+			// aapt resource value: 0x7f020083
+			public const int transport = 2130837635;
+			
+			// aapt resource value: 0x7f020084
+			public const int weather = 2130837636;
 			
 			static Drawable()
 			{
@@ -8482,17 +8626,17 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a006b
 			public const int action_bar_title = 2131361899;
 			
-			// aapt resource value: 0x7f0a00bc
-			public const int action_container = 2131361980;
+			// aapt resource value: 0x7f0a00bd
+			public const int action_container = 2131361981;
 			
 			// aapt resource value: 0x7f0a0090
 			public const int action_context_bar = 2131361936;
 			
-			// aapt resource value: 0x7f0a00c7
-			public const int action_divider = 2131361991;
+			// aapt resource value: 0x7f0a00c8
+			public const int action_divider = 2131361992;
 			
-			// aapt resource value: 0x7f0a00bd
-			public const int action_image = 2131361981;
+			// aapt resource value: 0x7f0a00be
+			public const int action_image = 2131361982;
 			
 			// aapt resource value: 0x7f0a0003
 			public const int action_menu_divider = 2131361795;
@@ -8509,14 +8653,14 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a006d
 			public const int action_mode_close_button = 2131361901;
 			
-			// aapt resource value: 0x7f0a00d2
-			public const int action_settings = 2131362002;
+			// aapt resource value: 0x7f0a00d6
+			public const int action_settings = 2131362006;
 			
-			// aapt resource value: 0x7f0a00be
-			public const int action_text = 2131361982;
+			// aapt resource value: 0x7f0a00bf
+			public const int action_text = 2131361983;
 			
-			// aapt resource value: 0x7f0a00c8
-			public const int actions = 2131361992;
+			// aapt resource value: 0x7f0a00c9
+			public const int actions = 2131361993;
 			
 			// aapt resource value: 0x7f0a006e
 			public const int activity_chooser_view_content = 2131361902;
@@ -8578,8 +8722,8 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a0088
 			public const int checkbox = 2131361928;
 			
-			// aapt resource value: 0x7f0a00c6
-			public const int chronometer = 2131361990;
+			// aapt resource value: 0x7f0a00c7
+			public const int chronometer = 2131361991;
 			
 			// aapt resource value: 0x7f0a0063
 			public const int clip_horizontal = 2131361891;
@@ -8677,6 +8821,9 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a0069
 			public const int forever = 2131361897;
 			
+			// aapt resource value: 0x7f0a00b4
+			public const int fragment_all_trips_progress_bar = 2131361972;
+			
 			// aapt resource value: 0x7f0a000a
 			public const int ghost_view = 2131361802;
 			
@@ -8692,8 +8839,8 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a0073
 			public const int icon = 2131361907;
 			
-			// aapt resource value: 0x7f0a00c9
-			public const int icon_group = 2131361993;
+			// aapt resource value: 0x7f0a00ca
+			public const int icon_group = 2131361994;
 			
 			// aapt resource value: 0x7f0a0043
 			public const int ifRoom = 2131361859;
@@ -8701,11 +8848,11 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a0070
 			public const int image = 2131361904;
 			
-			// aapt resource value: 0x7f0a00ba
-			public const int imageView = 2131361978;
+			// aapt resource value: 0x7f0a00bb
+			public const int imageView = 2131361979;
 			
-			// aapt resource value: 0x7f0a00c2
-			public const int info = 2131361986;
+			// aapt resource value: 0x7f0a00c3
+			public const int info = 2131361987;
 			
 			// aapt resource value: 0x7f0a006a
 			public const int italic = 2131361898;
@@ -8737,8 +8884,8 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a00a6
 			public const int main_content_frame = 2131361958;
 			
-			// aapt resource value: 0x7f0a00cb
-			public const int masked = 2131361995;
+			// aapt resource value: 0x7f0a00cc
+			public const int masked = 2131361996;
 			
 			// aapt resource value: 0x7f0a009e
 			public const int message = 2131361950;
@@ -8758,23 +8905,23 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a0031
 			public const int multiply = 2131361841;
 			
-			// aapt resource value: 0x7f0a00d1
-			public const int nav_about = 2131362001;
-			
-			// aapt resource value: 0x7f0a00cc
-			public const int nav_all_trips = 2131361996;
-			
-			// aapt resource value: 0x7f0a00ce
-			public const int nav_backup = 2131361998;
-			
-			// aapt resource value: 0x7f0a00cd
-			public const int nav_new_trip = 2131361997;
-			
-			// aapt resource value: 0x7f0a00cf
-			public const int nav_restore = 2131361999;
+			// aapt resource value: 0x7f0a00d5
+			public const int nav_about = 2131362005;
 			
 			// aapt resource value: 0x7f0a00d0
-			public const int nav_settings = 2131362000;
+			public const int nav_all_trips = 2131362000;
+			
+			// aapt resource value: 0x7f0a00d2
+			public const int nav_backup = 2131362002;
+			
+			// aapt resource value: 0x7f0a00d1
+			public const int nav_new_trip = 2131362001;
+			
+			// aapt resource value: 0x7f0a00d3
+			public const int nav_restore = 2131362003;
+			
+			// aapt resource value: 0x7f0a00d4
+			public const int nav_settings = 2131362004;
 			
 			// aapt resource value: 0x7f0a00a0
 			public const int nav_view = 2131361952;
@@ -8785,23 +8932,23 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a0044
 			public const int never = 2131361860;
 			
-			// aapt resource value: 0x7f0a00b9
-			public const int newTrip_create_new_button = 2131361977;
-			
-			// aapt resource value: 0x7f0a00b5
-			public const int newTrip_date_from_text = 2131361973;
-			
-			// aapt resource value: 0x7f0a00b7
-			public const int newTrip_date_to_text = 2131361975;
-			
-			// aapt resource value: 0x7f0a00b4
-			public const int newTrip_location_textView = 2131361972;
+			// aapt resource value: 0x7f0a00ba
+			public const int newTrip_create_new_button = 2131361978;
 			
 			// aapt resource value: 0x7f0a00b6
-			public const int newTrip_open_from_date_button = 2131361974;
+			public const int newTrip_date_from_text = 2131361974;
 			
 			// aapt resource value: 0x7f0a00b8
-			public const int newTrip_open_to_date_button = 2131361976;
+			public const int newTrip_date_to_text = 2131361976;
+			
+			// aapt resource value: 0x7f0a00b5
+			public const int newTrip_location_textView = 2131361973;
+			
+			// aapt resource value: 0x7f0a00b7
+			public const int newTrip_open_from_date_button = 2131361975;
+			
+			// aapt resource value: 0x7f0a00b9
+			public const int newTrip_open_to_date_button = 2131361977;
 			
 			// aapt resource value: 0x7f0a002b
 			public const int none = 2131361835;
@@ -8809,14 +8956,14 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a0027
 			public const int normal = 2131361831;
 			
-			// aapt resource value: 0x7f0a00c4
-			public const int notification_background = 2131361988;
+			// aapt resource value: 0x7f0a00c5
+			public const int notification_background = 2131361989;
+			
+			// aapt resource value: 0x7f0a00c1
+			public const int notification_main_column = 2131361985;
 			
 			// aapt resource value: 0x7f0a00c0
-			public const int notification_main_column = 2131361984;
-			
-			// aapt resource value: 0x7f0a00bf
-			public const int notification_main_column_container = 2131361983;
+			public const int notification_main_column_container = 2131361984;
 			
 			// aapt resource value: 0x7f0a0062
 			public const int outline = 2131361890;
@@ -8845,11 +8992,11 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a0057
 			public const int right = 2131361879;
 			
-			// aapt resource value: 0x7f0a00c3
-			public const int right_icon = 2131361987;
+			// aapt resource value: 0x7f0a00c4
+			public const int right_icon = 2131361988;
 			
-			// aapt resource value: 0x7f0a00c1
-			public const int right_side = 2131361985;
+			// aapt resource value: 0x7f0a00c2
+			public const int right_side = 2131361986;
 			
 			// aapt resource value: 0x7f0a000c
 			public const int save_image_matrix = 2131361804;
@@ -8913,6 +9060,15 @@ namespace Tripplanner.Droid
 			
 			// aapt resource value: 0x7f0a0051
 			public const int selected = 2131361873;
+			
+			// aapt resource value: 0x7f0a00cf
+			public const int sfprogressbar_progress = 2131361999;
+			
+			// aapt resource value: 0x7f0a00ce
+			public const int sfprogressbar_secondary_progress = 2131361998;
+			
+			// aapt resource value: 0x7f0a00cd
+			public const int sfprogressbar_track = 2131361997;
 			
 			// aapt resource value: 0x7f0a0085
 			public const int shortcut = 2131361925;
@@ -8995,8 +9151,8 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a005c
 			public const int textStart = 2131361884;
 			
-			// aapt resource value: 0x7f0a00bb
-			public const int textView = 2131361979;
+			// aapt resource value: 0x7f0a00bc
+			public const int textView = 2131361980;
 			
 			// aapt resource value: 0x7f0a00b2
 			public const int text_input_password_toggle = 2131361970;
@@ -9010,8 +9166,8 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a001a
 			public const int textinput_helper_text = 2131361818;
 			
-			// aapt resource value: 0x7f0a00c5
-			public const int time = 2131361989;
+			// aapt resource value: 0x7f0a00c6
+			public const int time = 2131361990;
 			
 			// aapt resource value: 0x7f0a0023
 			public const int title = 2131361827;
@@ -9061,8 +9217,8 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a001b
 			public const int view_offset_helper = 2131361819;
 			
-			// aapt resource value: 0x7f0a00ca
-			public const int visible = 2131361994;
+			// aapt resource value: 0x7f0a00cb
+			public const int visible = 2131361995;
 			
 			// aapt resource value: 0x7f0a0045
 			public const int withText = 2131361861;
@@ -9556,11 +9712,11 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0d001a
 			public const int abc_toolbar_collapse_description = 2131558426;
 			
-			// aapt resource value: 0x7f0d003b
-			public const int action_settings = 2131558459;
+			// aapt resource value: 0x7f0d003c
+			public const int action_settings = 2131558460;
 			
-			// aapt resource value: 0x7f0d0038
-			public const int app_name = 2131558456;
+			// aapt resource value: 0x7f0d0039
+			public const int app_name = 2131558457;
 			
 			// aapt resource value: 0x7f0d0028
 			public const int appbar_scrolling_view_behavior = 2131558440;
@@ -9574,8 +9730,8 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0d002b
 			public const int character_counter_pattern = 2131558443;
 			
-			// aapt resource value: 0x7f0d0036
-			public const int fab_scroll_shrink_grow_autohide_behavior = 2131558454;
+			// aapt resource value: 0x7f0d0037
+			public const int fab_scroll_shrink_grow_autohide_behavior = 2131558455;
 			
 			// aapt resource value: 0x7f0d002c
 			public const int fab_transformation_scrim_behavior = 2131558444;
@@ -9586,14 +9742,17 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0d002e
 			public const int hide_bottom_view_on_scroll_behavior = 2131558446;
 			
+			// aapt resource value: 0x7f0d0036
+			public const int library_name = 2131558454;
+			
 			// aapt resource value: 0x7f0d002f
 			public const int mtrl_chip_close_icon_content_description = 2131558447;
 			
-			// aapt resource value: 0x7f0d003a
-			public const int navigation_drawer_close = 2131558458;
+			// aapt resource value: 0x7f0d003b
+			public const int navigation_drawer_close = 2131558459;
 			
-			// aapt resource value: 0x7f0d0039
-			public const int navigation_drawer_open = 2131558457;
+			// aapt resource value: 0x7f0d003a
+			public const int navigation_drawer_open = 2131558458;
 			
 			// aapt resource value: 0x7f0d0030
 			public const int password_toggle_content_description = 2131558448;
@@ -9616,8 +9775,8 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0d0035
 			public const int status_bar_notification_info_overflow = 2131558453;
 			
-			// aapt resource value: 0x7f0d0037
-			public const int view_scroll_translation_autohide_behavior = 2131558455;
+			// aapt resource value: 0x7f0d0038
+			public const int view_scroll_translation_autohide_behavior = 2131558456;
 			
 			static String()
 			{
@@ -13213,8 +13372,8 @@ namespace Tripplanner.Droid
 			public const int MenuView_subMenuArrow = 8;
 			
 			public static int[] MvxBinding = new int[] {
-					2130772445,
-					2130772446};
+					2130772470,
+					2130772471};
 			
 			// aapt resource value: 0
 			public const int MvxBinding_MvxBind = 0;
@@ -13223,20 +13382,20 @@ namespace Tripplanner.Droid
 			public const int MvxBinding_MvxLang = 1;
 			
 			public static int[] MvxControl = new int[] {
-					2130772447};
+					2130772472};
 			
 			// aapt resource value: 0
 			public const int MvxControl_MvxTemplate = 0;
 			
 			public static int[] MvxExpandableListView = new int[] {
-					2130772450};
+					2130772475};
 			
 			// aapt resource value: 0
 			public const int MvxExpandableListView_MvxGroupItemTemplate = 0;
 			
 			public static int[] MvxListView = new int[] {
-					2130772448,
-					2130772449};
+					2130772473,
+					2130772474};
 			
 			// aapt resource value: 1
 			public const int MvxListView_MvxDropDownItemTemplate = 1;
@@ -13451,6 +13610,112 @@ namespace Tripplanner.Droid
 			
 			// aapt resource value: 12
 			public const int SearchView_voiceIcon = 12;
+			
+			public static int[] SfProgressBar = new int[] {
+					2130772357,
+					2130772445,
+					2130772446,
+					2130772447,
+					2130772448,
+					2130772449,
+					2130772450,
+					2130772451,
+					2130772452,
+					2130772453,
+					2130772454,
+					2130772455,
+					2130772456,
+					2130772457,
+					2130772458,
+					2130772459,
+					2130772460,
+					2130772461,
+					2130772462,
+					2130772463,
+					2130772464,
+					2130772465,
+					2130772466,
+					2130772467,
+					2130772468,
+					2130772469};
+			
+			// aapt resource value: 9
+			public const int SfProgressBar_animationDuration = 9;
+			
+			// aapt resource value: 0
+			public const int SfProgressBar_cornerRadius = 0;
+			
+			// aapt resource value: 20
+			public const int SfProgressBar_endAngle = 20;
+			
+			// aapt resource value: 15
+			public const int SfProgressBar_gapWidth = 15;
+			
+			// aapt resource value: 8
+			public const int SfProgressBar_indeterminateAnimationDuration = 8;
+			
+			// aapt resource value: 25
+			public const int SfProgressBar_indicatorInnerRadius = 25;
+			
+			// aapt resource value: 24
+			public const int SfProgressBar_indicatorOuterRadius = 24;
+			
+			// aapt resource value: 13
+			public const int SfProgressBar_indicatorPaddingBottom = 13;
+			
+			// aapt resource value: 10
+			public const int SfProgressBar_indicatorPaddingLeft = 10;
+			
+			// aapt resource value: 11
+			public const int SfProgressBar_indicatorPaddingRight = 11;
+			
+			// aapt resource value: 12
+			public const int SfProgressBar_indicatorPaddingTop = 12;
+			
+			// aapt resource value: 7
+			public const int SfProgressBar_isIndeterminate = 7;
+			
+			// aapt resource value: 6
+			public const int SfProgressBar_maximum = 6;
+			
+			// aapt resource value: 5
+			public const int SfProgressBar_minimum = 5;
+			
+			// aapt resource value: 1
+			public const int SfProgressBar_progress = 1;
+			
+			// aapt resource value: 2
+			public const int SfProgressBar_progressColor = 2;
+			
+			// aapt resource value: 18
+			public const int SfProgressBar_secondaryAnimationDuration = 18;
+			
+			// aapt resource value: 16
+			public const int SfProgressBar_secondaryProgress = 16;
+			
+			// aapt resource value: 17
+			public const int SfProgressBar_secondaryProgressColor = 17;
+			
+			// aapt resource value: 14
+			public const int SfProgressBar_segmentCount = 14;
+			
+			// aapt resource value: 21
+			public const int SfProgressBar_showProgressValue = 21;
+			
+			// aapt resource value: 19
+			public const int SfProgressBar_startAngle = 19;
+			
+			// aapt resource value: 3
+			public const int SfProgressBar_trackColor = 3;
+			
+			// aapt resource value: 4
+			public const int SfProgressBar_trackHeight = 4;
+			
+			// aapt resource value: 23
+			public const int SfProgressBar_trackInnerRadius = 23;
+			
+			// aapt resource value: 22
+			public const int SfProgressBar_trackOuterRadius = 22;
 			
 			public static int[] Snackbar = new int[] {
 					2130772368,

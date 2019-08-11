@@ -27,6 +27,7 @@ namespace Tripplanner.Business.ViewModels
             this.notificationService = notificationService;
             CreateNewAccomItemCommand = GetAsyncCommand(async () => await CreateNewAccomItem());
             Messenger.Subscribe<AccommodationDeletedMessage>(msg => RemoveAccommodation(msg.Accommodation));
+            IndeterminateLoading = true;
         }
 
         public ICommand CreateNewAccomItemCommand { get; }
@@ -42,6 +43,8 @@ namespace Tripplanner.Business.ViewModels
                 RaisePropertyChanged(() => Accommodations);
             }
         }
+
+        public bool IndeterminateLoading { get; }
 
         private bool isLoading;
         public bool IsLoading
