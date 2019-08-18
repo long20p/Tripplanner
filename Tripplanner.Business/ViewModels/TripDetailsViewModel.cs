@@ -20,17 +20,17 @@ namespace Tripplanner.Business.ViewModels
         public ICommand GoToActivitiesCommand { get; }
         public ICommand GoToCityTransportCommand { get; }
 
-        public Trip Trip => trip;
-        public string TripDate => $"{trip.DateFrom:dd/MM/yy} - {trip.DateTo:dd/MM/yy}";
+        public string TripDate => $"{base.Trip.DateFrom:dd/MM/yy} - {Trip.DateTo:dd/MM/yy}";
+        public string Destination => Trip.Destination;
 
         private async Task GoToTransportation()
         {
-            await NavigationService.Navigate<TransportationViewModel, Trip>(trip);
+            await NavigationService.Navigate<TransportationViewModel, Trip>(Trip);
         }
 
         private async Task GoToAccomodation()
         {
-            await NavigationService.Navigate<AccommodationViewModel, Trip>(trip);
+            await NavigationService.Navigate<AccommodationListViewModel, Trip>(Trip);
         }
     }
 }

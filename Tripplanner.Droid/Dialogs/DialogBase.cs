@@ -11,10 +11,19 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Support.V4;
 using MvvmCross.ViewModels;
+using Tripplanner.Business.ViewModels.Components;
 
 namespace Tripplanner.Droid.Dialogs
 {
-    public abstract class DialogBase<T> : MvxDialogFragment<T> where T : class, IMvxViewModel
+    public abstract class DialogBase<T> : MvxDialogFragment<T> where T : class, IMvxViewModel, IDismissibleComponent
     {
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        {
+            var view = base.OnCreateView(inflater, container, savedInstanceState);
+
+            ViewModel.OnFinish = Dismiss;
+
+            return view;
+        }
     }
 }
