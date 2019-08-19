@@ -1,10 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Backup"/>
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What to backup"
+            android:textSize="30dp"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@+id/backup_all_trips_radio_btn">
+            <RadioButton
+                android:id="@+id/backup_all_trips_radio_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="All trips"
+                app:MvxBind="Click SelectAllTripsCommand"/>
+            <RadioButton
+                android:id="@+id/backup_custom_trips_radio_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selected trips"
+                app:MvxBind="Click SelectCustomTripsCommand"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose backup location"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="10dp"
+            android:textSize="30dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Local storage"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:background="@android:color/holo_green_light"
+                app:MvxBind="Click SelectLocalStorageCommand"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:MvxBind="Visibility IsLocalStorageChosen, Converter=BoolToVisibility">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Local storage export config"/>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Export"/>
+                </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Dropbox"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:background="@android:color/holo_blue_bright"
+                app:MvxBind="Click SelectDropboxCommand"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:MvxBind="Visibility IsDropboxChosen, Converter=BoolToVisibility">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dropbox export config"/>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Export"/>
+                </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Amazon"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:background="@android:color/holo_orange_light"
+                app:MvxBind="Click SelectAmazonCommand"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:MvxBind="Visibility IsAmazonChosen, Converter=BoolToVisibility">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Amazon export config"/>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Export"/>
+                </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="One Drive"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:background="@android:color/holo_blue_dark"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Google Drive"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:background="#ddddd555"/>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

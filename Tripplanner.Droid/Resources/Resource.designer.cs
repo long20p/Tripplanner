@@ -8626,17 +8626,17 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a006b
 			public const int action_bar_title = 2131361899;
 			
-			// aapt resource value: 0x7f0a00bd
-			public const int action_container = 2131361981;
+			// aapt resource value: 0x7f0a00bf
+			public const int action_container = 2131361983;
 			
 			// aapt resource value: 0x7f0a0090
 			public const int action_context_bar = 2131361936;
 			
-			// aapt resource value: 0x7f0a00c8
-			public const int action_divider = 2131361992;
+			// aapt resource value: 0x7f0a00ca
+			public const int action_divider = 2131361994;
 			
-			// aapt resource value: 0x7f0a00be
-			public const int action_image = 2131361982;
+			// aapt resource value: 0x7f0a00c0
+			public const int action_image = 2131361984;
 			
 			// aapt resource value: 0x7f0a0003
 			public const int action_menu_divider = 2131361795;
@@ -8653,14 +8653,14 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a006d
 			public const int action_mode_close_button = 2131361901;
 			
-			// aapt resource value: 0x7f0a00d6
-			public const int action_settings = 2131362006;
+			// aapt resource value: 0x7f0a00d8
+			public const int action_settings = 2131362008;
 			
-			// aapt resource value: 0x7f0a00bf
-			public const int action_text = 2131361983;
+			// aapt resource value: 0x7f0a00c1
+			public const int action_text = 2131361985;
 			
-			// aapt resource value: 0x7f0a00c9
-			public const int actions = 2131361993;
+			// aapt resource value: 0x7f0a00cb
+			public const int actions = 2131361995;
 			
 			// aapt resource value: 0x7f0a006e
 			public const int activity_chooser_view_content = 2131361902;
@@ -8682,6 +8682,12 @@ namespace Tripplanner.Droid
 			
 			// aapt resource value: 0x7f0a004f
 			public const int auto = 2131361871;
+			
+			// aapt resource value: 0x7f0a00b5
+			public const int backup_all_trips_radio_btn = 2131361973;
+			
+			// aapt resource value: 0x7f0a00b6
+			public const int backup_custom_trips_radio_btn = 2131361974;
 			
 			// aapt resource value: 0x7f0a0038
 			public const int beginning = 2131361848;
@@ -8722,8 +8728,8 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a0088
 			public const int checkbox = 2131361928;
 			
-			// aapt resource value: 0x7f0a00c7
-			public const int chronometer = 2131361991;
+			// aapt resource value: 0x7f0a00c9
+			public const int chronometer = 2131361993;
 			
 			// aapt resource value: 0x7f0a0063
 			public const int clip_horizontal = 2131361891;
@@ -8839,8 +8845,8 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a0073
 			public const int icon = 2131361907;
 			
-			// aapt resource value: 0x7f0a00ca
-			public const int icon_group = 2131361994;
+			// aapt resource value: 0x7f0a00cc
+			public const int icon_group = 2131361996;
 			
 			// aapt resource value: 0x7f0a0043
 			public const int ifRoom = 2131361859;
@@ -8848,11 +8854,11 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a0070
 			public const int image = 2131361904;
 			
-			// aapt resource value: 0x7f0a00bb
-			public const int imageView = 2131361979;
+			// aapt resource value: 0x7f0a00bd
+			public const int imageView = 2131361981;
 			
-			// aapt resource value: 0x7f0a00c3
-			public const int info = 2131361987;
+			// aapt resource value: 0x7f0a00c5
+			public const int info = 2131361989;
 			
 			// aapt resource value: 0x7f0a006a
 			public const int italic = 2131361898;
@@ -8884,8 +8890,8 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a00a6
 			public const int main_content_frame = 2131361958;
 			
-			// aapt resource value: 0x7f0a00cc
-			public const int masked = 2131361996;
+			// aapt resource value: 0x7f0a00ce
+			public const int masked = 2131361998;
 			
 			// aapt resource value: 0x7f0a009e
 			public const int message = 2131361950;
@@ -8905,23 +8911,23 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a0031
 			public const int multiply = 2131361841;
 			
-			// aapt resource value: 0x7f0a00d5
-			public const int nav_about = 2131362005;
-			
-			// aapt resource value: 0x7f0a00d0
-			public const int nav_all_trips = 2131362000;
+			// aapt resource value: 0x7f0a00d7
+			public const int nav_about = 2131362007;
 			
 			// aapt resource value: 0x7f0a00d2
-			public const int nav_backup = 2131362002;
-			
-			// aapt resource value: 0x7f0a00d1
-			public const int nav_new_trip = 2131362001;
-			
-			// aapt resource value: 0x7f0a00d3
-			public const int nav_restore = 2131362003;
+			public const int nav_all_trips = 2131362002;
 			
 			// aapt resource value: 0x7f0a00d4
-			public const int nav_settings = 2131362004;
+			public const int nav_backup = 2131362004;
+			
+			// aapt resource value: 0x7f0a00d3
+			public const int nav_new_trip = 2131362003;
+			
+			// aapt resource value: 0x7f0a00d5
+			public const int nav_restore = 2131362005;
+			
+			// aapt resource value: 0x7f0a00d6
+			public const int nav_settings = 2131362006;
 			
 			// aapt resource value: 0x7f0a00a0
 			public const int nav_view = 2131361952;
@@ -8932,23 +8938,23 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a0044
 			public const int never = 2131361860;
 			
-			// aapt resource value: 0x7f0a00ba
-			public const int newTrip_create_new_button = 2131361978;
-			
-			// aapt resource value: 0x7f0a00b6
-			public const int newTrip_date_from_text = 2131361974;
+			// aapt resource value: 0x7f0a00bc
+			public const int newTrip_create_new_button = 2131361980;
 			
 			// aapt resource value: 0x7f0a00b8
-			public const int newTrip_date_to_text = 2131361976;
+			public const int newTrip_date_from_text = 2131361976;
 			
-			// aapt resource value: 0x7f0a00b5
-			public const int newTrip_location_textView = 2131361973;
+			// aapt resource value: 0x7f0a00ba
+			public const int newTrip_date_to_text = 2131361978;
 			
 			// aapt resource value: 0x7f0a00b7
-			public const int newTrip_open_from_date_button = 2131361975;
+			public const int newTrip_location_textView = 2131361975;
 			
 			// aapt resource value: 0x7f0a00b9
-			public const int newTrip_open_to_date_button = 2131361977;
+			public const int newTrip_open_from_date_button = 2131361977;
+			
+			// aapt resource value: 0x7f0a00bb
+			public const int newTrip_open_to_date_button = 2131361979;
 			
 			// aapt resource value: 0x7f0a002b
 			public const int none = 2131361835;
@@ -8956,14 +8962,14 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a0027
 			public const int normal = 2131361831;
 			
-			// aapt resource value: 0x7f0a00c5
-			public const int notification_background = 2131361989;
+			// aapt resource value: 0x7f0a00c7
+			public const int notification_background = 2131361991;
 			
-			// aapt resource value: 0x7f0a00c1
-			public const int notification_main_column = 2131361985;
+			// aapt resource value: 0x7f0a00c3
+			public const int notification_main_column = 2131361987;
 			
-			// aapt resource value: 0x7f0a00c0
-			public const int notification_main_column_container = 2131361984;
+			// aapt resource value: 0x7f0a00c2
+			public const int notification_main_column_container = 2131361986;
 			
 			// aapt resource value: 0x7f0a0062
 			public const int outline = 2131361890;
@@ -8992,11 +8998,11 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a0057
 			public const int right = 2131361879;
 			
-			// aapt resource value: 0x7f0a00c4
-			public const int right_icon = 2131361988;
+			// aapt resource value: 0x7f0a00c6
+			public const int right_icon = 2131361990;
 			
-			// aapt resource value: 0x7f0a00c2
-			public const int right_side = 2131361986;
+			// aapt resource value: 0x7f0a00c4
+			public const int right_side = 2131361988;
 			
 			// aapt resource value: 0x7f0a000c
 			public const int save_image_matrix = 2131361804;
@@ -9061,14 +9067,14 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a0051
 			public const int selected = 2131361873;
 			
+			// aapt resource value: 0x7f0a00d1
+			public const int sfprogressbar_progress = 2131362001;
+			
+			// aapt resource value: 0x7f0a00d0
+			public const int sfprogressbar_secondary_progress = 2131362000;
+			
 			// aapt resource value: 0x7f0a00cf
-			public const int sfprogressbar_progress = 2131361999;
-			
-			// aapt resource value: 0x7f0a00ce
-			public const int sfprogressbar_secondary_progress = 2131361998;
-			
-			// aapt resource value: 0x7f0a00cd
-			public const int sfprogressbar_track = 2131361997;
+			public const int sfprogressbar_track = 2131361999;
 			
 			// aapt resource value: 0x7f0a0085
 			public const int shortcut = 2131361925;
@@ -9151,8 +9157,8 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a005c
 			public const int textStart = 2131361884;
 			
-			// aapt resource value: 0x7f0a00bc
-			public const int textView = 2131361980;
+			// aapt resource value: 0x7f0a00be
+			public const int textView = 2131361982;
 			
 			// aapt resource value: 0x7f0a00b2
 			public const int text_input_password_toggle = 2131361970;
@@ -9166,8 +9172,8 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a001a
 			public const int textinput_helper_text = 2131361818;
 			
-			// aapt resource value: 0x7f0a00c6
-			public const int time = 2131361990;
+			// aapt resource value: 0x7f0a00c8
+			public const int time = 2131361992;
 			
 			// aapt resource value: 0x7f0a0023
 			public const int title = 2131361827;
@@ -9217,8 +9223,8 @@ namespace Tripplanner.Droid
 			// aapt resource value: 0x7f0a001b
 			public const int view_offset_helper = 2131361819;
 			
-			// aapt resource value: 0x7f0a00cb
-			public const int visible = 2131361995;
+			// aapt resource value: 0x7f0a00cd
+			public const int visible = 2131361997;
 			
 			// aapt resource value: 0x7f0a0045
 			public const int withText = 2131361861;
