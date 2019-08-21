@@ -60,16 +60,17 @@
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:gravity="center_vertical"
                     app:MvxBind="Visibility IsLocalStorageChosen, Converter=BoolToVisibility">
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Local storage export config"/>
-                    <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Export"/>
+                        android:text="Name"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        app:MvxBind="Text LocalBackupName"/>
                 </LinearLayout>
             <TextView
                 android:layout_width="match_parent"
@@ -131,4 +132,12 @@
                 android:background="#ddddd555"/>
         </LinearLayout>
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create backup"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        app:MvxBind="Click CreateBackupCommand"/>
 </LinearLayout>

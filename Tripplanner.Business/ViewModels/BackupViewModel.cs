@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Net.Sockets;
 using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Tripplanner.Business.Services;
 
@@ -13,11 +14,13 @@ namespace Tripplanner.Business.ViewModels
     public class BackupViewModel : ViewModelBase
     {
         private Dictionary<string, Expression<Func<bool>>> choiceMappings;
-        private IStorageService storageService;
+        private IBackupService backupService;
+        private INotificationService notificationService;
 
-        public BackupViewModel(IStorageService storageService)
+        public BackupViewModel(INotificationService notificationService, IBackupService backupService)
         {
-            this.storageService = storageService;
+            this.notificationService = notificationService;
+            this.backupService = backupService;
             choiceMappings = new Dictionary<string, Expression<Func<bool>>>
             {
                 {nameof(IsLocalStorageChosen), () => IsLocalStorageChosen},
@@ -30,6 +33,7 @@ namespace Tripplanner.Business.ViewModels
             SelectLocalStorageCommand = GetCommand(() => ToggleChoice(nameof(IsLocalStorageChosen), !IsLocalStorageChosen));
             SelectDropboxCommand = GetCommand(() => ToggleChoice(nameof(IsDropboxChosen), !IsDropboxChosen));
             SelectAmazonCommand = GetCommand(() => ToggleChoice(nameof(IsAmazonChosen), !IsAmazonChosen));
+            CreateBackupCommand = GetAsyncCommand(async () => await CreateBackup());
         }
 
         public ICommand SelectAllTripsCommand { get; }
@@ -37,6 +41,7 @@ namespace Tripplanner.Business.ViewModels
         public ICommand SelectLocalStorageCommand { get; }
         public ICommand SelectDropboxCommand { get; }
         public ICommand SelectAmazonCommand { get; }
+        public ICommand CreateBackupCommand { get; }
 
         private bool isAllTripsOptionSelected;
 
@@ -83,6 +88,17 @@ namespace Tripplanner.Business.ViewModels
             }
         }
 
+        private string _localBackupName;
+        public string LocalBackupName
+        {
+            get => _localBackupName;
+            set
+            {
+                _localBackupName = value;
+                RaisePropertyChanged(() => LocalBackupName);
+            }
+        }
+
         private void SelectAllTrips()
         {
             IsAllTripsOptionSelected = true;
@@ -109,6 +125,23 @@ namespace Tripplanner.Business.ViewModels
             if (prop != null && prop.PropertyType == typeof(bool))
             {
                 prop.SetValue(this, value);
+            }
+        }
+
+        private async Task CreateBackup()
+        {
+            var backupName = $"{(string.IsNullOrWhiteSpace(LocalBackupName) ? Constants.DefaultBackupFileName : LocalBackupName)}_{DateTime.Now:yyyyMMdd_hhmmss}";
+            if (IsAllTripsOptionSelected)
+            {
+                var succeed = await backupService.BackupAllTrips(backupName);
+                if (succeed)
+                {
+                    notificationService.ShowInfo($"Backup created successfully");
+                }
+            }
+            else
+            {
+                
             }
         }
     }
