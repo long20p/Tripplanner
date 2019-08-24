@@ -25,14 +25,19 @@ namespace Tripplanner.Droid.Services
 
         public string RootPath { get; }
 
-        public IEnumerable<string> GetFilesInFolder(string folder)
+        public IEnumerable<string> GetFilesInFolder(string folder, bool includeExtension = true)
         {
             var fullPath = Path.Combine(RootPath, folder);
             if (!Directory.Exists(fullPath))
                 return null;
 
             var dirInfo = new DirectoryInfo(fullPath);
-            return dirInfo.GetFiles().Select(x => x.Name);
+            return dirInfo.GetFiles().Select(x =>
+                includeExtension 
+                    ? x.Name 
+                    : string.IsNullOrEmpty(x.Extension) 
+                        ? x.Name 
+                        : x.Name.Substring(0, x.Name.LastIndexOf('.')));
         }
 
         public bool SaveTextFile(string relativeFilePath, string content)

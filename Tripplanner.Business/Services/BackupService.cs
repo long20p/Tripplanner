@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tripplanner.Business.Repositories;
@@ -51,6 +52,22 @@ namespace Tripplanner.Business.Services
         public Task<bool> BackupSelectedTrips(IEnumerable<Guid> tripIds, string backupName)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<IEnumerable<string>> GetBackupNames()
+        {
+            return await Task.Run(() =>
+            {
+                try
+                {
+                    return storageService.GetFilesInFolder(Constants.FolderBackup, false);
+                }
+                catch (Exception ex)
+                {
+                    //TODO: Logging...
+                    return null;
+                }
+            });
         }
     }
 }

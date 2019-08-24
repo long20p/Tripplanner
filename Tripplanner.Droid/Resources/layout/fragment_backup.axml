@@ -138,6 +138,6 @@
         android:layout_height="wrap_content"
         android:text="Create backup"
         android:layout_marginTop="10dp"
-        android:gravity="center"
+        android:layout_gravity="center"
         app:MvxBind="Click CreateBackupCommand"/>
 </LinearLayout>
