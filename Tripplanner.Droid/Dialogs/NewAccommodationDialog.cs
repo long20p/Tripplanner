@@ -20,11 +20,12 @@ namespace Tripplanner.Droid.Dialogs
     [Register(nameof(NewAccommodationDialog))]
     public class NewAccommodationDialog : DialogBase<NewAccommodationViewModel>
     {
+        protected override int DialogId => Resource.Layout.dialog_accommodation_entry;
+
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            base.OnCreateView(inflater, container, savedInstanceState);
+            var view = base.OnCreateView(inflater, container, savedInstanceState);
 
-            var view = this.BindingInflate(Resource.Layout.dialog_accommodation_entry, null);
             return view;
         }
     }

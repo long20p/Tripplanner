@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Tripplanner.Business.Repositories;
-using Newtonsoft.Json;
 using Tripplanner.Business.Configs;
+using Tripplanner.Business.Models;
+using Tripplanner.Business.Utils;
 
 namespace Tripplanner.Business.Services
 {
@@ -15,12 +15,15 @@ namespace Tripplanner.Business.Services
         private ITripRepository tripRepository;
         private IAccommodationRepository accommodationRepository;
         private IStorageService storageService;
+        private ISerializer serializer;
 
-        public BackupService(IStorageService storageService, ITripRepository tripRepository, IAccommodationRepository accommodationRepository)
+        public BackupService(IStorageService storageService, ITripRepository tripRepository,
+            IAccommodationRepository accommodationRepository, ISerializer serializer)
         {
             this.storageService = storageService;
             this.tripRepository = tripRepository;
             this.accommodationRepository = accommodationRepository;
+            this.serializer = serializer;
         }
 
         public async Task<bool> BackupAllTrips(string backupName)
@@ -29,8 +32,8 @@ namespace Tripplanner.Business.Services
             {
                 try
                 {
-                    var trips = JsonConvert.SerializeObject(tripRepository.GetAll());
-                    var accommodations = JsonConvert.SerializeObject(accommodationRepository.GetAll());
+                    var trips = serializer.Serialize(tripRepository.GetAll());
+                    var accommodations = serializer.Serialize(accommodationRepository.GetAll());
 
                     var archiveEntries = new List<ArchiveEntry>
                     {
@@ -67,6 +70,31 @@ namespace Tripplanner.Business.Services
                     //TODO: Logging...
                     return null;
                 }
+            });
+        }
+
+        public async Task RestoreFromLocalStorage(IEnumerable<ArchiveEntry> files)
+        {
+            await Task.Run(() =>
+            {
+                var tripFile = files.FirstOrDefault(x => x.Name == Constants.BackupTripsFileName);
+                var accommFile = files.FirstOrDefault(x => x.Name == Constants.BackupAccommodationsFileName);
+                var trips = serializer.Deserialize<IEnumerable<Trip>>(tripFile.Content as string);
+                var accommodations = serializer.Deserialize<IEnumerable<Accommodation>>(accommFile.Content as string);
+                tripRepository.AddOrUpdate(trips);
+                accommodationRepository.AddOrUpdate(accommodations);
+            });
+        }
+
+        public async Task<TripsExistenceCheckResult> CheckBackupTripExists(string backupName)
+        {
+            return await Task.Run(() =>
+            {
+                var entries = storageService.GetZipContents(Path.Combine(Constants.FolderBackup, $"{backupName}.zip"));
+                var tripFile = entries.FirstOrDefault(x => x.Name == Constants.BackupTripsFileName);
+                var trips = serializer.Deserialize<IEnumerable<Trip>>(tripFile.Content as string);
+                var exists = tripRepository.GetAll().Select(x => x.UniqueId).Intersect(trips.Select(x => x.UniqueId)).Any();
+                return new TripsExistenceCheckResult {AlreadyExists = exists, Entries = entries};
             });
         }
     }

@@ -7,6 +7,7 @@ using Android.Graphics;
 using Tripplanner.Business;
 using Tripplanner.Business.Configs;
 using Tripplanner.Business.Services;
+using Tripplanner.Business.Utils;
 using ImageFormat = Tripplanner.Business.Configs.ImageFormat;
 using Path = System.IO.Path;
 
@@ -105,6 +106,48 @@ namespace Tripplanner.Droid.Services
                     }
                 }
             }
+        }
+
+        public IEnumerable<ArchiveEntry> GetZipContents(string relativeFilePath)
+        {
+            var filePath = Path.Combine(RootPath, relativeFilePath);
+            if (!File.Exists(filePath))
+            {
+                return null;
+            }
+
+            var entries = new List<ArchiveEntry>();
+            using (var zipFile = new FileStream(filePath, FileMode.Open))
+            {
+                using (var archive = new ZipArchive(zipFile, ZipArchiveMode.Read))
+                {
+                    foreach (var entry in archive.Entries)
+                    {
+                        if (entry.IsText())
+                        {
+                            using (var reader = new StreamReader(entry.Open()))
+                            {
+                                var content = reader.ReadToEnd();
+                                entries.Add(new ArchiveEntry(entry.Name, ArchiveEntryType.Text, content));
+                            }
+                        }
+                        else
+                        {
+                            using (var reader = new MemoryStream())
+                            {
+                                using (var entryStream = entry.Open())
+                                {
+                                    entryStream.CopyTo(reader);
+                                    var content = reader.ToArray();
+                                    entries.Add(new ArchiveEntry(entry.Name, ArchiveEntryType.Binary, content));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return entries;
         }
 
         public bool SaveBitmapFile(string relativeFilePath, object content, ImageFormat format)

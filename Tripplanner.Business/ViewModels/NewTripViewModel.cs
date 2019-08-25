@@ -97,7 +97,7 @@ namespace Tripplanner.Business.ViewModels
         {
             var trip = new Trip
             {
-                TripId = Guid.NewGuid(),
+                UniqueId = Guid.NewGuid(),
                 Destination = Destination,
                 DateFrom = DateFrom,
                 DateTo = DateTo

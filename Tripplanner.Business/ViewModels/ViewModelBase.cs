@@ -36,6 +36,11 @@ namespace Tripplanner.Business.ViewModels
         {
             return new MvxCommand(execute, canExecute);
         }
+
+        protected ICommand GetCommand<TParam>(Action<TParam> execute, Func<TParam, bool> canExecute = null)
+        {
+            return new MvxCommand<TParam>(execute, canExecute);
+        }
     }
 
     public abstract class ViewModelBase : ViewModelBase<object>

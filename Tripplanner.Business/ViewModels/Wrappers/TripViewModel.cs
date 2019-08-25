@@ -25,7 +25,7 @@ namespace Tripplanner.Business.ViewModels.Wrappers
 
         public Trip Trip => trip;
         public string Destination => trip.Destination;
-        public string TripId => trip.TripId.ToString();
+        public string TripId => trip.UniqueId.ToString();
         public string Dates => $"{trip.DateFrom.ToString(Constants.DateFormat)} - {trip.DateTo.ToString(Constants.DateFormat)}";
 
         private void DeleteTrip()

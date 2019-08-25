@@ -67,7 +67,7 @@ namespace Tripplanner.Business.ViewModels
         {
             IsLoading = true;
             var all = await Task.Run(() =>
-                accommodationRepository.Where(x => x.TripId == Trip.TripId)
+                accommodationRepository.Where(x => x.TripId == Trip.UniqueId)
                     .Select(x => new AccommodationViewModel(x, Trip, accommodationRepository)).ToList());
             Accommodations = new ObservableCollection<AccommodationViewModel>(all);
             IsLoading = false;
@@ -77,7 +77,7 @@ namespace Tripplanner.Business.ViewModels
         {
             await NavigationService.Navigate<NewAccommodationViewModel, Action<Accommodation>>(a =>
             {
-                a.TripId = Trip.TripId;
+                a.TripId = Trip.UniqueId;
                 accommodationRepository.Add(a);
                 Accommodations.Add(new AccommodationViewModel(a, Trip, accommodationRepository));
                 RaisePropertyChanged(() => Accommodations);

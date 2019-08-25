@@ -4,12 +4,23 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <Mvx.MvxListView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Mvx.MvxListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
         app:MvxItemTemplate="@layout/fragment_restore_list_item"
-        app:MvxBind="ItemsSource Backups" />
+        app:MvxBind="ItemsSource Backups; ItemClick SelectBackupCommand" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Restore"
+            app:MvxBind="Click RestoreCommand; Enabled IsItemSelected"/>
+    </LinearLayout>
     <Syncfusion.Android.ProgressBar.SfCircularProgressBar
         android:id="@+id/fragment_restore_progress_bar"
         android:layout_width="150dp"

@@ -13,6 +13,7 @@ namespace Tripplanner.Business.Services
         string LoadTextFile(string relativeFilePath);
         bool DeleteTextFile(string relativeFilePath);
         void SaveZipFile(string relativeFilePath, IEnumerable<ArchiveEntry> entries);
+        IEnumerable<ArchiveEntry> GetZipContents(string relativeFilePath);
         string GetBitmapFullFilePath(string relativeFilePath);
         bool SaveBitmapFile(string relativeFilePath, object content, ImageFormat format);
         object LoadBitmapFile(string relativeFilePath);
