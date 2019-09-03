@@ -23,6 +23,9 @@ namespace Tripplanner.Business.ViewModels
                 case nameof(BackupViewModel):
                     NavigationService.Navigate<BackupViewModel>();
                     break;
+                case nameof(RestoreViewModel):
+                    NavigationService.Navigate<RestoreViewModel>();
+                    break;
                 case nameof(AboutViewModel):
                     NavigationService.Navigate<AboutViewModel>();
                     break;

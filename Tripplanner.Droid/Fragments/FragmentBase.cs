@@ -11,7 +11,7 @@ namespace Tripplanner.Droid.Fragments
 {
     public abstract class FragmentBase<T> : MvxFragment<T> where T : class, IMvxViewModel
     {
-        protected virtual int FragmentId { get; }
+        protected abstract int FragmentId { get; }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {

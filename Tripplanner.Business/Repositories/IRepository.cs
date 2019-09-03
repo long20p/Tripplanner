@@ -8,9 +8,13 @@ namespace Tripplanner.Business.Repositories
     public interface IRepository<T> where T : new()
     {
         bool Add(T entity);
-        T Get(int id);
+        T GetById(int id);
+        T GetByPredicate(Func<T, bool> predicate);
         IEnumerable<T> GetAll();
         IEnumerable<T> Where(Expression<Func<T, bool>> filter);
         bool Delete(T entity);
+        bool Update(T entity);
+        bool AddOrUpdate(IEnumerable<T> entities);
+        bool AddOrUpdateSingle(T entity);
     }
 }
