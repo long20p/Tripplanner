@@ -20,10 +20,11 @@ namespace Tripplanner.Droid.Dialogs
     [Register(nameof(DateSelectorDialog))]
     public class DateSelectorDialog : DialogBase<DateSelectorViewModel>
     {
+        protected override int DialogId => Resource.Layout.dialog_date_selector;
+
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            base.OnCreateView(inflater, container, savedInstanceState);
-            var view = this.BindingInflate(Resource.Layout.dialog_date_selector, null);
+            var view = base.OnCreateView(inflater, container, savedInstanceState);
 
             var calendar = view.FindViewById<CalendarView>(Resource.Id.dialog_date_selector_calendar);
             calendar.DateChange += (sender, e) =>

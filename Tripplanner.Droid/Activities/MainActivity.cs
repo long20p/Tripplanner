@@ -30,6 +30,7 @@ namespace Tripplanner.Droid.Activities
             {Resource.Id.nav_all_trips, nameof(AllTripsViewModel)},
             {Resource.Id.nav_settings, nameof(SettingsViewModel)},
             {Resource.Id.nav_backup, nameof(BackupViewModel)},
+            {Resource.Id.nav_restore, nameof(RestoreViewModel)},
             {Resource.Id.nav_about, nameof(AboutViewModel)}
         };
         private static Dictionary<string, int> viewModelToPageIdMappings = pageIdToViewModelMappings.ToDictionary(x => x.Value, x => x.Key);

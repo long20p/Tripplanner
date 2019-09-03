@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using SQLite;
 
 namespace Tripplanner.Business.Models
 {
-    public abstract class TripRelatedEntity : BaseEntity
+    public interface IUnique
     {
-        public Guid TripId { get; set; }
+        Guid UniqueId { get; }
     }
 }

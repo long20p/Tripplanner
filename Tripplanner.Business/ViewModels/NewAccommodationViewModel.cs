@@ -100,6 +100,7 @@ namespace Tripplanner.Business.ViewModels
 
             var accommodation = new Accommodation
             {
+                UniqueId = Guid.NewGuid(),
                 Address = Address,
                 From = DateFrom,
                 To = DateTo,

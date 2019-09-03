@@ -21,6 +21,11 @@ namespace Tripplanner.Business
                 .AsInterfaces()
                 .RegisterAsDynamic();
 
+            CreatableTypes()
+                .EndingWith("Service")
+                .AsInterfaces()
+                .RegisterAsDynamic();
+
             RegisterAppStart<MainViewModel>();
         }
     }

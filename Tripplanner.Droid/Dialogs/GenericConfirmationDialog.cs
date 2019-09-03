@@ -9,22 +9,20 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using MvvmCross.Droid.Support.V4;
-using MvvmCross.Platforms.Android.Binding.BindingContext;
-using MvvmCross.ViewModels;
+using MvvmCross.Platforms.Android.Presenters.Attributes;
 using Tripplanner.Business.ViewModels.Components;
 
 namespace Tripplanner.Droid.Dialogs
 {
-    public abstract class DialogBase<T> : MvxDialogFragment<T> where T : class, IMvxViewModel, IDismissibleComponent
+    [MvxDialogFragmentPresentation]
+    [Register(nameof(GenericConfirmationDialog))]
+    public class GenericConfirmationDialog : DialogBase<GenericConfirmationViewModel>
     {
-        protected abstract int DialogId { get; }
+        protected override int DialogId => Resource.Layout.dialog_generic_confirmation;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            base.OnCreateView(inflater, container, savedInstanceState);
-            var view = this.BindingInflate(DialogId, null);
-            ViewModel.OnFinish = Dismiss;
+            var view = base.OnCreateView(inflater, container, savedInstanceState);
 
             return view;
         }

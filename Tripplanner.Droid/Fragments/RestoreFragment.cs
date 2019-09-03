@@ -10,17 +10,16 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
-using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using Tripplanner.Business.ViewModels;
 
-namespace Tripplanner.Droid.Dialogs
+namespace Tripplanner.Droid.Fragments
 {
-    [MvxDialogFragmentPresentation]
-    [Register(nameof(NewAccommodationDialog))]
-    public class NewAccommodationDialog : DialogBase<NewAccommodationViewModel>
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.main_content_frame, true)]
+    [Register("tripplanner.droid.fragments.RestoreFragment")]
+    public class RestoreFragment : FragmentBase<RestoreViewModel>
     {
-        protected override int DialogId => Resource.Layout.dialog_accommodation_entry;
+        protected override int FragmentId => Resource.Layout.fragment_restore;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
