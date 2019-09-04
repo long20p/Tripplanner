@@ -1,4 +1,6 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Threading.Tasks;
+using System.Windows.Input;
 using Tripplanner.Business.Messages;
 using Tripplanner.Business.Models;
 using Tripplanner.Business.Repositories;
@@ -17,11 +19,26 @@ namespace Tripplanner.Business.ViewModels.Wrappers
             this.trip = trip;
             this.accommodationRepository = accommodationRepository;
             DeleteAccommodationCommand = GetCommand(DeleteAccommodation);
+            SelectEntryCommand = GetCommand(SelectEntry);
+            UpdateEntryCommand = GetAsyncCommand(async () => await UpdateEntry());
         }
 
         public ICommand DeleteAccommodationCommand { get; }
+        public ICommand SelectEntryCommand { get; }
+        public ICommand UpdateEntryCommand { get; }
 
         public Accommodation Accommodation => accommodation;
+
+        private bool _isSelected;
+        public bool IsSelected
+        {
+            get => _isSelected;
+            set
+            {
+                _isSelected = value;
+                RaisePropertyChanged(() => IsSelected);
+            }
+        }
 
         public string Dates => accommodation.UseTripDates
             ? $"{trip.DateFrom.ToString(Constants.DateFormat)} - {trip.DateTo.ToString(Constants.DateFormat)}"
@@ -30,7 +47,21 @@ namespace Tripplanner.Business.ViewModels.Wrappers
         private void DeleteAccommodation()
         {
             accommodationRepository.Delete(accommodation);
-            Messenger.Publish(new AccommodationDeletedMessage(this));
+            PublishEvent(new AccommodationDeletedMessage(this));
+        }
+
+        private void SelectEntry()
+        {
+            IsSelected = !IsSelected;
+        }
+
+        private async Task UpdateEntry()
+        {
+            await NavigationService.Navigate<NewAccommodationViewModel, Action<Accommodation>>(a =>
+            {
+                //accommodationRepository.AddOrUpdateSingle(a);
+                //notificationService.ShowInfo($"Entry for {a.Address} created");
+            });
         }
     }
 }

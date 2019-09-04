@@ -27,6 +27,8 @@ namespace Tripplanner.Business.ViewModels
         public ICommand AddCommand { get; }
         public ICommand CancelCommand { get; }
 
+        public string Name { get; set; }
+
         public string Address { get; set; }
 
         private DateTime? dateFrom;
@@ -101,6 +103,7 @@ namespace Tripplanner.Business.ViewModels
             var accommodation = new Accommodation
             {
                 UniqueId = Guid.NewGuid(),
+                Name = Name,
                 Address = Address,
                 From = DateFrom,
                 To = DateTo,

@@ -107,7 +107,7 @@ namespace Tripplanner.Business.ViewModels
 
             OnNavigateToTripDetails?.Invoke();
             await NavigationService.Navigate<TripDetailsViewModel, Trip>(trip);
-            Messenger.Publish(new NewTripCreatedMessage(this, trip));
+            PublishEvent(new NewTripCreatedMessage(this, trip));
         }
     }
 }

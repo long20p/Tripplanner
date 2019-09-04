@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using MvvmCross.Plugin.Messenger;
 using Tripplanner.Business.Messages;
 using Tripplanner.Business.Models;
 using Tripplanner.Business.Repositories;
@@ -26,7 +27,7 @@ namespace Tripplanner.Business.ViewModels
             this.accommodationRepository = accommodationRepository;
             this.notificationService = notificationService;
             CreateNewAccomItemCommand = GetAsyncCommand(async () => await CreateNewAccomItem());
-            Messenger.Subscribe<AccommodationDeletedMessage>(msg => RemoveAccommodation(msg.Accommodation));
+            SubscribeToEvent<AccommodationDeletedMessage>(msg => RemoveAccommodation(msg.Accommodation));
             IndeterminateLoading = true;
         }
 
