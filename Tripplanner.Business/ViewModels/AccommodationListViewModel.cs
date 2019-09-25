@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using MvvmCross.Plugin.Messenger;
 using Tripplanner.Business.Messages;
 using Tripplanner.Business.Models;
 using Tripplanner.Business.Repositories;
@@ -26,7 +27,7 @@ namespace Tripplanner.Business.ViewModels
             this.accommodationRepository = accommodationRepository;
             this.notificationService = notificationService;
             CreateNewAccomItemCommand = GetAsyncCommand(async () => await CreateNewAccomItem());
-            Messenger.Subscribe<AccommodationDeletedMessage>(msg => RemoveAccommodation(msg.Accommodation));
+            SubscribeToEvent<AccommodationDeletedMessage>(msg => RemoveAccommodation(msg.Accommodation));
             IndeterminateLoading = true;
         }
 
@@ -68,21 +69,26 @@ namespace Tripplanner.Business.ViewModels
             IsLoading = true;
             var all = await Task.Run(() =>
                 accommodationRepository.Where(x => x.TripId == Trip.UniqueId)
-                    .Select(x => new AccommodationViewModel(x, Trip, accommodationRepository)).ToList());
+                    .Select(x => new AccommodationViewModel(x, Trip, accommodationRepository, notificationService)).ToList());
             Accommodations = new ObservableCollection<AccommodationViewModel>(all);
             IsLoading = false;
         }
 
         private async Task CreateNewAccomItem()
         {
-            await NavigationService.Navigate<NewAccommodationViewModel, Action<Accommodation>>(a =>
+            var newAccomArgument = new AccommodationEditParam
             {
-                a.TripId = Trip.UniqueId;
-                accommodationRepository.Add(a);
-                Accommodations.Add(new AccommodationViewModel(a, Trip, accommodationRepository));
-                RaisePropertyChanged(() => Accommodations);
-                //notificationService.ShowInfo($"Entry for {a.Address} created");
-            });
+                EditAction = a =>
+                {
+                    a.TripId = Trip.UniqueId;
+                    accommodationRepository.Add(a);
+                    Accommodations.Add(new AccommodationViewModel(a, Trip, accommodationRepository, notificationService));
+                    RaisePropertyChanged(() => Accommodations);
+                    //notificationService.ShowInfo($"Entry for {a.Address} created");
+                }
+            };
+
+            await NavigationService.Navigate<AccommodationEditViewModel, AccommodationEditParam>(newAccomArgument);
         }
 
         private void RemoveAccommodation(AccommodationViewModel accommodation)

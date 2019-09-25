@@ -10,7 +10,7 @@ using Tripplanner.Business.Services;
 
 namespace Tripplanner.Business.Repositories
 {
-    public abstract class BaseRepository<T> : IRepository<T> where T : IUnique, ICopyable<T>, new()
+    public abstract class BaseRepository<T> : IRepository<T> where T : IUnique, new()
     {
         private readonly IStorageService storageService;
         private readonly SQLiteConnection database;
@@ -59,7 +59,7 @@ namespace Tripplanner.Business.Repositories
             return rowCount;
         }
 
-        public virtual bool AddOrUpdate(IEnumerable<T> entities)
+        public virtual bool AddOrReplace(IEnumerable<T> entities)
         {
             //var all = GetAll().ToList();
             try

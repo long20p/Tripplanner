@@ -15,6 +15,7 @@ using V4App = Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Support.V4;
+using MvvmCross.Plugin.Messenger;
 using Tripplanner.Business.Messages;
 using Tripplanner.Business.ViewModels;
 using Tripplanner.Droid.Fragments;
@@ -47,7 +48,8 @@ namespace Tripplanner.Droid.Activities
             //SetSupportActionBar(toolbar);
 
             Messenger.Subscribe<NewTripCreatedMessage>(message =>
-                Toast.MakeText(this, $"Trip to {message.Trip.Destination} created", ToastLength.Long).Show());
+                Toast.MakeText(this, $"Trip to {message.Trip.Destination} created", ToastLength.Long).Show(),
+                MvxReference.Strong);
 
             //FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             //fab.Click += FabOnClick;

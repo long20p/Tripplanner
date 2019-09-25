@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <GridLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:layout_columnWeight="4"
-        android:layout_gravity="center_vertical|fill_horizontal">
-        <TextView
-            android:layout_width="match_parent"
+        android:background="@android:color/holo_green_light"
+        app:MvxBind="Click SelectEntryCommand">
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:MvxBind="Text Accommodation.Address" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:MvxBind="Text Dates" />
-    </LinearLayout>
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_columnWeight="4"
+            android:layout_gravity="center_vertical|fill_horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:MvxBind="Text Accommodation.Name" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:MvxBind="Text Dates" />
+        </LinearLayout>
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,4 +33,25 @@
         android:layout_columnWeight="1"
         android:layout_gravity="center"
         app:MvxBind="Click DeleteAccommodationCommand"/>
-</GridLayout>
+    </GridLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:MvxBind="Visibility IsSelected, Converter=BoolToVisibility">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:MvxBind="Text Accommodation.Address" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:MvxBind="Text Accommodation.Note" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Update"
+            app:MvxBind="Click UpdateEntryCommand"/>
+    </LinearLayout>
+</LinearLayout>

@@ -14,7 +14,7 @@ namespace Tripplanner.Business.Repositories
         IEnumerable<T> Where(Expression<Func<T, bool>> filter);
         bool Delete(T entity);
         bool Update(T entity);
-        bool AddOrUpdate(IEnumerable<T> entities);
+        bool AddOrReplace(IEnumerable<T> entities);
         bool AddOrUpdateSingle(T entity);
     }
 }

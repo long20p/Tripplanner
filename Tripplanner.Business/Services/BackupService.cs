@@ -81,8 +81,8 @@ namespace Tripplanner.Business.Services
                 var accommFile = files.FirstOrDefault(x => x.Name == Constants.BackupAccommodationsFileName);
                 var trips = serializer.Deserialize<IEnumerable<Trip>>(tripFile.Content as string);
                 var accommodations = serializer.Deserialize<IEnumerable<Accommodation>>(accommFile.Content as string);
-                tripRepository.AddOrUpdate(trips);
-                accommodationRepository.AddOrUpdate(accommodations);
+                tripRepository.AddOrReplace(trips);
+                accommodationRepository.AddOrReplace(accommodations);
             });
         }
 
