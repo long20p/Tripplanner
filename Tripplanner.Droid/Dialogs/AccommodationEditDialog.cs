@@ -17,8 +17,8 @@ using Tripplanner.Business.ViewModels;
 namespace Tripplanner.Droid.Dialogs
 {
     [MvxDialogFragmentPresentation]
-    [Register(nameof(NewAccommodationDialog))]
-    public class NewAccommodationDialog : DialogBase<NewAccommodationViewModel>
+    [Register(nameof(AccommodationEditDialog))]
+    public class AccommodationEditDialog : DialogBase<AccommodationEditViewModel>
     {
         protected override int DialogId => Resource.Layout.dialog_accommodation_entry;
 

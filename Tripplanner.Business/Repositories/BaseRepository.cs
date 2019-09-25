@@ -59,7 +59,7 @@ namespace Tripplanner.Business.Repositories
             return rowCount;
         }
 
-        public virtual bool AddOrUpdate(IEnumerable<T> entities)
+        public virtual bool AddOrReplace(IEnumerable<T> entities)
         {
             //var all = GetAll().ToList();
             try

@@ -76,7 +76,7 @@
     <Compile Include="Dialogs\DateSelectorDialog.cs" />
     <Compile Include="Dialogs\DialogBase.cs" />
     <Compile Include="Dialogs\GenericConfirmationDialog.cs" />
-    <Compile Include="Dialogs\NewAccommodationDialog.cs" />
+    <Compile Include="Dialogs\AccommodationEditDialog.cs" />
     <Compile Include="Fragments\AboutFragment.cs" />
     <Compile Include="Fragments\AllTripsFragment.cs" />
     <Compile Include="Fragments\BackupFragment.cs" />

@@ -4,6 +4,7 @@ using System.Windows.Input;
 using Tripplanner.Business.Messages;
 using Tripplanner.Business.Models;
 using Tripplanner.Business.Repositories;
+using Tripplanner.Business.Services;
 
 namespace Tripplanner.Business.ViewModels.Wrappers
 {
@@ -12,12 +13,15 @@ namespace Tripplanner.Business.ViewModels.Wrappers
         private Accommodation accommodation;
         private Trip trip;
         private readonly IAccommodationRepository accommodationRepository;
+        private INotificationService notificationService;
 
-        public AccommodationViewModel(Accommodation accommodation, Trip trip, IAccommodationRepository accommodationRepository)
+        public AccommodationViewModel(Accommodation accommodation, Trip trip,
+            IAccommodationRepository accommodationRepository, INotificationService notificationService)
         {
             this.accommodation = accommodation;
             this.trip = trip;
             this.accommodationRepository = accommodationRepository;
+            this.notificationService = notificationService;
             DeleteAccommodationCommand = GetCommand(DeleteAccommodation);
             SelectEntryCommand = GetCommand(SelectEntry);
             UpdateEntryCommand = GetAsyncCommand(async () => await UpdateEntry());
@@ -57,11 +61,18 @@ namespace Tripplanner.Business.ViewModels.Wrappers
 
         private async Task UpdateEntry()
         {
-            await NavigationService.Navigate<NewAccommodationViewModel, Action<Accommodation>>(a =>
+            var editArgument = new AccommodationEditParam
             {
-                //accommodationRepository.AddOrUpdateSingle(a);
-                //notificationService.ShowInfo($"Entry for {a.Address} created");
-            });
+                CurrentAccommodation = accommodation,
+                EditAction = a =>
+                {
+                    accommodationRepository.Update(a);
+                    RaisePropertyChanged(() => Accommodation);
+                    RaisePropertyChanged(() => Dates);
+                    notificationService.ShowInfo($"Entry for {a.Name} updated");
+                }
+            };
+            await NavigationService.Navigate<AccommodationEditViewModel, AccommodationEditParam>(editArgument);
         }
     }
 }

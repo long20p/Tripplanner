@@ -141,7 +141,6 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add"
-            app:MvxBind="Click AddCommand"/>
+            app:MvxBind="Text ActionName;Click EditCommand"/>
     </LinearLayout>
 </LinearLayout>
