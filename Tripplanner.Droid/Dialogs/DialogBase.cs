@@ -25,7 +25,7 @@ namespace Tripplanner.Droid.Dialogs
             base.OnCreateView(inflater, container, savedInstanceState);
             var view = this.BindingInflate(DialogId, null);
             ViewModel.OnFinish = Dismiss;
-
+            Dialog.SetCanceledOnTouchOutside(false);
             return view;
         }
     }
