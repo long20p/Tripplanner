@@ -5,6 +5,8 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Graphics;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -27,6 +29,17 @@ namespace Tripplanner.Droid.Dialogs
             ViewModel.OnFinish = Dismiss;
             Dialog.SetCanceledOnTouchOutside(false);
             return view;
+        }
+
+        public override void OnResume()
+        {
+            var size = new Point();
+            var display = Dialog.Window.WindowManager.DefaultDisplay;
+            display.GetSize(size);
+            Dialog.Window.SetLayout((int)(size.X * 0.85), ViewGroup.LayoutParams.WrapContent);
+            Dialog.Window.SetGravity(GravityFlags.Center);
+            Dialog.Window.SetBackgroundDrawable(new ColorDrawable(Color.Transparent));
+            base.OnResume();
         }
     }
 }
