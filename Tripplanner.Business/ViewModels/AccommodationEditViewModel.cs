@@ -117,11 +117,6 @@ namespace Tripplanner.Business.ViewModels
             set
             {
                 isIdenticalToTripDates = value;
-                if (isIdenticalToTripDates)
-                {
-                    DateFrom = null;
-                    DateTo = null;
-                }
                 RaisePropertyChanged(() => IsIdenticalToTripDates);
             }
         }
@@ -151,8 +146,8 @@ namespace Tripplanner.Business.ViewModels
 
             accommodationEditArgument.CurrentAccommodation.Name = Name;
             accommodationEditArgument.CurrentAccommodation.Address = Address;
-            accommodationEditArgument.CurrentAccommodation.From = DateFrom;
-            accommodationEditArgument.CurrentAccommodation.To = DateTo;
+            accommodationEditArgument.CurrentAccommodation.From = IsIdenticalToTripDates ? null : DateFrom;
+            accommodationEditArgument.CurrentAccommodation.To = IsIdenticalToTripDates ? null : DateTo;
             accommodationEditArgument.CurrentAccommodation.UseTripDates = IsIdenticalToTripDates;
             accommodationEditArgument.CurrentAccommodation.Note = Note;
 
@@ -167,7 +162,7 @@ namespace Tripplanner.Business.ViewModels
 
         private bool Validate()
         {
-            return !string.IsNullOrWhiteSpace(Address)
+            return !string.IsNullOrWhiteSpace(Name) && !string.IsNullOrWhiteSpace(Address)
                    && (IsIdenticalToTripDates || (DateFrom.HasValue && DateTo.HasValue));
         }
 
