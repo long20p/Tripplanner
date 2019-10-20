@@ -13,12 +13,14 @@ namespace Tripplanner.Business.ViewModels
         {
             GoToTransportCommand = GetAsyncCommand( async () => await GoToTransportation());
             GoToAccommodationCommand = GetAsyncCommand(async () => await GoToAccomodation());
+            GoToExchangeRateCommand = GetAsyncCommand(async () => await GoToExchangeRate());
         }
 
         public ICommand GoToTransportCommand { get; }
         public ICommand GoToAccommodationCommand { get; }
         public ICommand GoToActivitiesCommand { get; }
         public ICommand GoToCityTransportCommand { get; }
+        public ICommand GoToExchangeRateCommand { get; }
 
         public string TripDate => $"{base.Trip.DateFrom:dd/MM/yy} - {Trip.DateTo:dd/MM/yy}";
         public string Destination => Trip.Destination;
@@ -31,6 +33,11 @@ namespace Tripplanner.Business.ViewModels
         private async Task GoToAccomodation()
         {
             await NavigationService.Navigate<AccommodationListViewModel, Trip>(Trip);
+        }
+
+        private async Task GoToExchangeRate()
+        {
+            await NavigationService.Navigate<CurrencyExchangeViewModel, Trip>(Trip);
         }
     }
 }
