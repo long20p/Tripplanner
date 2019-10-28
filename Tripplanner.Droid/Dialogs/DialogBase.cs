@@ -22,6 +22,8 @@ namespace Tripplanner.Droid.Dialogs
     {
         protected abstract int DialogId { get; }
 
+        protected virtual double RelativeWidth => 0.85;
+
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             base.OnCreateView(inflater, container, savedInstanceState);
@@ -36,7 +38,7 @@ namespace Tripplanner.Droid.Dialogs
             var size = new Point();
             var display = Dialog.Window.WindowManager.DefaultDisplay;
             display.GetSize(size);
-            Dialog.Window.SetLayout((int)(size.X * 0.85), ViewGroup.LayoutParams.WrapContent);
+            Dialog.Window.SetLayout((int)(size.X * RelativeWidth), ViewGroup.LayoutParams.WrapContent);
             Dialog.Window.SetGravity(GravityFlags.Center);
             Dialog.Window.SetBackgroundDrawable(new ColorDrawable(Color.Transparent));
             base.OnResume();
