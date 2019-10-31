@@ -96,9 +96,8 @@ namespace Tripplanner.CurrencyService.Cache
                 try
                 {
                     var updatedRates = new Dictionary<string, decimal>(StringComparer.OrdinalIgnoreCase);
-                    var response = await httpClient.GetAsync(ExchangeRatesUrl);
-                    var content = await response.Content.ReadAsStringAsync();
-                    var json = JsonConvert.DeserializeObject(content) as JObject;
+                    var response = await httpClient.GetStringAsync(ExchangeRatesUrl);
+                    var json = JsonConvert.DeserializeObject(response) as JObject;
                     foreach (JProperty property in json["rates"])
                     {
                         updatedRates.Add(property.Name, Decimal.Parse(property.Value.ToString()));
@@ -131,9 +130,8 @@ namespace Tripplanner.CurrencyService.Cache
                 try
                 {
                     var updatedNames = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-                    var response = await httpClient.GetAsync(CurrencyListUrl);
-                    var content = await response.Content.ReadAsStringAsync();
-                    var json = JsonConvert.DeserializeObject(content) as JObject;
+                    var response = await httpClient.GetStringAsync(CurrencyListUrl);
+                    var json = JsonConvert.DeserializeObject(response) as JObject;
                     foreach (JProperty property in json.Properties())
                     {
                         updatedNames.Add(property.Name, property.Value.ToString());

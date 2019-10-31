@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Tripplanner.CurrencyService.Cache;
 
@@ -26,14 +27,27 @@ namespace Tripplanner.CurrencyService.Controllers
         }
 
         [HttpGet]
-        public ActionResult<decimal> Rates(string from, string to)
+        [Route("{fromCcy}/{toCcy}")]
+        public ActionResult<decimal> Rates(string fromCcy, string toCcy)
         {
-            if (from == null || to == null)
+            if (fromCcy == null || toCcy == null)
             {
                 return BadRequest("Either currency is missing or both");
             }
 
-            return ratesCacheManager.GetRate(from, to);
+            try
+            {
+                return ratesCacheManager.GetRate(fromCcy, toCcy);
+            }
+            catch (ArgumentException aex)
+            {
+                return BadRequest(aex.Message);
+            }
+            catch (Exception ex)
+            {
+                //TODO: Log ex
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
     }
 }
