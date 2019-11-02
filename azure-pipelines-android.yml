@@ -25,3 +25,10 @@ steps:
     projectFile: '**/*Droid*.csproj'
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'DockerHub_Long'
+    repository: 'phamlong/tripplanner'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
