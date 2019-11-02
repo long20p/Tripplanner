@@ -4,8 +4,9 @@ using System.Text;
 
 namespace Tripplanner.Business.Models
 {
-    public interface ICopyable<T>
+    public class Currency
     {
-        void CopyFrom(T other);
+        public string Name { get; set; }
+        public string Code { get; set; }
     }
 }

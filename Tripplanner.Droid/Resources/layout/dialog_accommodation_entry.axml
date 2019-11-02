@@ -3,27 +3,50 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_round_corner">
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:rowCount="3"
+        android:layout_gravity="fill"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:rowCount="4"
         android:columnCount="2">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:text="Address"
-            android:layout_gravity="center_vertical"/>
+            android:text="Name"
+            android:layout_gravity="top"/>
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
-            android:background="@drawable/edittext_round"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            style="@style/RoundCornerEditText"
+            app:MvxBind="Text Name"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:text="Address"
+            android:layout_gravity="top"/>
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            android:gravity="top|left"
+            android:lines="2"
+            android:layout_marginTop="10dp"
+            style="@style/MultilineRoundCornerEditText"
             app:MvxBind="Text Address"/>
 
         <LinearLayout
@@ -38,7 +61,8 @@
                 android:layout_height="wrap_content"
                 android:rowCount="2"
                 android:columnCount="3"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                app:MvxBind="Visibility IsIdenticalToTripDates, Converter=InversedBoolToVisibility">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -54,7 +78,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/edittext_round"
+                    style="@style/RoundCornerEditText"
                     app:MvxBind="Text DateFromText; IsEnabled IsIdenticalToTripDates, Converter=InversedBool" />
                 <ImageButton
                     android:layout_width="40dp"
@@ -80,7 +104,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/edittext_round"
+                    style="@style/RoundCornerEditText"
                     app:MvxBind="Text DateToText; IsEnabled IsIdenticalToTripDates, Converter=InversedBool"/>
                 <ImageButton
                     android:layout_width="40dp"
@@ -103,29 +127,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Note"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="top"/>
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_gravity="fill"
-            android:background="@drawable/edittext_round"
+            android:maxLength ="1000" 
+            android:gravity="top|left"
+            style="@style/MultilineRoundCornerEditText"
             app:MvxBind="Text Note"/>
     </GridLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:layout_marginBottom="15dp"
+        android:gravity="right">
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/button_height"
+            android:theme="@style/CancelButton"
             android:text="Cancel"
             app:MvxBind="Click CancelCommand"/>
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add"
-            app:MvxBind="Click AddCommand"/>
+            android:layout_height="@dimen/button_height"
+            android:theme="@style/NormalButton"
+            android:layout_marginRight="15dp"
+            app:MvxBind="Text ActionName;Click EditCommand"/>
     </LinearLayout>
 </LinearLayout>

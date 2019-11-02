@@ -31,7 +31,7 @@ namespace Tripplanner.Business.ViewModels.Wrappers
         private void DeleteTrip()
         {
             tripRepository.Delete(trip);
-            Messenger.Publish(new TripDeletedMessage(this));
+            PublishEvent(new TripDeletedMessage(this));
         }
     }
 }

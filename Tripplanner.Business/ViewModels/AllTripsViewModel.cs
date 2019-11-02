@@ -23,8 +23,8 @@ namespace Tripplanner.Business.ViewModels
             this.tripRepository = tripRepository;
             this.dispatcherService = dispatcherService;
             SelectTripCommand = GetAsyncCommand<TripViewModel>(async trip => await SelectTrip(trip));
-            Messenger.Subscribe<NewTripCreatedMessage>( msg => AddTrip(msg.Trip));
-            Messenger.Subscribe<TripDeletedMessage>( msg => RemoveTrip(msg.Trip));
+            SubscribeToEvent<NewTripCreatedMessage>( msg => AddTrip(msg.Trip));
+            SubscribeToEvent<TripDeletedMessage>( msg => RemoveTrip(msg.Trip));
             IndeterminateLoading = true;
         }
 

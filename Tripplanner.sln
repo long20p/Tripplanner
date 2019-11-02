@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tripplanner.Business", "Tri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tripplanner.DatabaseDesign", "Tripplanner.DatabaseDesign\Tripplanner.DatabaseDesign.csproj", "{53C90BE0-9FB1-446A-A650-2B0E889DB836}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tripplanner.CurrencyService", "Tripplanner.CurrencyService\Tripplanner.CurrencyService.csproj", "{5DBAA2E1-81AC-43B7-BB2D-72B8A0D4B565}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{53C90BE0-9FB1-446A-A650-2B0E889DB836}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53C90BE0-9FB1-446A-A650-2B0E889DB836}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53C90BE0-9FB1-446A-A650-2B0E889DB836}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DBAA2E1-81AC-43B7-BB2D-72B8A0D4B565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DBAA2E1-81AC-43B7-BB2D-72B8A0D4B565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DBAA2E1-81AC-43B7-BB2D-72B8A0D4B565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DBAA2E1-81AC-43B7-BB2D-72B8A0D4B565}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

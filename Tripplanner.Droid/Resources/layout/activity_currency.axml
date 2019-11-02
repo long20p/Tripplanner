@@ -3,8 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffe0e0e0">
+    android:layout_height="match_parent">
     <FrameLayout 
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -14,8 +13,8 @@
             android:divider="@android:color/transparent"
             android:dividerHeight="0dp"
             android:layout_marginVertical="3dp"
-            app:MvxItemTemplate="@layout/fragment_accommodation_list_item"
-            app:MvxBind="ItemsSource Accommodations" />
+            app:MvxItemTemplate="@layout/fragment_currency_list_item"
+            app:MvxBind="ItemsSource ExchangeRates" />
         <Syncfusion.Android.ProgressBar.SfCircularProgressBar
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -26,8 +25,16 @@
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/round_refresh"
+        app:MvxBind="Click RefreshRatesCommand; Visibility IsLoading,Converter=InversedBoolToVisibility"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="20dp"
         app:srcCompat="@drawable/baseline_add"
-        app:MvxBind="Click CreateNewAccomItemCommand; Visibility IsLoading,Converter=InversedBoolToVisibility"/>
+        app:MvxBind="Click AddNewCurrencyPairCommand; Visibility IsLoading,Converter=InversedBoolToVisibility"/>
 </android.support.design.widget.CoordinatorLayout>

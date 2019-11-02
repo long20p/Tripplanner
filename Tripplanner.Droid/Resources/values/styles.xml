@@ -6,9 +6,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name="buttonStyle">@style/NormalButton</item>-->
     </style>
 
-    <style name="Tripplanner.AppTheme.NoActionBar">
+    <style name="Tripplanner.AppTheme.NoActionBar" parent="Tripplanner.AppTheme">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
@@ -23,4 +24,37 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!-- Button -->
+    <style name="NormalButton" parent="Widget.AppCompat.Button.Colored">
+      <item name="colorControlHighlight">@android:color/holo_blue_light</item>
+      <item name="colorButtonNormal">@color/colorAccent</item>
+      <item name="android:textColor">@android:color/white</item>
+      <!--<item name="android:layout_height">40dp</item>-->
+    </style>
+
+    <style name="DangerButton" parent="NormalButton">
+      <item name="colorControlHighlight">@android:color/holo_orange_dark</item>
+      <item name="colorButtonNormal">@android:color/holo_red_light</item>
+    </style>
+
+    <style name="CancelButton" parent="NormalButton">
+      <item name="colorControlHighlight">@color/cancelButtonHighlight</item>
+      <item name="colorButtonNormal">@color/cancelButtonNormal</item>
+    </style>
+
+    <!-- EditText -->
+    <style name="RoundCornerEditText" parent="Widget.AppCompat.EditText">
+      <item name="android:paddingHorizontal">5dp</item>
+      <item name="android:paddingVertical">3dp</item>
+      <item name="android:background">@drawable/edittext_round</item>
+    </style>
+
+    <style name="MultilineRoundCornerEditText" parent="RoundCornerEditText">
+      <item name="android:inputType">textMultiLine</item>
+      <item name="android:scrollHorizontally">false</item>
+      <item name="android:scrollbars">vertical</item>
+      <item name="android:lines">4</item>
+      <item name="android:maxLines">8</item>
+      <item name="android:maxLength">300</item>
+    </style>
 </resources>

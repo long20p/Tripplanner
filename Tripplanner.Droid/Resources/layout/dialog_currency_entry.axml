@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_round_corner">
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:rowCount="4"
+        android:columnCount="2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="From" />
+        <mvvmcross.platforms.android.binding.views.MvxSpinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill"
+            app:MvxItemTemplate="@layout/fragment_currency_list_item"
+            app:MvxDropDownItemTemplate="@layout/fragment_currency_list_item"
+            app:MvxBind="ItemsSource Currencies; HandleItemSelected SelectSourceCurrencyCommand"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To" />
+        <mvvmcross.platforms.android.binding.views.MvxSpinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill"
+            app:MvxItemTemplate="@layout/fragment_currency_list_item"
+            app:MvxDropDownItemTemplate="@layout/fragment_currency_list_item"
+            app:MvxBind="ItemsSource Currencies; HandleItemSelected SelectTargetCurrencyCommand"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amount"
+            android:layout_marginRight="10dp" />
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            style="@style/RoundCornerEditText"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_columnSpan="2"
+            android:gravity="center">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/button_height"
+                android:theme="@style/CancelButton"
+                android:text="Cancel"
+                app:MvxBind="Click CancelCommand"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/button_height"
+                android:theme="@style/NormalButton"
+                android:text="Add"
+                app:MvxBind="Click AddCurrencyPairCommand"/>
+        </LinearLayout>
+    </GridLayout>
+</LinearLayout>

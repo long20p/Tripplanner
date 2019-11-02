@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Activities\AccommodationActivity.cs" />
     <Compile Include="Activities\ActivityBase.cs" />
+    <Compile Include="Activities\CurrencyActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
     <Compile Include="Activities\TransportationActivity.cs" />
@@ -73,10 +74,11 @@
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\InversedBoolConverter.cs" />
     <Compile Include="Converters\InversedBoolToVisibilityConverter.cs" />
+    <Compile Include="Dialogs\CurrencyPairDialog.cs" />
     <Compile Include="Dialogs\DateSelectorDialog.cs" />
     <Compile Include="Dialogs\DialogBase.cs" />
     <Compile Include="Dialogs\GenericConfirmationDialog.cs" />
-    <Compile Include="Dialogs\NewAccommodationDialog.cs" />
+    <Compile Include="Dialogs\AccommodationEditDialog.cs" />
     <Compile Include="Fragments\AboutFragment.cs" />
     <Compile Include="Fragments\AllTripsFragment.cs" />
     <Compile Include="Fragments\BackupFragment.cs" />
@@ -288,6 +290,30 @@
     <AndroidResource Include="Resources\layout\dialog_generic_confirmation.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\list_item_round_corner.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\dialog_round_corner.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_currency.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_currency_list_item.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\dialog_currency_entry.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\round_refresh.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

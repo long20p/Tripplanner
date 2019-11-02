@@ -5,20 +5,19 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Graphics;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
-using Android.Util;
 using Android.Views;
-using Android.Widget;
-using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using Tripplanner.Business.ViewModels;
 
 namespace Tripplanner.Droid.Dialogs
 {
     [MvxDialogFragmentPresentation]
-    [Register(nameof(NewAccommodationDialog))]
-    public class NewAccommodationDialog : DialogBase<NewAccommodationViewModel>
+    [Register(nameof(AccommodationEditDialog))]
+    public class AccommodationEditDialog : DialogBase<AccommodationEditViewModel>
     {
         protected override int DialogId => Resource.Layout.dialog_accommodation_entry;
 
