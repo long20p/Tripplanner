@@ -7,7 +7,7 @@ trigger:
 - develop
 
 pool:
-  vmImage: 'macos-latest'
+  vmImage: 'vs2019-win2016'
 
 variables:
   buildConfiguration: 'Release'
@@ -22,6 +22,6 @@ steps:
 
 - task: XamarinAndroid@1
   inputs:
-    projectFile: '**/*droid*.csproj'
+    projectFile: '**/*Droid*.csproj'
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
