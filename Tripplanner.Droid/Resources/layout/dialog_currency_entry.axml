@@ -22,6 +22,9 @@
         <mvvmcross.platforms.android.binding.views.MvxSpinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="fill"
+            app:MvxItemTemplate="@layout/fragment_currency_list_item"
+            app:MvxDropDownItemTemplate="@layout/fragment_currency_list_item"
             app:MvxBind="ItemsSource Currencies; HandleItemSelected SelectSourceCurrencyCommand"/>
 
         <TextView
@@ -31,6 +34,9 @@
         <mvvmcross.platforms.android.binding.views.MvxSpinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="fill"
+            app:MvxItemTemplate="@layout/fragment_currency_list_item"
+            app:MvxDropDownItemTemplate="@layout/fragment_currency_list_item"
             app:MvxBind="ItemsSource Currencies; HandleItemSelected SelectTargetCurrencyCommand"/>
 
         <TextView

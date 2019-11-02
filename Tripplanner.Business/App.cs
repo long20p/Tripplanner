@@ -24,7 +24,7 @@ namespace Tripplanner.Business
             CreatableTypes()
                 .EndingWith("Service")
                 .AsInterfaces()
-                .RegisterAsDynamic();
+                .RegisterAsSingleton();
 
             RegisterAppStart<MainViewModel>();
         }

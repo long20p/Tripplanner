@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
+using Tripplanner.Business.Models;
+using Tripplanner.Business.Services;
 using Tripplanner.Business.ViewModels.Components;
 
 namespace Tripplanner.Business.ViewModels
 {
     public class NewCurrencyPairViewModel : ViewModelBase, IDismissibleComponent
     {
-        public NewCurrencyPairViewModel()
+        private ICurrencyService currencyService;
+
+        public NewCurrencyPairViewModel(ICurrencyService currencyService)
         {
-            Currencies = new ObservableCollection<string> { "USD", "EUR", "JPY", "GBP", "SGD" };
+            this.currencyService = currencyService;
+            Currencies = new ObservableCollection<Currency>(currencyService.Currencies);
             SelectSourceCurrencyCommand = GetCommand(SelectSourceCurrency);
             SelectTargetCurrencyCommand = GetCommand(SelectTargetCurrency);
             AddCurrencyPairCommand = GetCommand(AddCurrencyPair);
@@ -24,8 +29,8 @@ namespace Tripplanner.Business.ViewModels
         public ICommand CancelCommand { get; }
         public Action OnFinish { get; set; }
 
-        private ObservableCollection<string> _currencies;
-        public ObservableCollection<string> Currencies
+        private ObservableCollection<Currency> _currencies;
+        public ObservableCollection<Currency> Currencies
         {
             get => _currencies;
             set
