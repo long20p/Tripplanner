@@ -9,8 +9,8 @@ FROM mcr.microsoft.com/dotnet/core/sdk:2.1-nanoserver-1809 AS build
 WORKDIR /src
 #COPY ["Tripplanner.CurrencyService.csproj", "Tripplanner.CurrencyService/"]
 #RUN dotnet restore "Tripplanner.CurrencyService/Tripplanner.CurrencyService.csproj"
-COPY . ./Tripplanner.CurrencyService/
-WORKDIR "/src/Tripplanner.CurrencyService"
+COPY . ./CurrencyService/
+WORKDIR "/src/CurrencyService"
 RUN dotnet build "Tripplanner.CurrencyService.csproj" -c Release -o /app
 
 FROM build AS publish
