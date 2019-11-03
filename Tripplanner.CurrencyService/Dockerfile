@@ -7,7 +7,7 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.1-nanoserver-1809 AS build
 WORKDIR /src
-COPY ["./Tripplanner.CurrencyService/Tripplanner.CurrencyService.csproj", "Tripplanner.CurrencyService/"]
+COPY ["./Tripplanner.CurrencyService/Tripplanner.CurrencyService.csproj", "./Tripplanner.CurrencyService/"]
 RUN dotnet restore "Tripplanner.CurrencyService/Tripplanner.CurrencyService.csproj"
 COPY . .
 WORKDIR "/src/Tripplanner.CurrencyService"
