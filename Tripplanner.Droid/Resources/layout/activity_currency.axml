@@ -12,8 +12,8 @@
             android:layout_height="match_parent"
             android:divider="@android:color/transparent"
             android:dividerHeight="0dp"
-            android:layout_marginVertical="3dp"
-            app:MvxItemTemplate="@layout/fragment_currency_list_item"
+            android:layout_marginVertical="10dp"
+            app:MvxItemTemplate="@layout/fragment_exchange_rate_list_item"
             app:MvxBind="ItemsSource ExchangeRates" />
         <Syncfusion.Android.ProgressBar.SfCircularProgressBar
             android:layout_width="150dp"

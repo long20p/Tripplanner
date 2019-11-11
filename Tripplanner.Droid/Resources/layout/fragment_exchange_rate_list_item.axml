@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:layout_gravity="fill"
+        android:columnCount="5">
+        <EditText
+            android:layout_width="90dp"
+            android:minHeight="30dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:numeric="decimal"
+            android:singleLine="true"
+            android:textSize="@dimen/exchange_rate_text_size"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            style="@style/RoundCornerEditText"
+            app:MvxBind="Text AmountInSource"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:textSize="@dimen/exchange_rate_text_size"
+            app:MvxBind="Text SourceCurrency"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:textSize="@dimen/exchange_rate_text_size"
+            android:text="="/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_columnWeight="1"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center"
+            android:textSize="@dimen/exchange_rate_text_size"
+            app:MvxBind="Text AmountInTarget"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:textSize="@dimen/exchange_rate_text_size"
+            app:MvxBind="Text TargetCurrency"/>
+    </GridLayout>
+</LinearLayout>
