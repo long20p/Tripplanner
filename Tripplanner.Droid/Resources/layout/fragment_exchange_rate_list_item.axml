@@ -4,53 +4,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <GridLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="10dp"
-        android:layout_gravity="fill"
-        android:columnCount="5">
-        <EditText
-            android:layout_width="90dp"
-            android:minHeight="30dp"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:numeric="decimal"
-            android:singleLine="true"
-            android:textSize="@dimen/exchange_rate_text_size"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp"
-            style="@style/RoundCornerEditText"
-            app:MvxBind="Text AmountInSource"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
-            android:layout_marginRight="10dp"
-            android:textSize="@dimen/exchange_rate_text_size"
-            app:MvxBind="Text SourceCurrency"/>
-        <TextView
+        android:columnCount="3">
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
-            android:layout_marginRight="10dp"
-            android:textSize="@dimen/exchange_rate_text_size"
-            android:text="="/>
-        <TextView
+            android:orientation="vertical"
+            android:layout_columnWeight="4"
+            android:layout_marginLeft="10dp">
+            <EditText
+                android:layout_width="120dp"
+                android:minHeight="30dp"
+                android:layout_height="wrap_content"
+                android:numeric="decimal"
+                android:singleLine="true"
+                android:textSize="@dimen/exchange_rate_text_size"
+                style="@style/RoundCornerEditText"
+                app:MvxBind="Text Rate.AmountInSource"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/exchange_rate_text_size"
+                app:MvxBind="Text Rate.SourceCurrency"/>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_columnWeight="1"
-            android:layout_marginRight="10dp"
-            android:layout_gravity="center"
-            android:textSize="@dimen/exchange_rate_text_size"
-            app:MvxBind="Text AmountInTarget"/>
-        <TextView
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_columnWeight="4">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/exchange_rate_text_size"
+                app:MvxBind="Text Rate.AmountInTarget"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/exchange_rate_text_size"
+                app:MvxBind="Text Rate.TargetCurrency"/>
+        </LinearLayout>
+        <GridLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:layout_gravity="center"
-            android:textSize="@dimen/exchange_rate_text_size"
-            app:MvxBind="Text TargetCurrency"/>
+            android:rowCount="2"
+            android:columnCount="1">
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_rowWeight="1"
+                android:background="@drawable/round_refresh"
+                app:MvxBind="Click UpdateRateCommand"/>
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_rowWeight="1"
+                android:background="@drawable/round_remove"
+                app:MvxBind="Click RemoveCurrencyPairCommand"/>
+        </GridLayout>
     </GridLayout>
 </LinearLayout>
