@@ -1,7 +1,7 @@
-# Develop build
+# Release build
 
 trigger:
-- develop
+- release/*
 
 pool:
   vmImage: 'windows-latest'
@@ -24,8 +24,10 @@ steps:
     msbuildArchitecture: 'x64'
     configuration: '$(buildConfiguration)'
 
-#- task: XamarinAndroid@1
-#  inputs:
-#    projectFile: '**/*Droid*.csproj'
-#    outputDirectory: '$(outputDirectory)'
-#    configuration: '$(buildConfiguration)'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'DockerHub_Long'
+    repository: 'phamlong/tripplanner_currencyservice'
+    command: 'buildAndPush'
+    Dockerfile: 'Tripplanner.CurrencyService/Dockerfile'
+    tags: build$(Build.BuildId)
