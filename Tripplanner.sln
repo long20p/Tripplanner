@@ -9,7 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tripplanner.Business", "Tri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tripplanner.DatabaseDesign", "Tripplanner.DatabaseDesign\Tripplanner.DatabaseDesign.csproj", "{53C90BE0-9FB1-446A-A650-2B0E889DB836}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tripplanner.CurrencyService", "Tripplanner.CurrencyService\Tripplanner.CurrencyService.csproj", "{5DBAA2E1-81AC-43B7-BB2D-72B8A0D4B565}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tripplanner.CurrencyService", "Tripplanner.CurrencyService\Tripplanner.CurrencyService.csproj", "{5DBAA2E1-81AC-43B7-BB2D-72B8A0D4B565}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{F9082523-E969-428D-A7C3-667E23FF82FC}"
+	ProjectSection(SolutionItems) = preProject
+		azure-pipelines.yml = azure-pipelines.yml
+		release-pipelines.yml = release-pipelines.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
