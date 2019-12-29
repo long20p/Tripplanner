@@ -29,6 +29,7 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'DockerHub_Long'
-    repository: 'phamlong/tripplanner'
+    repository: 'phamlong/tripplanner_currencyservice'
     command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    Dockerfile: 'Tripplanner.CurrencyService/Dockerfile'
+    tags: build$(Build.BuildId)
