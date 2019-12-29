@@ -1,0 +1,33 @@
+# Release build
+
+trigger:
+- release/*
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  buildConfiguration: 'Release'
+  outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
+
+steps:
+
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '**/*.sln'
+
+- task: MSBuild@1
+  inputs:
+    solution: '**/*.sln'
+    msbuildArchitecture: 'x64'
+    configuration: '$(buildConfiguration)'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'DockerHub_Long'
+    repository: 'phamlong/tripplanner_currencyservice'
+    command: 'buildAndPush'
+    Dockerfile: 'Tripplanner.CurrencyService/Dockerfile'
+    tags: build$(Build.BuildId)

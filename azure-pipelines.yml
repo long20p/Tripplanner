@@ -1,0 +1,31 @@
+# Develop build
+
+trigger:
+- develop
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  buildConfiguration: 'Release'
+  outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
+
+steps:
+
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '**/*.sln'
+
+- task: MSBuild@1
+  inputs:
+    solution: '**/*.sln'
+    msbuildArchitecture: 'x64'
+    configuration: '$(buildConfiguration)'
+
+#- task: XamarinAndroid@1
+#  inputs:
+#    projectFile: '**/*Droid*.csproj'
+#    outputDirectory: '$(outputDirectory)'
+#    configuration: '$(buildConfiguration)'
