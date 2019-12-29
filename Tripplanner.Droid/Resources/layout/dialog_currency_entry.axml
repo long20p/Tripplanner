@@ -6,38 +6,35 @@
     android:layout_height="match_parent"
     android:background="@drawable/dialog_round_corner">
     <GridLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="fill"
+        android:layout_gravity="center"
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="10dp"
-        android:rowCount="4"
+        android:rowCount="3"
         android:columnCount="2">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="From" />
         <mvvmcross.platforms.android.binding.views.MvxSpinner
-            android:layout_width="wrap_content"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="fill"
-            app:MvxItemTemplate="@layout/fragment_currency_list_item"
+            app:MvxItemTemplate="@layout/fragment_currency_selected_item"
             app:MvxDropDownItemTemplate="@layout/fragment_currency_list_item"
-            app:MvxBind="ItemsSource Currencies; HandleItemSelected SelectSourceCurrencyCommand"/>
+            app:MvxBind="ItemsSource Currencies; SelectedItem SelectedSourceCurrency"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="To" />
         <mvvmcross.platforms.android.binding.views.MvxSpinner
-            android:layout_width="wrap_content"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="fill"
-            app:MvxItemTemplate="@layout/fragment_currency_list_item"
+            app:MvxItemTemplate="@layout/fragment_currency_selected_item"
             app:MvxDropDownItemTemplate="@layout/fragment_currency_list_item"
-            app:MvxBind="ItemsSource Currencies; HandleItemSelected SelectTargetCurrencyCommand"/>
+            app:MvxBind="ItemsSource Currencies; SelectedItem SelectedTargetCurrency"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,9 +44,11 @@
         <EditText
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            style="@style/RoundCornerEditText"/>
-
-        <LinearLayout
+            android:numeric="decimal"
+            style="@style/RoundCornerEditText"
+            app:MvxBind="Text Amount"/>
+    </GridLayout>
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -68,5 +67,4 @@
                 android:text="Add"
                 app:MvxBind="Click AddCurrencyPairCommand"/>
         </LinearLayout>
-    </GridLayout>
 </LinearLayout>

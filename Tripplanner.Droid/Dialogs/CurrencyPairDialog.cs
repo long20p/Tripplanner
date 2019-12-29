@@ -21,7 +21,7 @@ namespace Tripplanner.Droid.Dialogs
     {
         protected override int DialogId => Resource.Layout.dialog_currency_entry;
 
-        protected override double RelativeWidth => 0.7;
+        protected override double RelativeWidth => 0.6;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {

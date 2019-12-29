@@ -11,8 +11,8 @@ namespace Tripplanner.Business.Services
 {
     public class CurrencyService : ICurrencyService
     {
-        private const string GetRateUrl = "http://10.0.0.1:32768/api/ExchangeRates/{0}/{1}";
-        private const string CurrencyNamesUrl = "http://10.0.0.1:32768/api/ExchangeRates/CurrencyNames";
+        private const string GetRateUrl = "https://currency-service.azurewebsites.net/api/ExchangeRates/{0}/{1}";
+        private const string CurrencyNamesUrl = "https://currency-service.azurewebsites.net/api/ExchangeRates/CurrencyNames";
 
         private readonly HttpClient httpClient;
 

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Tripplanner.Business.Models;
 using Tripplanner.Business.Services;
@@ -9,22 +11,21 @@ using Tripplanner.Business.ViewModels.Components;
 
 namespace Tripplanner.Business.ViewModels
 {
-    public class NewCurrencyPairViewModel : ViewModelBase, IDismissibleComponent
+    public class NewCurrencyPairViewModel : ViewModelBase<Action<ExchangeRate>>, IDismissibleComponent
     {
         private ICurrencyService currencyService;
+        private Action<ExchangeRate> addExchangeRate;
 
         public NewCurrencyPairViewModel(ICurrencyService currencyService)
         {
             this.currencyService = currencyService;
             Currencies = new ObservableCollection<Currency>(currencyService.Currencies);
-            SelectSourceCurrencyCommand = GetCommand(SelectSourceCurrency);
-            SelectTargetCurrencyCommand = GetCommand(SelectTargetCurrency);
-            AddCurrencyPairCommand = GetCommand(AddCurrencyPair);
+            AddCurrencyPairCommand = GetAsyncCommand(async () => await AddCurrencyPair());
             CancelCommand = GetCommand(Cancel);
+            SelectedSourceCurrency = Currencies.FirstOrDefault(c => c.Code == "USD");
+            SelectedTargetCurrency = Currencies.FirstOrDefault(c => c.Code == "EUR");
         }
 
-        public ICommand SelectSourceCurrencyCommand { get; }
-        public ICommand SelectTargetCurrencyCommand { get; }
         public ICommand AddCurrencyPairCommand { get; }
         public ICommand CancelCommand { get; }
         public Action OnFinish { get; set; }
@@ -40,24 +41,65 @@ namespace Tripplanner.Business.ViewModels
             }
         }
 
-        private void SelectSourceCurrency()
+        private string amount;
+        public string Amount
         {
+            get => amount;
+            set
+            {
+                amount = value;
+                RaisePropertyChanged(() => Amount);
+            }
 
         }
 
-        private void SelectTargetCurrency()
+        private Currency selectedSourceCurrency;
+        public Currency SelectedSourceCurrency
         {
+            get => selectedSourceCurrency;
+            set
+            {
+                selectedSourceCurrency = value;
+                RaisePropertyChanged(() => SelectedSourceCurrency);
+            }
 
         }
 
-        private void AddCurrencyPair()
+        private Currency selectedTargetCurrency;
+        public Currency SelectedTargetCurrency
         {
+            get => selectedTargetCurrency;
+            set
+            {
+                selectedTargetCurrency = value;
+                RaisePropertyChanged(() => SelectedTargetCurrency);
+            }
+        }
 
+        private async Task AddCurrencyPair()
+        {
+            var rateValue = await currencyService.GetRate(SelectedSourceCurrency.Code, SelectedTargetCurrency.Code);
+            var exchangeRate = new ExchangeRate
+            {
+                UniqueId = Guid.NewGuid(),
+                SourceCurrency = SelectedSourceCurrency.Code,
+                TargetCurrency = SelectedTargetCurrency.Code,
+                AmountInSource = decimal.Parse(Amount),
+                LastRate = rateValue,
+                LastRateValidAt = DateTime.Now
+            };
+            addExchangeRate(exchangeRate);
+            OnFinish();
         }
 
         private void Cancel()
         {
             OnFinish();
+        }
+
+        public override void Prepare(Action<ExchangeRate> parameter)
+        {
+            addExchangeRate = parameter;
         }
     }
 }
