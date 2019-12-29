@@ -1,7 +1,4 @@
-# Xamarin.Android
-# Build a Xamarin.Android project.
-# Add steps that test, sign, and distribute an app, save build artifacts, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/xamarin
+# Solution build
 
 trigger:
 - develop
@@ -14,22 +11,15 @@ variables:
   outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
 
 steps:
-- task: NuGetToolInstaller@1
 
-- task: NuGetCommand@2
+- task: MSBuild@1
   inputs:
-    restoreSolution: '**/*.sln'
-
-- task: XamarinAndroid@1
-  inputs:
-    projectFile: '**/*Droid*.csproj'
-    outputDirectory: '$(outputDirectory)'
+    solution: '**/*.sln'
+    msbuildArchitecture: 'x64'
     configuration: '$(buildConfiguration)'
 
-- task: Docker@2
-  inputs:
-    containerRegistry: 'DockerHub_Long'
-    repository: 'phamlong/tripplanner_currencyservice'
-    command: 'buildAndPush'
-    Dockerfile: 'Tripplanner.CurrencyService/Dockerfile'
-    tags: build$(Build.BuildId)
+#- task: XamarinAndroid@1
+#  inputs:
+#    projectFile: '**/*Droid*.csproj'
+#    outputDirectory: '$(outputDirectory)'
+#    configuration: '$(buildConfiguration)'
