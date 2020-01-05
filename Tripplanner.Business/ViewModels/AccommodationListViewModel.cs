@@ -24,7 +24,7 @@ namespace Tripplanner.Business.ViewModels
             this.dialogService = dialogService;
             this.accommodationRepository = accommodationRepository;
             this.notificationService = notificationService;
-            CreateNewAccomItemCommand = GetAsyncCommand(async () => await CreateNewAccomItem());
+            CreateNewAccomItemCommand = GetAsyncCommand(CreateNewAccomItem);
             SubscribeToEvent<AccommodationDeletedMessage>(msg => RemoveAccommodation(msg.Accommodation));
             IndeterminateLoading = true;
         }
