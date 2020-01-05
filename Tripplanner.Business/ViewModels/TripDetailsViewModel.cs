@@ -27,7 +27,7 @@ namespace Tripplanner.Business.ViewModels
 
         private async Task GoToTransportation()
         {
-            await NavigationService.Navigate<TransportationViewModel, Trip>(Trip);
+            await NavigationService.Navigate<TransportationListViewModel, Trip>(Trip);
         }
 
         private async Task GoToAccomodation()

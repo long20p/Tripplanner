@@ -14,13 +14,15 @@ using Tripplanner.Business.ViewModels;
 namespace Tripplanner.Droid.Activities
 {
     [Activity(Label = "TransportationActivity")]
-    public class TransportationActivity : ActivityBase<TransportationViewModel>
+    public class TransportationActivity : ActivityBase<TransportationListViewModel>
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.activity_transportation);
+
+            Title = "Get there";
         }
     }
 }
