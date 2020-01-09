@@ -65,7 +65,7 @@ namespace Tripplanner.Business.ViewModels
                     new LongDistanceTransport
                     { 
                         TransportType = LongDistanceTransportType.Flight, 
-                        OperationCompany = "Volotea", 
+                        TransportCompany = "Volotea", 
                         StartLocation = "Naples", 
                         EndLocation = "Palermo",
                         StartTime = new DateTime(2020, 1, 12, 12, 35, 00),
@@ -76,7 +76,7 @@ namespace Tripplanner.Business.ViewModels
                     new LongDistanceTransport
                     {
                         TransportType = LongDistanceTransportType.Ship,
-                        OperationCompany = "Garibaldi",
+                        TransportCompany = "Garibaldi",
                         StartLocation = "Catania",
                         EndLocation = "Salerno",
                         StartTime = new DateTime(2020, 1, 15, 23, 30, 00),
@@ -90,7 +90,18 @@ namespace Tripplanner.Business.ViewModels
 
         private async Task CreateNewTransportItem()
         {
+            var editParam = new TransportEditParam
+            {
+                EditAction = transport =>
+                {
+                    transport.TripId = Trip.UniqueId;
+                    transportRepository.Add(transport);
+                    Transports.Add(new TransportViewModel(transport, transportRepository));
+                    RaisePropertyChanged(() => Transports);
+                }
+            };
 
+            await NavigationService.Navigate<TransportEditViewModel, TransportEditParam>(editParam);
         }
     }
 }

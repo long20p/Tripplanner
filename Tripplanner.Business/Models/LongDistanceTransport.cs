@@ -7,7 +7,7 @@ namespace Tripplanner.Business.Models
     public class LongDistanceTransport : TripRelatedEntity
     {
         public LongDistanceTransportType TransportType { get; set; }
-        public string OperationCompany { get; set; }
+        public string TransportCompany { get; set; }
         public double Distance { get; set; }
         public string StartLocation { get; set; }
         public string EndLocation { get; set; }

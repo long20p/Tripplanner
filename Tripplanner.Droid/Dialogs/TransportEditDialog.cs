@@ -16,11 +16,9 @@ using Tripplanner.Business.ViewModels;
 namespace Tripplanner.Droid.Dialogs
 {
     [MvxDialogFragmentPresentation]
-    [Register(nameof(CurrencyPairDialog))]
-    public class CurrencyPairDialog : DialogBase<NewCurrencyPairViewModel>
+    [Register(nameof(TransportEditDialog))]
+    public class TransportEditDialog : DialogBase<TransportEditViewModel>
     {
-        protected override int DialogId => Resource.Layout.dialog_currency_entry;
-
-        protected override double RelativeWidth => 0.6;
+        protected override int DialogId => Resource.Layout.dialog_transport_entry;
     }
 }

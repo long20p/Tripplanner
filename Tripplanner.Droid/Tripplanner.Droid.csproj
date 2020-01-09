@@ -79,6 +79,7 @@
     <Compile Include="Dialogs\DialogBase.cs" />
     <Compile Include="Dialogs\GenericConfirmationDialog.cs" />
     <Compile Include="Dialogs\AccommodationEditDialog.cs" />
+    <Compile Include="Dialogs\TransportEditDialog.cs" />
     <Compile Include="Fragments\AboutFragment.cs" />
     <Compile Include="Fragments\AllTripsFragment.cs" />
     <Compile Include="Fragments\BackupFragment.cs" />
@@ -330,6 +331,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\fragment_transportation_list_item.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\dialog_transport_entry.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_transporttype_list_item.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -19,7 +19,7 @@ namespace Tripplanner.Business.ViewModels.Wrappers
 
         public LongDistanceTransport Transport => transport;
 
-        public string Title => $"{transport.OperationCompany} {transport.TransportType}";
+        public string Title => $"{transport.TransportCompany} {transport.TransportType}";
 
         public string Locations => $"{transport.StartLocation} - {transport.EndLocation}";
 
