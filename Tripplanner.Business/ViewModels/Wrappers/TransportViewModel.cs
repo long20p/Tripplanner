@@ -23,12 +23,12 @@ namespace Tripplanner.Business.ViewModels.Wrappers
 
         public string Locations => $"{transport.StartLocation} - {transport.EndLocation}";
 
-        public bool SameDay => transport.StartTime.Day == transport.EndTime.Day
-            && transport.StartTime.Month == transport.EndTime.Month
-            && transport.StartTime.Year == transport.EndTime.Year;
+        public bool SameDay => transport.DepartureDate.Day == transport.ArrivalDate.Day
+            && transport.DepartureDate.Month == transport.ArrivalDate.Month
+            && transport.DepartureDate.Year == transport.ArrivalDate.Year;
 
-        public string Time => $"{transport.StartTime:HH:mm:ss} - {transport.EndTime:HH:mm:ss}";
+        public string Time => $"{transport.DepartureDate:HH:mm:ss} - {transport.ArrivalDate:HH:mm:ss}";
 
-        public string Date => SameDay ? transport.StartTime.ToString("yyyy.MM.dd") : $"{transport.StartTime:yyyy.MM.dd} - {transport.EndTime:yyyy.MM.dd}";
+        public string Date => SameDay ? transport.DepartureDate.ToString("yyyy.MM.dd") : $"{transport.DepartureDate:yyyy.MM.dd} - {transport.ArrivalDate:yyyy.MM.dd}";
     }
 }
