@@ -6,7 +6,13 @@
     android:layout_height="wrap_content"
     android:background="@drawable/dialog_round_corner">
 
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="15dp">
+
+        <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Transport type"/>
@@ -204,13 +210,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Additional information"/>
-    <EditText
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:lines="3"
             android:maxLines="6"
+            android:gravity="top|left"
             style="@style/RoundCornerEditText"
-            app:MvxBind="Text AdditionalInfo"/>
+            app:MvxBind="Text AdditionalInfo" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -225,5 +232,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:MvxBind="Text ActionName;Click EditCommand"/>
+    </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>

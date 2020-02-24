@@ -232,11 +232,27 @@ namespace Tripplanner.Business.ViewModels
                 ActionName = "Update";
                 SelectedTransportType = editParam.CurrentTransport.TransportType.ToString();
                 TransportCompany = editParam.CurrentTransport.TransportCompany;
+
                 Distance = editParam.CurrentTransport.Distance;
                 StartLocation = editParam.CurrentTransport.StartLocation;
                 Destination = editParam.CurrentTransport.EndLocation;
+
                 DepartureDate = editParam.CurrentTransport.DepartureDate;
+                var departureTimeParts = editParam.CurrentTransport.DepartureTime?.Split(':');
+                if(departureTimeParts?.Length == 2)
+                {
+                    DepartureTimeHour = int.Parse(departureTimeParts[0]);
+                    DepartureTimeMinute = int.Parse(departureTimeParts[1]);
+                }
+
                 ArrivalDate = editParam.CurrentTransport.ArrivalDate;
+                var arrivalTimeParts = editParam.CurrentTransport.ArrivalTime?.Split(':');
+                if(arrivalTimeParts?.Length == 2)
+                {
+                    ArrivalTimeHour = int.Parse(arrivalTimeParts[0]);
+                    ArrivalTimeMinute = int.Parse(arrivalTimeParts[1]);
+                }
+
                 TicketNumber = editParam.CurrentTransport.TicketNumber;
                 AdditionalInfo = editParam.CurrentTransport.AdditionalInfo;
             }
@@ -259,7 +275,9 @@ namespace Tripplanner.Business.ViewModels
             editParam.CurrentTransport.StartLocation = StartLocation;
             editParam.CurrentTransport.EndLocation = Destination;
             editParam.CurrentTransport.DepartureDate = DepartureDate;
+            editParam.CurrentTransport.DepartureTime = $"{DepartureTimeHour}:{DepartureTimeMinute}";
             editParam.CurrentTransport.ArrivalDate = ArrivalDate;
+            editParam.CurrentTransport.ArrivalTime = $"{ArrivalTimeHour}:{ArrivalTimeMinute}";
             editParam.CurrentTransport.TicketNumber = TicketNumber;
             editParam.CurrentTransport.AdditionalInfo = AdditionalInfo;
 
