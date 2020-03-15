@@ -20,12 +20,5 @@ namespace Tripplanner.Droid.Dialogs
     public class AccommodationEditDialog : DialogBase<AccommodationEditViewModel>
     {
         protected override int DialogId => Resource.Layout.dialog_accommodation_entry;
-
-        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-        {
-            var view = base.OnCreateView(inflater, container, savedInstanceState);
-
-            return view;
-        }
     }
 }

@@ -5,8 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Tripplanner.Business.Messages;
 using Tripplanner.Business.Models;
 using Tripplanner.Business.Repositories;
+using Tripplanner.Business.Services;
 using Tripplanner.Business.ViewModels.Wrappers;
 
 namespace Tripplanner.Business.ViewModels
@@ -14,11 +16,14 @@ namespace Tripplanner.Business.ViewModels
     public class TransportationListViewModel : TripAwareViewModelBase
     {
         private ITransportRepository transportRepository;
+        private INotificationService notificationService;
 
-        public TransportationListViewModel(ITransportRepository transportRepository)
+        public TransportationListViewModel(ITransportRepository transportRepository, INotificationService notificationService)
         {
             this.transportRepository = transportRepository;
+            this.notificationService = notificationService;
             CreateNewTransportItemCommand = GetAsyncCommand(CreateNewTransportItem);
+            SubscribeToEvent<TransportDeletedMessage>(msg => RemoveTransportItem(msg.Transport));
             IndeterminateLoading = true;
         }
 
@@ -57,40 +62,33 @@ namespace Tripplanner.Business.ViewModels
         private async Task LoadTransportsForTrip()
         {
             IsLoading = true;
-            //var all = await Task.Run(() => transportRepository.Where(x => x.TripId == Trip.UniqueId)
-            //.Select(x => new TransportViewModel(x, transportRepository)).ToList());
-            var all = new List<TransportViewModel>
-            {
-                new TransportViewModel(
-                    new LongDistanceTransport
-                    { 
-                        TransportType = LongDistanceTransportType.Flight, 
-                        OperationCompany = "Volotea", 
-                        StartLocation = "Naples", 
-                        EndLocation = "Palermo",
-                        StartTime = new DateTime(2020, 1, 12, 12, 35, 00),
-                        EndTime = new DateTime(2020, 1, 12, 14, 05, 00)
-                    },
-                    transportRepository),
-                new TransportViewModel(
-                    new LongDistanceTransport
-                    {
-                        TransportType = LongDistanceTransportType.Ship,
-                        OperationCompany = "Garibaldi",
-                        StartLocation = "Catania",
-                        EndLocation = "Salerno",
-                        StartTime = new DateTime(2020, 1, 15, 23, 30, 00),
-                        EndTime = new DateTime(2020, 1, 16, 9, 00, 00)
-                    },
-                    transportRepository)
-            };
+            var all = await Task.Run(() => transportRepository.Where(x => x.TripId == Trip.UniqueId)
+            .Select(x => new TransportViewModel(x, transportRepository, notificationService)).ToList());
+
             Transports = new ObservableCollection<TransportViewModel>(all);
             IsLoading = false;
         }
 
         private async Task CreateNewTransportItem()
         {
+            var editParam = new TransportEditParam
+            {
+                EditAction = transport =>
+                {
+                    transport.TripId = Trip.UniqueId;
+                    transportRepository.Add(transport);
+                    Transports.Add(new TransportViewModel(transport, transportRepository, notificationService));
+                    RaisePropertyChanged(() => Transports);
+                }
+            };
 
+            await NavigationService.Navigate<TransportEditViewModel, TransportEditParam>(editParam);
+        }
+
+        private void RemoveTransportItem(TransportViewModel transport)
+        {
+            Transports.Remove(transport);
+            RaisePropertyChanged(() => Transports);
         }
     }
 }
