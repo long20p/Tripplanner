@@ -67,6 +67,7 @@
     <Compile Include="Activities\AccommodationActivity.cs" />
     <Compile Include="Activities\ActivityBase.cs" />
     <Compile Include="Activities\CurrencyActivity.cs" />
+    <Compile Include="Activities\GuideActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
     <Compile Include="Activities\TransportationActivity.cs" />
@@ -341,6 +342,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\fragment_transporttype_list_item.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_guide.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
