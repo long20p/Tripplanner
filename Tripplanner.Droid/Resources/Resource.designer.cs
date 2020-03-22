@@ -9224,13 +9224,10 @@ namespace Tripplanner.Droid
 			public const int visible = 2131230935;
 			
 			// aapt resource value: 0x7F0800D8
-			public const int wikitravelWebView = 2131230936;
+			public const int withText = 2131230936;
 			
 			// aapt resource value: 0x7F0800D9
-			public const int withText = 2131230937;
-			
-			// aapt resource value: 0x7F0800DA
-			public const int wrap_content = 2131230938;
+			public const int wrap_content = 2131230937;
 			
 			static Id()
 			{
@@ -9524,64 +9521,67 @@ namespace Tripplanner.Droid
 			public const int fragment_exchange_rate_list_item = 2131427392;
 			
 			// aapt resource value: 0x7F0B0041
-			public const int fragment_new_trip = 2131427393;
+			public const int fragment_guide_list_item = 2131427393;
 			
 			// aapt resource value: 0x7F0B0042
-			public const int fragment_restore = 2131427394;
+			public const int fragment_new_trip = 2131427394;
 			
 			// aapt resource value: 0x7F0B0043
-			public const int fragment_restore_list_item = 2131427395;
+			public const int fragment_restore = 2131427395;
 			
 			// aapt resource value: 0x7F0B0044
-			public const int fragment_settings = 2131427396;
+			public const int fragment_restore_list_item = 2131427396;
 			
 			// aapt resource value: 0x7F0B0045
-			public const int fragment_transportation_list_item = 2131427397;
+			public const int fragment_settings = 2131427397;
 			
 			// aapt resource value: 0x7F0B0046
-			public const int fragment_transporttype_list_item = 2131427398;
+			public const int fragment_transportation_list_item = 2131427398;
 			
 			// aapt resource value: 0x7F0B0047
-			public const int mtrl_layout_snackbar = 2131427399;
+			public const int fragment_transporttype_list_item = 2131427399;
 			
 			// aapt resource value: 0x7F0B0048
-			public const int mtrl_layout_snackbar_include = 2131427400;
+			public const int mtrl_layout_snackbar = 2131427400;
 			
 			// aapt resource value: 0x7F0B0049
-			public const int nav_header_main = 2131427401;
+			public const int mtrl_layout_snackbar_include = 2131427401;
 			
 			// aapt resource value: 0x7F0B004A
-			public const int notification_action = 2131427402;
+			public const int nav_header_main = 2131427402;
 			
 			// aapt resource value: 0x7F0B004B
-			public const int notification_action_tombstone = 2131427403;
+			public const int notification_action = 2131427403;
 			
 			// aapt resource value: 0x7F0B004C
-			public const int notification_template_custom_big = 2131427404;
+			public const int notification_action_tombstone = 2131427404;
 			
 			// aapt resource value: 0x7F0B004D
-			public const int notification_template_icon_group = 2131427405;
+			public const int notification_template_custom_big = 2131427405;
 			
 			// aapt resource value: 0x7F0B004E
-			public const int notification_template_part_chronometer = 2131427406;
+			public const int notification_template_icon_group = 2131427406;
 			
 			// aapt resource value: 0x7F0B004F
-			public const int notification_template_part_time = 2131427407;
+			public const int notification_template_part_chronometer = 2131427407;
 			
 			// aapt resource value: 0x7F0B0050
-			public const int select_dialog_item_material = 2131427408;
+			public const int notification_template_part_time = 2131427408;
 			
 			// aapt resource value: 0x7F0B0051
-			public const int select_dialog_multichoice_material = 2131427409;
+			public const int select_dialog_item_material = 2131427409;
 			
 			// aapt resource value: 0x7F0B0052
-			public const int select_dialog_singlechoice_material = 2131427410;
+			public const int select_dialog_multichoice_material = 2131427410;
 			
 			// aapt resource value: 0x7F0B0053
-			public const int splash_screen = 2131427411;
+			public const int select_dialog_singlechoice_material = 2131427411;
 			
 			// aapt resource value: 0x7F0B0054
-			public const int support_simple_spinner_dropdown_item = 2131427412;
+			public const int splash_screen = 2131427412;
+			
+			// aapt resource value: 0x7F0B0055
+			public const int support_simple_spinner_dropdown_item = 2131427413;
 			
 			static Layout()
 			{

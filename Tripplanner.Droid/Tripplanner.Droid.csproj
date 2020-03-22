@@ -72,9 +72,11 @@
     <Compile Include="Activities\SplashActivity.cs" />
     <Compile Include="Activities\TransportationActivity.cs" />
     <Compile Include="Activities\TripDetailsActivity.cs" />
+    <Compile Include="Controls\BindableWebView.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\InversedBoolConverter.cs" />
     <Compile Include="Converters\InversedBoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\HtmlToTextConverter.cs" />
     <Compile Include="Dialogs\CurrencyPairDialog.cs" />
     <Compile Include="Dialogs\DateSelectorDialog.cs" />
     <Compile Include="Dialogs\DialogBase.cs" />
@@ -347,6 +349,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_guide.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_guide_list_item.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -24,9 +24,9 @@ namespace Tripplanner.Droid.Activities
             base.OnCreate(savedInstanceState);
             
             SetContentView(Resource.Layout.activity_guide);
-            guideView = FindViewById<WebView>(Resource.Id.wikitravelWebView);
-            ViewModel.LoadHtmlPage = RefreshWebView;
-            RefreshWebView(ViewModel.PageUrl);
+            //guideView = FindViewById<WebView>(Resource.Id.wikitravelWebView);
+            //ViewModel.LoadHtmlPage = RefreshWebView;
+            //RefreshWebView(ViewModel.PageUrl);
 
             Title = "Guide";
         }

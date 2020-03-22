@@ -12,7 +12,7 @@ using Tripplanner.Business.ViewModels.Wrappers;
 
 namespace Tripplanner.Business.ViewModels
 {
-    public class AccommodationListViewModel : TripAwareViewModelBase
+    public class AccommodationListViewModel : TripAwareViewModelBase, IDataLoader
     {
         private IDialogService dialogService;
         private INotificationService notificationService;
