@@ -18,7 +18,7 @@ namespace Tripplanner.Business.ViewModels
         public GuideViewModel(IGuideService guideService)
         {
             this.guideService = guideService;
-            RefreshHtmlPageCommand = GetCommand(RefreshHtmlPage);
+            RefreshHtmlPageCommand = GetAsyncCommand(RefreshHtmlPage);
             IndeterminateLoading = true;
         }
 
@@ -59,21 +59,17 @@ namespace Tripplanner.Business.ViewModels
             }
         }
 
-        public override Task Initialize()
+        public override async Task Initialize()
         {
-            LoadSections();
-            return base.Initialize();
+            await LoadSections();
+            await base.Initialize();
         }
 
-        private void LoadSections()
+        private async Task LoadSections()
         {
             IsLoading = true;
-            var res = guideService.GetAllSections(Destination).Result;
+            var res = await guideService.GetAllSections(Destination);
             res = res.Where(x => x.Level == 2);
-            res.ToList().ForEach(guide =>
-            {
-                guide.HtmlContent = guideService.GetSectionByIndex(guide.PageId, guide.Index).Result;
-            });
             Sections = new ObservableCollection<GuideSectionViewModel>(res.Select(x => new GuideSectionViewModel(x)));
             IsLoading = false;
         }
@@ -84,9 +80,9 @@ namespace Tripplanner.Business.ViewModels
             Destination = Trip.Destination;
         }
 
-        private void RefreshHtmlPage()
+        private async Task RefreshHtmlPage()
         {
-            LoadSections();
+            await LoadSections();
         }
     }
 }
