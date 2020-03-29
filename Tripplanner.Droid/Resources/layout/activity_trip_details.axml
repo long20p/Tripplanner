@@ -14,8 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:columnCount="2"
-        android:rowCount="2">
+        android:columnCount="2">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -92,24 +91,19 @@
                 android:layout_height="wrap_content"
                 android:text="Get around"/>
         </LinearLayout>
-    </GridLayout>
-
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:columnCount="4">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_gravity="fill"
             android:layout_margin="4dp"
             android:orientation="vertical"
             android:gravity="center"
             app:MvxBind="Click GoToExchangeRateCommand">
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
                 android:background="@drawable/money"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -120,14 +114,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_gravity="fill"
             android:layout_margin="4dp"
             android:orientation="vertical"
             android:gravity="center"
             app:MvxBind="Click GoToWeatherCommand">
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
                 android:background="@drawable/weather"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -138,14 +133,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_gravity="fill"
             android:layout_margin="4dp"
             android:orientation="vertical"
             android:gravity="center"
             app:MvxBind="Click GoToGuideCommand">
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
                 android:background="@drawable/guide"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -156,14 +152,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_gravity="fill"
             android:layout_margin="4dp"
             android:orientation="vertical"
             android:gravity="center"
             app:MvxBind="Click GoToAnythingElseCommand">
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
                 android:background="@drawable/miscellaneous"/>
             <TextView
                 android:layout_width="wrap_content"

@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:MvxBind="Text Section.Title;Click SelectSectionCommand"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:textStyle="bold" />
     <Tripplanner.Droid.Controls.BindableWebView
         android:layout_width="match_parent"
