@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -59,6 +60,9 @@ namespace Tripplanner.Business.Services
             {
                 html = html.Substring(sectionStart);
             }
+            html = Regex.Replace(html, "<[aA][^>]*>[Ee]dit</a>", "");
+            html = Regex.Replace(html, "<[aA][^>]*>", "<span>");
+            html = Regex.Replace(html, "</[aA]>", "</span>");
             return html;
         }
 

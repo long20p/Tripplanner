@@ -28,6 +28,11 @@
                 android:layout_gravity="right"
                 app:MvxBind="Click RefreshHtmlPageCommand;Enabled IsLoading,Converter=InversedBool"/>
         </GridLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_guide_wiki_license"
+            android:textStyle="italic" />
         <FrameLayout 
             android:layout_width="match_parent"
             android:layout_height="match_parent">
