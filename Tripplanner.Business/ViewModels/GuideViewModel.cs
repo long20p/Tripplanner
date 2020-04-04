@@ -59,12 +59,48 @@ namespace Tripplanner.Business.ViewModels
             }
         }
 
+        private bool isError;
+        public bool IsError
+        {
+            get => isError;
+            set 
+            { 
+                isError = value;
+                RaisePropertyChanged(() => IsError);
+            }
+        }
+
+        private string errorMessage;
+        public string ErrorMessage
+        {
+            get => errorMessage;
+            set 
+            { 
+                errorMessage = value;
+                RaisePropertyChanged(() => ErrorMessage);
+            }
+        }
+
+
         public async Task LoadSections()
         {
             IsLoading = true;
-            var res = await guideService.GetAllSections(Destination);
-            res = res.Where(x => x.Level == 2);
-            Sections = new ObservableCollection<GuideSectionViewModel>(res.Select(x => new GuideSectionViewModel(x)));
+            IsError = false;
+            try
+            {
+                var res = await guideService.GetAllSections(Destination);
+                Sections = new ObservableCollection<GuideSectionViewModel>(res.Select(x => new GuideSectionViewModel(x)));
+            }
+            catch (ApplicationException aex)
+            {
+                IsError = true;
+                ErrorMessage = aex.Message;
+            }
+            catch (Exception)
+            {
+                IsError = true;
+                ErrorMessage = "Something happened while looking for the destination. Can you try again later?";
+            }
             IsLoading = false;
         }
 

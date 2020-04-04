@@ -28,20 +28,36 @@
                 android:layout_gravity="right"
                 app:MvxBind="Click RefreshHtmlPageCommand;Enabled IsLoading,Converter=InversedBool"/>
         </GridLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/activity_guide_wiki_license"
-            android:textStyle="italic" />
+        
         <FrameLayout 
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <Mvx.MvxListView
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginVertical="5dp"
-                app:MvxItemTemplate="@layout/fragment_guide_list_item"
-                app:MvxBind="ItemsSource Sections" />
+                app:MvxBind="Visibility IsLoading,Converter=InversedBoolToVisibility">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:MvxBind="Text ErrorMessage;Visibility IsError,Converter=BoolToVisibility" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:MvxBind="Visibility IsError,Converter=InversedBoolToVisibility">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity_guide_wiki_license"
+                        android:textStyle="italic" />
+                    <Mvx.MvxListView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="5dp"
+                        app:MvxItemTemplate="@layout/fragment_guide_list_item"
+                        app:MvxBind="ItemsSource Sections" />
+                </LinearLayout>
+            </FrameLayout>
             <Syncfusion.Android.ProgressBar.SfCircularProgressBar
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"

@@ -33,15 +33,7 @@ namespace Tripplanner.Business.Services
                 return sections;
             }
 
-            try
-            {
-                sections = await GetSectionsFromApi(location);
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
+            sections = await GetSectionsFromApi(location);
 
             await SaveLocationToCache(location, sections);
 
@@ -94,15 +86,33 @@ namespace Tripplanner.Business.Services
             return string.Join("_", fileName.Split(Path.GetInvalidFileNameChars()));
         }
 
-        private async Task<IEnumerable<GuideSection>> GetSectionsFromApi(string location)
+        private async Task<IEnumerable<GuideSection>> GetSectionsFromApi(string location, int defaultLevel = 2)
         {
             var requestUrl = $"{BaseUrl}&page={location}&prop=sections";
             var result = await httpClient.GetStringAsync(requestUrl);
             var json = JsonConvert.DeserializeObject<JObject>(result);
+            if(json.TryGetValue("error", out var error))
+            {
+                var reason = error.Value<string>("code");
+                if(reason != null && reason == "missingtitle")
+                {
+                    throw new ApplicationException("The specified destination doesn't exist. You can try to change the seach term and try again.");
+                }
+                else
+                {
+                    throw new Exception("Unknown error");
+                }
+            }
+
             var rawSections = json["parse"]["sections"] as JArray;
             var sections = new List<GuideSection>();
             foreach (var item in rawSections)
             {
+                var level = item.Value<int>("level");
+                if(level != defaultLevel)
+                {
+                    continue;
+                }
                 var index = item.Value<int>("index");
                 var content = await GetSectionByIndex(location, index);
                 var section = new GuideSection
@@ -110,7 +120,7 @@ namespace Tripplanner.Business.Services
                     Id = item.Value<string>("anchor"),
                     Title = item.Value<string>("line"),
                     Index = index,
-                    Level = item.Value<int>("level"),
+                    Level = level,
                     PageId = item.Value<string>("fromtitle"),
                     HtmlContent = content
                 };
