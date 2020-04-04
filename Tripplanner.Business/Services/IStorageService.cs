@@ -8,6 +8,7 @@ namespace Tripplanner.Business.Services
     public interface IStorageService
     {
         string RootPath { get; }
+        bool FileExists(string relativeFilePath);
         IEnumerable<string> GetFilesInFolder(string folder, bool includeExtension = true);
         bool SaveTextFile(string relativeFilePath, string content);
         string LoadTextFile(string relativeFilePath);
