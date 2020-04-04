@@ -44,7 +44,7 @@ namespace Tripplanner.Business.ViewModels
 
         private async Task GoToGuide()
         {
-            await NavigationService.Navigate<GuideViewModel, Trip>(Trip);
+            await NavigationService.Navigate<GuideMainViewModel, Trip>(Trip);
         }
     }
 }

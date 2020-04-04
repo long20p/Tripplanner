@@ -14,27 +14,16 @@ using Tripplanner.Business.ViewModels;
 
 namespace Tripplanner.Droid.Activities
 {
-    [Activity(Label = "GuideActivity")]
-    public class GuideActivity : ActivityBase<GuideViewModel>
-    {
-        private WebView guideView;
-
-        protected override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
+    //[Activity(Label = "GuideActivity")]
+    //public class GuideActivity : ActivityBase<GuideViewModel>
+    //{
+    //    protected override void OnCreate(Bundle savedInstanceState)
+    //    {
+    //        base.OnCreate(savedInstanceState);
             
-            SetContentView(Resource.Layout.activity_guide);
-            //guideView = FindViewById<WebView>(Resource.Id.wikitravelWebView);
-            //ViewModel.LoadHtmlPage = RefreshWebView;
-            //RefreshWebView(ViewModel.PageUrl);
+    //        SetContentView(Resource.Layout.activity_guide);
 
-            Title = "Guide";
-        }
-
-        private void RefreshWebView(string url)
-        {
-            guideView.LoadUrl(url);
-            //guideView.LoadData(url, "text/html", null);
-        }
-    }
+    //        Title = "Guide";
+    //    }
+    //}
 }

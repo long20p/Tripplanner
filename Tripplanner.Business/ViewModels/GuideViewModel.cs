@@ -11,7 +11,7 @@ using Tripplanner.Business.ViewModels.Wrappers;
 
 namespace Tripplanner.Business.ViewModels
 {
-    public class GuideViewModel : TripAwareViewModelBase, IDataLoader
+    public class GuideViewModel : ViewModelBase, IDataLoader
     {
         private IGuideService guideService;
 
@@ -59,13 +59,7 @@ namespace Tripplanner.Business.ViewModels
             }
         }
 
-        public override async Task Initialize()
-        {
-            await LoadSections();
-            await base.Initialize();
-        }
-
-        private async Task LoadSections()
+        public async Task LoadSections()
         {
             IsLoading = true;
             var res = await guideService.GetAllSections(Destination);
@@ -74,11 +68,11 @@ namespace Tripplanner.Business.ViewModels
             IsLoading = false;
         }
 
-        public override void Prepare(Trip parameter)
-        {
-            base.Prepare(parameter);
-            Destination = Trip.Destination;
-        }
+        //public override void Prepare(Trip parameter)
+        //{
+        //    base.Prepare(parameter);
+        //    Destination = Trip.Destination;
+        //}
 
         private async Task RefreshHtmlPage()
         {

@@ -68,10 +68,12 @@
     <Compile Include="Activities\ActivityBase.cs" />
     <Compile Include="Activities\CurrencyActivity.cs" />
     <Compile Include="Activities\GuideActivity.cs" />
+    <Compile Include="Activities\GuideMainActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
     <Compile Include="Activities\TransportationActivity.cs" />
     <Compile Include="Activities\TripDetailsActivity.cs" />
+    <Compile Include="Adapters\TripplannerFragmentStatePagerAdapter.cs" />
     <Compile Include="Controls\BindableWebView.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\InversedBoolConverter.cs" />
@@ -86,10 +88,12 @@
     <Compile Include="Fragments\AboutFragment.cs" />
     <Compile Include="Fragments\AllTripsFragment.cs" />
     <Compile Include="Fragments\BackupFragment.cs" />
+    <Compile Include="Fragments\CustomGuideFragment.cs" />
     <Compile Include="Fragments\FragmentBase.cs" />
     <Compile Include="Fragments\NewTripFragment.cs" />
     <Compile Include="Fragments\RestoreFragment.cs" />
     <Compile Include="Fragments\SettingsFragment.cs" />
+    <Compile Include="Fragments\WikiGuideFragment.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -354,6 +358,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\fragment_guide_list_item.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_guide_main.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_guide_custom.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -3,5 +3,5 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
-    <string name="activity_guide_wiki_license">* Contens from Wikitravel are available under the CC-by-SA 3.0 license</string>
+    <string name="activity_guide_wiki_license">* Contents from Wikitravel are available under the CC-by-SA 3.0 license</string>
 </resources>
