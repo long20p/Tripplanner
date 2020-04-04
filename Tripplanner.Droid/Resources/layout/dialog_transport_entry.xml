@@ -1,0 +1,238 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_round_corner">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="15dp">
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Transport type"/>
+
+    <mvvmcross.platforms.android.binding.views.MvxSpinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:MvxItemTemplate="@layout/fragment_transporttype_list_item"
+            app:MvxDropDownItemTemplate="@layout/fragment_transporttype_list_item"
+            app:MvxBind="ItemsSource TransportTypes; SelectedItem SelectedTransportType"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Transport company"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            style="@style/RoundCornerEditText"
+            app:MvxBind="Text TransportCompany"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="From"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            style="@style/RoundCornerEditText"
+            app:MvxBind="Text StartLocation"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="To"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            style="@style/RoundCornerEditText"
+            app:MvxBind="Text Destination"/>
+
+    <!-- Departure -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Departure"/>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="5">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center_vertical"
+            android:text="Date"/>
+        <EditText
+            android:minWidth="60dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:maxLines="1"
+            style="@style/RoundCornerEditText"
+            app:MvxBind="Text Format('{0:dd.MM.yyyy}', DepartureDate)"/>
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/logo"
+            app:MvxBind="Click OpenDepartureCalendarCommand"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:text="Time"/>
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal"
+            android:columnCount="4">
+            <EditText
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:numeric="integer"
+                android:maxLength="2"
+                style="@style/RoundCornerEditText"
+                app:MvxBind="Text DepartureTimeHour"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"/>
+            <EditText
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:numeric="integer"
+                android:maxLength="2"
+                style="@style/RoundCornerEditText"
+                app:MvxBind="Text DepartureTimeMinute"/>
+            <mvvmcross.platforms.android.binding.views.MvxSpinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"               
+                app:MvxBind="ItemsSource MiddayIndicators; SelectedItem DepartureTimeMiddayIndicator"/>
+        </GridLayout>
+    </GridLayout>
+
+    <!-- Arrival -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Arrival"/>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="6">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center_vertical"
+            android:text="Date"/>
+        <EditText
+            android:minWidth="60dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:maxLines="1"
+            style="@style/RoundCornerEditText"
+            app:MvxBind="Text Format('{0:dd.MM.yyyy}', ArrivalDate)"/>
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/logo"
+            app:MvxBind="Click OpenArrivalCalendarCommand"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:text="Time"/>
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal"
+            android:columnCount="4">
+            <EditText
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:numeric="integer"
+                android:maxLength="2"
+                style="@style/RoundCornerEditText"
+                app:MvxBind="Text ArrivalTimeHour"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"/>
+            <EditText
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:numeric="integer"
+                android:maxLength="2"
+                style="@style/RoundCornerEditText"
+                app:MvxBind="Text ArrivalTimeMinute"/>
+            <mvvmcross.platforms.android.binding.views.MvxSpinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"               
+                app:MvxBind="ItemsSource MiddayIndicators; SelectedItem ArrivalTimeMiddayIndicator"/>
+        </GridLayout>
+    </GridLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ticket number"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            style="@style/RoundCornerEditText"
+            app:MvxBind="Text TicketNumber"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Additional information"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="3"
+            android:maxLines="6"
+            android:gravity="top|left"
+            style="@style/RoundCornerEditText"
+            app:MvxBind="Text AdditionalInfo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            app:MvxBind="Click CancelCommand"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:MvxBind="Text ActionName;Click EditCommand"/>
+    </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

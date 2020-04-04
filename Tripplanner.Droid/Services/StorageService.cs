@@ -26,6 +26,11 @@ namespace Tripplanner.Droid.Services
 
         public string RootPath { get; }
 
+        public bool FileExists(string relativeFilePath)
+        {
+            return File.Exists(Path.Combine(RootPath, relativeFilePath));
+        }
+
         public IEnumerable<string> GetFilesInFolder(string folder, bool includeExtension = true)
         {
             var fullPath = Path.Combine(RootPath, folder);
