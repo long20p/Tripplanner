@@ -28,20 +28,49 @@
                 android:layout_gravity="right"
                 app:MvxBind="Click RefreshHtmlPageCommand;Enabled IsLoading,Converter=InversedBool"/>
         </GridLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/activity_guide_wiki_license"
-            android:textStyle="italic" />
+        
         <FrameLayout 
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <Mvx.MvxListView
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginVertical="5dp"
-                app:MvxItemTemplate="@layout/fragment_guide_list_item"
-                app:MvxBind="ItemsSource Sections" />
+                app:MvxBind="Visibility IsLoading,Converter=InversedBoolToVisibility">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:MvxBind="Visibility IsError,Converter=BoolToVisibility">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:MvxBind="Text ErrorMessage" />
+                    <Mvx.MvxListView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:divider="@android:color/transparent"
+                        android:dividerHeight="0dp"
+                        app:MvxItemTemplate="@layout/fragment_guide_suggestion_list_item"
+                        app:MvxBind="ItemsSource PlaceSuggestions" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:MvxBind="Visibility IsError,Converter=InversedBoolToVisibility">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity_guide_wiki_license"
+                        android:textStyle="italic" />
+                    <Mvx.MvxListView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp"
+                        app:MvxItemTemplate="@layout/fragment_guide_section_list_item"
+                        app:MvxBind="ItemsSource Sections" />
+                </LinearLayout>
+            </FrameLayout>
             <Syncfusion.Android.ProgressBar.SfCircularProgressBar
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"

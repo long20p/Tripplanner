@@ -14,11 +14,11 @@ namespace Tripplanner.Business.ViewModels
         public GuideMainViewModel(IGuideService guideService)
         {
             this.guideService = guideService;
-            WikiGuideVM = new GuideViewModel(guideService);
+            WikiGuideVM = new WikiGuideViewModel(guideService);
             CustomGuideVM = new CustomGuideViewModel();
         }
 
-        public GuideViewModel WikiGuideVM { get; }
+        public WikiGuideViewModel WikiGuideVM { get; }
         public CustomGuideViewModel CustomGuideVM { get; }
 
         public override async Task Initialize()
