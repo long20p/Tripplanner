@@ -23,7 +23,6 @@ namespace Tripplanner.Business.ViewModels
         }
 
         protected IMvxNavigationService NavigationService { get; }
-        
 
         protected ICommand GetAsyncCommand(Func<Task> execute, Func<bool> canExecute = null)
         {
@@ -53,6 +52,11 @@ namespace Tripplanner.Business.ViewModels
         protected void SubscribeToEvent<TParam>(Action<TParam> action) where TParam : MessageBase
         {
             messenger.Subscribe(action, MvxReference.Strong);
+        }
+
+        protected TParam ResolveType<TParam>() where TParam : class
+        {
+            return Mvx.IoCProvider.Resolve<TParam>();
         }
     }
 

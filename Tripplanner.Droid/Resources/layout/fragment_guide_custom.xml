@@ -1,10 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Custom"/>
+        android:text="@string/guide_custom_header"/>
+    <Mvx.MvxListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:padding="10dp"
+        app:MvxItemTemplate="@layout/fragment_guide_custom_list_item"
+        app:MvxBind="ItemsSource Notes" />
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="5"
+                android:maxLines="5"
+                android:gravity="top|left"
+                style="@style/RoundCornerEditText"
+                app:MvxBind="Text NewEntryText"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                app:MvxBind="Click AddNewEntryCommand"/>
+    </LinearLayout>
 </LinearLayout>

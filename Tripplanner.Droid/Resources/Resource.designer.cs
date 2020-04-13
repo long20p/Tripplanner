@@ -9536,73 +9536,76 @@ namespace Tripplanner.Droid
 			public const int fragment_guide_custom = 2131427393;
 			
 			// aapt resource value: 0x7F0B0042
-			public const int fragment_guide_section_list_item = 2131427394;
+			public const int fragment_guide_custom_list_item = 2131427394;
 			
 			// aapt resource value: 0x7F0B0043
-			public const int fragment_guide_suggestion_list_item = 2131427395;
+			public const int fragment_guide_section_list_item = 2131427395;
 			
 			// aapt resource value: 0x7F0B0044
-			public const int fragment_guide_wiki = 2131427396;
+			public const int fragment_guide_suggestion_list_item = 2131427396;
 			
 			// aapt resource value: 0x7F0B0045
-			public const int fragment_new_trip = 2131427397;
+			public const int fragment_guide_wiki = 2131427397;
 			
 			// aapt resource value: 0x7F0B0046
-			public const int fragment_restore = 2131427398;
+			public const int fragment_new_trip = 2131427398;
 			
 			// aapt resource value: 0x7F0B0047
-			public const int fragment_restore_list_item = 2131427399;
+			public const int fragment_restore = 2131427399;
 			
 			// aapt resource value: 0x7F0B0048
-			public const int fragment_settings = 2131427400;
+			public const int fragment_restore_list_item = 2131427400;
 			
 			// aapt resource value: 0x7F0B0049
-			public const int fragment_transportation_list_item = 2131427401;
+			public const int fragment_settings = 2131427401;
 			
 			// aapt resource value: 0x7F0B004A
-			public const int fragment_transporttype_list_item = 2131427402;
+			public const int fragment_transportation_list_item = 2131427402;
 			
 			// aapt resource value: 0x7F0B004B
-			public const int mtrl_layout_snackbar = 2131427403;
+			public const int fragment_transporttype_list_item = 2131427403;
 			
 			// aapt resource value: 0x7F0B004C
-			public const int mtrl_layout_snackbar_include = 2131427404;
+			public const int mtrl_layout_snackbar = 2131427404;
 			
 			// aapt resource value: 0x7F0B004D
-			public const int nav_header_main = 2131427405;
+			public const int mtrl_layout_snackbar_include = 2131427405;
 			
 			// aapt resource value: 0x7F0B004E
-			public const int notification_action = 2131427406;
+			public const int nav_header_main = 2131427406;
 			
 			// aapt resource value: 0x7F0B004F
-			public const int notification_action_tombstone = 2131427407;
+			public const int notification_action = 2131427407;
 			
 			// aapt resource value: 0x7F0B0050
-			public const int notification_template_custom_big = 2131427408;
+			public const int notification_action_tombstone = 2131427408;
 			
 			// aapt resource value: 0x7F0B0051
-			public const int notification_template_icon_group = 2131427409;
+			public const int notification_template_custom_big = 2131427409;
 			
 			// aapt resource value: 0x7F0B0052
-			public const int notification_template_part_chronometer = 2131427410;
+			public const int notification_template_icon_group = 2131427410;
 			
 			// aapt resource value: 0x7F0B0053
-			public const int notification_template_part_time = 2131427411;
+			public const int notification_template_part_chronometer = 2131427411;
 			
 			// aapt resource value: 0x7F0B0054
-			public const int select_dialog_item_material = 2131427412;
+			public const int notification_template_part_time = 2131427412;
 			
 			// aapt resource value: 0x7F0B0055
-			public const int select_dialog_multichoice_material = 2131427413;
+			public const int select_dialog_item_material = 2131427413;
 			
 			// aapt resource value: 0x7F0B0056
-			public const int select_dialog_singlechoice_material = 2131427414;
+			public const int select_dialog_multichoice_material = 2131427414;
 			
 			// aapt resource value: 0x7F0B0057
-			public const int splash_screen = 2131427415;
+			public const int select_dialog_singlechoice_material = 2131427415;
 			
 			// aapt resource value: 0x7F0B0058
-			public const int support_simple_spinner_dropdown_item = 2131427416;
+			public const int splash_screen = 2131427416;
+			
+			// aapt resource value: 0x7F0B0059
+			public const int support_simple_spinner_dropdown_item = 2131427417;
 			
 			static Layout()
 			{
@@ -9806,43 +9809,46 @@ namespace Tripplanner.Droid
 			public const int fab_transformation_sheet_behavior = 2131623984;
 			
 			// aapt resource value: 0x7F0E0031
-			public const int hide_bottom_view_on_scroll_behavior = 2131623985;
+			public const int guide_custom_header = 2131623985;
 			
 			// aapt resource value: 0x7F0E0032
-			public const int library_name = 2131623986;
+			public const int hide_bottom_view_on_scroll_behavior = 2131623986;
 			
 			// aapt resource value: 0x7F0E0033
-			public const int mtrl_chip_close_icon_content_description = 2131623987;
+			public const int library_name = 2131623987;
 			
 			// aapt resource value: 0x7F0E0034
-			public const int navigation_drawer_close = 2131623988;
+			public const int mtrl_chip_close_icon_content_description = 2131623988;
 			
 			// aapt resource value: 0x7F0E0035
-			public const int navigation_drawer_open = 2131623989;
+			public const int navigation_drawer_close = 2131623989;
 			
 			// aapt resource value: 0x7F0E0036
-			public const int password_toggle_content_description = 2131623990;
+			public const int navigation_drawer_open = 2131623990;
 			
 			// aapt resource value: 0x7F0E0037
-			public const int path_password_eye = 2131623991;
+			public const int password_toggle_content_description = 2131623991;
 			
 			// aapt resource value: 0x7F0E0038
-			public const int path_password_eye_mask_strike_through = 2131623992;
+			public const int path_password_eye = 2131623992;
 			
 			// aapt resource value: 0x7F0E0039
-			public const int path_password_eye_mask_visible = 2131623993;
+			public const int path_password_eye_mask_strike_through = 2131623993;
 			
 			// aapt resource value: 0x7F0E003A
-			public const int path_password_strike_through = 2131623994;
+			public const int path_password_eye_mask_visible = 2131623994;
 			
 			// aapt resource value: 0x7F0E003B
-			public const int search_menu_title = 2131623995;
+			public const int path_password_strike_through = 2131623995;
 			
 			// aapt resource value: 0x7F0E003C
-			public const int status_bar_notification_info_overflow = 2131623996;
+			public const int search_menu_title = 2131623996;
 			
 			// aapt resource value: 0x7F0E003D
-			public const int view_scroll_translation_autohide_behavior = 2131623997;
+			public const int status_bar_notification_info_overflow = 2131623997;
+			
+			// aapt resource value: 0x7F0E003E
+			public const int view_scroll_translation_autohide_behavior = 2131623998;
 			
 			static String()
 			{
