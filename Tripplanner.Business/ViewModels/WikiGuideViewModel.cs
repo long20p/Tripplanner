@@ -8,18 +8,24 @@ using System.Windows.Input;
 using Tripplanner.Business.Models;
 using Tripplanner.Business.Services;
 using Tripplanner.Business.ViewModels.Wrappers;
+using Tripplanner.Business.Messages;
 
 namespace Tripplanner.Business.ViewModels
 {
-    public class GuideViewModel : ViewModelBase, IDataLoader
+    public class WikiGuideViewModel : ViewModelBase, IDataLoader
     {
         private IGuideService guideService;
 
-        public GuideViewModel(IGuideService guideService)
+        public WikiGuideViewModel(IGuideService guideService)
         {
             this.guideService = guideService;
             RefreshHtmlPageCommand = GetAsyncCommand(RefreshHtmlPage);
             IndeterminateLoading = true;
+            SubscribeToEvent<SearchSuggestionMessage>(async msg =>
+            {
+                Destination = msg.Suggestion;
+                await RefreshHtmlPage();
+            });
         }
 
         public ICommand RefreshHtmlPageCommand { get; }
@@ -81,6 +87,16 @@ namespace Tripplanner.Business.ViewModels
             }
         }
 
+        private ObservableCollection<GuideSuggestedPlaceViewModel> placeSuggestions;
+        public ObservableCollection<GuideSuggestedPlaceViewModel> PlaceSuggestions
+        {
+            get => placeSuggestions; 
+            set 
+            { 
+                placeSuggestions = value;
+                RaisePropertyChanged(() => PlaceSuggestions);
+            }
+        }
 
         public async Task LoadSections()
         {
@@ -94,7 +110,9 @@ namespace Tripplanner.Business.ViewModels
             catch (ApplicationException aex)
             {
                 IsError = true;
-                ErrorMessage = aex.Message;
+                ErrorMessage = $"{aex.Message} Here are some suggestions:";
+                var suggestions = await guideService.GetSuggestions(Destination);
+                PlaceSuggestions = new ObservableCollection<GuideSuggestedPlaceViewModel>(suggestions.Select(x => new GuideSuggestedPlaceViewModel(x)).ToList());
             }
             catch (Exception)
             {

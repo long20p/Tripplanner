@@ -10,5 +10,6 @@ namespace Tripplanner.Business.Services
     {
         Task<IEnumerable<GuideSection>> GetAllSections(string location);
         Task<string> GetSectionByIndex(string location, int index);
+        Task<IEnumerable<string>> GetSuggestions(string searchTerm);
     }
 }

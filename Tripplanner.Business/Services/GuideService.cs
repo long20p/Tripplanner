@@ -14,7 +14,7 @@ namespace Tripplanner.Business.Services
 {
     public class GuideService : IGuideService
     {
-        private const string BaseUrl = "https://wikitravel.org/wiki/en/api.php?action=parse&mobileformat=true&format=json";
+        private const string BaseUrl = "https://wikitravel.org/wiki/en/api.php?format=json";
         private const string GuideFolder = "Guides";
         private HttpClient httpClient;
         private IStorageService storageService;
@@ -42,7 +42,7 @@ namespace Tripplanner.Business.Services
 
         public async Task<string> GetSectionByIndex(string location, int index)
         {
-            var requestUrl = $"{BaseUrl}&page={location}&section={index}";
+            var requestUrl = $"{BaseUrl}&action=parse&mobileformat=true&page={location}&section={index}";
             var result = await httpClient.GetStringAsync(requestUrl);
             var json = JsonConvert.DeserializeObject<JObject>(result);
             var textObj = json["parse"]["text"];
@@ -56,6 +56,15 @@ namespace Tripplanner.Business.Services
             html = Regex.Replace(html, "<[aA][^>]*>", "<span>");
             html = Regex.Replace(html, "</[aA]>", "</span>");
             return html;
+        }
+
+        public async Task<IEnumerable<string>> GetSuggestions(string searchTerm)
+        {
+            var requestUrl = $"{BaseUrl}&action=opensearch&search={searchTerm}";
+            var result = await httpClient.GetStringAsync(requestUrl);
+            var json = JsonConvert.DeserializeObject<JArray>(result);
+            var terms = json[1] as JArray;
+            return terms.Select(x => x.ToString());
         }
 
         private async Task<IEnumerable<GuideSection>> GetSectionsFromCache(string location)
@@ -88,7 +97,7 @@ namespace Tripplanner.Business.Services
 
         private async Task<IEnumerable<GuideSection>> GetSectionsFromApi(string location, int defaultLevel = 2)
         {
-            var requestUrl = $"{BaseUrl}&page={location}&prop=sections";
+            var requestUrl = $"{BaseUrl}&action=parse&mobileformat=true&page={location}&prop=sections";
             var result = await httpClient.GetStringAsync(requestUrl);
             var json = JsonConvert.DeserializeObject<JObject>(result);
             if(json.TryGetValue("error", out var error))

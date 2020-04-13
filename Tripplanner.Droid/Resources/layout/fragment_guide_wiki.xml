@@ -36,10 +36,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:MvxBind="Visibility IsLoading,Converter=InversedBoolToVisibility">
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:MvxBind="Text ErrorMessage;Visibility IsError,Converter=BoolToVisibility" />
+                    android:orientation="vertical"
+                    app:MvxBind="Visibility IsError,Converter=BoolToVisibility">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:MvxBind="Text ErrorMessage" />
+                    <Mvx.MvxListView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:divider="@android:color/transparent"
+                        android:dividerHeight="0dp"
+                        app:MvxItemTemplate="@layout/fragment_guide_suggestion_list_item"
+                        app:MvxBind="ItemsSource PlaceSuggestions" />
+                </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -52,9 +65,9 @@
                         android:textStyle="italic" />
                     <Mvx.MvxListView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginVertical="5dp"
-                        app:MvxItemTemplate="@layout/fragment_guide_list_item"
+                        app:MvxItemTemplate="@layout/fragment_guide_section_list_item"
                         app:MvxBind="ItemsSource Sections" />
                 </LinearLayout>
             </FrameLayout>
