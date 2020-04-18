@@ -67,7 +67,6 @@
     <Compile Include="Activities\AccommodationActivity.cs" />
     <Compile Include="Activities\ActivityBase.cs" />
     <Compile Include="Activities\CurrencyActivity.cs" />
-    <Compile Include="Activities\GuideActivity.cs" />
     <Compile Include="Activities\GuideMainActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
@@ -352,12 +351,12 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_guide.xml">
+    <AndroidResource Include="Resources\layout\fragment_guide_wiki.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\fragment_guide_list_item.xml">
+    <AndroidResource Include="Resources\layout\fragment_guide_section_list_item.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -368,6 +367,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\fragment_guide_custom.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_guide_suggestion_list_item.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_guide_custom_list_item.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

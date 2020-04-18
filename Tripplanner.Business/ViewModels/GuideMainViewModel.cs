@@ -9,22 +9,20 @@ namespace Tripplanner.Business.ViewModels
 {
     public class GuideMainViewModel : TripAwareViewModelBase
     {
-        private IGuideService guideService;
-
-        public GuideMainViewModel(IGuideService guideService)
+        public GuideMainViewModel()
         {
-            this.guideService = guideService;
-            WikiGuideVM = new GuideViewModel(guideService);
-            CustomGuideVM = new CustomGuideViewModel();
+            WikiGuideVM = ResolveType<WikiGuideViewModel>();
+            CustomGuideVM = ResolveType<CustomGuideViewModel>();
         }
 
-        public GuideViewModel WikiGuideVM { get; }
+        public WikiGuideViewModel WikiGuideVM { get; }
         public CustomGuideViewModel CustomGuideVM { get; }
 
         public override async Task Initialize()
         {
             WikiGuideVM.Destination = Trip.Destination;
             await WikiGuideVM.LoadSections();
+            CustomGuideVM.LoadTripNotes(Trip);
             await base.Initialize();
         }
     }

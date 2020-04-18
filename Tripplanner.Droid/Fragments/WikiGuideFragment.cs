@@ -17,9 +17,9 @@ namespace Tripplanner.Droid.Fragments
 {
     //[MvxFragmentPresentation(typeof(GuideMainViewModel), Resource.Id.activity_guide_viewpager, true)]
     [Register("tripplanner.droid.fragments.WikiGuideFragment")]
-    public class WikiGuideFragment : FragmentBase<GuideViewModel>
+    public class WikiGuideFragment : FragmentBase<WikiGuideViewModel>
     {
-        protected override int FragmentId => Resource.Layout.activity_guide;
+        protected override int FragmentId => Resource.Layout.fragment_guide_wiki;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
