@@ -8,29 +8,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/guide_custom_header"/>
-    <Mvx.MvxListView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp"
-        android:padding="10dp"
-        app:MvxItemTemplate="@layout/fragment_guide_custom_list_item"
-        app:MvxBind="ItemsSource Notes" />
-    <LinearLayout
-            android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="fill">
+        <Mvx.MvxListView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <EditText
+            android:layout_height="match_parent"
+            android:layout_above="@id/fragment_guide_custom_bottom_edit"
+            android:layout_marginVertical="5dp"
+            android:padding="10dp"
+            app:MvxItemTemplate="@layout/fragment_guide_custom_list_item"
+            app:MvxBind="ItemsSource Notes" />
+        <LinearLayout
+                android:id="@+id/fragment_guide_custom_bottom_edit"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:layout_alignParentBottom="true"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:lines="5"
-                android:maxLines="5"
-                android:gravity="top|left"
-                style="@style/RoundCornerEditText"
-                app:MvxBind="Text NewEntryText"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Add"
-                app:MvxBind="Click AddNewEntryCommand"/>
-    </LinearLayout>
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="5"
+                    android:maxLines="5"
+                    android:gravity="top|left"
+                    style="@style/RoundCornerEditText"
+                    app:MvxBind="Text NewEntryText"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add"
+                    app:MvxBind="Click AddNewEntryCommand"/>
+        </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>
